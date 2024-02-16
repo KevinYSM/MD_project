@@ -1,0 +1,1 @@
+nextflow run nf-core/sarek --input samplesheet.csv --outdir "/data/local/MD_scholarly/data/processed/nf-core/exome/" -profile singularity --genome GATK.GRCh38 --cpus 63 --tools mutect2,haplotypecaller,ascat,controlfreec,msisensorpro --wes

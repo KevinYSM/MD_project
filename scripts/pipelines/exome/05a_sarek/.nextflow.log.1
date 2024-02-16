@@ -1,0 +1,156 @@
+Feb-10 07:08:20.561 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/sarek --input /home/ubuntu/data/local/MD_scholarly/scripts/pipelines/exome/04_samplesheets/samplesheets/bbsplit_test.csv -profile singularity --fasta /home/ubuntu/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta --tools mutect2,haplotypecaller,ascat,controlfreec,msisensorpro --wes --outdir /data/local/MD_scholarly/data/processed/exome/sarek_a -c sarek.config
+Feb-10 07:08:20.649 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Feb-10 07:08:20.672 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Feb-10 07:08:20.683 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-10 07:08:20.684 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-10 07:08:20.688 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Feb-10 07:08:20.698 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Feb-10 07:08:20.713 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ubuntu/.nextflow/scm
+Feb-10 07:08:21.809 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Feb-10 07:08:21.831 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Feb-10 07:08:21.839 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Feb-10 07:08:23.057 [main] INFO  nextflow.scm.AssetManager - NOTE: Your local project version looks outdated - a different revision is available in the remote repository [6aeac929c9]
+Feb-10 07:08:23.067 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Feb-10 07:08:23.069 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek/sarek.config
+Feb-10 07:08:23.069 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Feb-10 07:08:23.070 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek/sarek.config
+Feb-10 07:08:23.083 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Feb-10 07:08:25.614 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Feb-10 07:08:25.624 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, uzl_omics, ifb_core, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, ilifu, uge, rosalind_uge, lugh, test_full_germline, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, unc_longleaf, tigem, tubingen_apg, google, apollo, ipop_up, pdc_kth, googlels, use_gatk_spark, daisybio, eddie, medair, alignment_to_fastq, biowulf, apptainer, bi, bigpurple, adcra, cedars, tools, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, targeted, icr_davros, ceres, save_bam_mapped, munin, arm, rosalind, hasta, annotation, cfc, uzh, split_fastq, ebi_codon_slurm, ebc, ku_sund_dangpu, ccga_dx, variantcalling_channels, crick, recalibrate_bam, marvin, biohpc_gen, shifter, mana, mamba, unc_lccc, wehi, awsbatch, wustl_htcf, imperial, maestro, software_license, skip_bqsr, genotoul, nci_gadi, skip_markduplicates, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, create, sage, trimming, cambridge, tools_tumoronly, jex, podman, ebi_codon, cheaha, xanadu, nyu_hpc, test, prepare_recalibration_bam, computerome, ucd_sonic, tools_germline, seg_globe, sanger, dkfz, tools_somatic_ascat, pasteur, ethz_euler, test_full, imb, tuos_stanage, azurebatch, hki, crukmi, csiro_petrichor, docker, engaging, gis, hypatia, psmn, umi, eva, nygc, markduplicates_bam, fgcz, conda, crg, singularity, self_hosted_runner, uw_hyak_pedslabs, utd_sysbio, debug, genouest, tools_somatic, cbe, markduplicates_cram, test_cache, recalibrate_cram, no_intervals, prepare_recalibration_cram, pair, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac]
+Feb-10 07:08:25.673 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Feb-10 07:08:25.674 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/sarek` [backstabbing_bartik] DSL2 - revision: ed1cc84993 [master]
+Feb-10 07:08:25.674 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Feb-10 07:08:25.674 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Feb-10 07:08:25.677 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Feb-10 07:08:25.680 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5aeebccc] - activable => nextflow.secret.LocalSecretsProvider@5aeebccc
+Feb-10 07:08:25.730 [main] DEBUG nextflow.Session - Session UUID: 4677db58-f51e-4315-b853-25926dd9c7f4
+Feb-10 07:08:25.730 [main] DEBUG nextflow.Session - Run name: backstabbing_bartik
+Feb-10 07:08:25.731 [main] DEBUG nextflow.Session - Executor pool size: 64
+Feb-10 07:08:25.737 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Feb-10 07:08:25.762 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC 
+  System: Linux 5.4.0-169-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 21.0.2+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1803167@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (88.5 GB) - Swap: 0 (0) - Virtual threads ON
+Feb-10 07:08:25.781 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek/work [ext2/ext3]
+Feb-10 07:08:25.781 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/.nextflow/assets/nf-core/sarek/bin
+Feb-10 07:08:25.791 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Feb-10 07:08:25.804 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Feb-10 07:08:25.890 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Feb-10 07:08:25.898 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Feb-10 07:08:26.164 [main] DEBUG nextflow.Session - Session start
+Feb-10 07:08:26.169 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /data/local/MD_scholarly/data/processed/exome/sarek_a/pipeline_info/execution_trace_2024-02-10_07-08-24.txt
+Feb-10 07:08:26.177 [main] DEBUG nextflow.Session - Using default localLib path: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Feb-10 07:08:26.180 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Feb-10 07:08:26.181 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib/nfcore_external_java_deps.jar
+Feb-10 07:08:26.947 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Feb-10 07:08:27.010 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek v3.2.3-ged1cc84[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision             : [0;32mmaster[0m
+  [0;34mrunName              : [0;32mbackstabbing_bartik[0m
+  [0;34mcontainerEngine      : [0;32msingularity[0m
+  [0;34mlaunchDir            : [0;32m/data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek[0m
+  [0;34mworkDir              : [0;32m/data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek/work[0m
+  [0;34mprojectDir           : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek[0m
+  [0;34muserName             : [0;32mubuntu[0m
+  [0;34mprofile              : [0;32msingularity[0m
+  [0;34mconfigFiles          : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config, /data/local/MD_scholarly/scripts/pipelines/exome/05a_sarek/sarek.config[0m
+
+[1mInput/output options[0m
+  [0;34minput                : [0;32m/home/ubuntu/data/local/MD_scholarly/scripts/pipelines/exome/04_samplesheets/samplesheets/bbsplit_test.csv[0m
+  [0;34moutdir               : [0;32m/data/local/MD_scholarly/data/processed/exome/sarek_a[0m
+
+[1mMain options[0m
+  [0;34mwes                  : [0;32mtrue[0m
+  [0;34mintervals            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/intervals/wgs_calling_regions_noseconds.hg38.bed[0m
+  [0;34mtools                : [0;32mmutect2,haplotypecaller,ascat,controlfreec,msisensorpro[0m
+
+[1mVariant Calling[0m
+  [0;34mcf_chrom_len         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Length/Homo_sapiens_assembly38.len[0m
+  [0;34mpon                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz[0m
+  [0;34mpon_tbi              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz.tbi[0m
+
+[1mReference genome options[0m
+  [0;34mascat_genome         : [0;32mhg38[0m
+  [0;34mascat_alleles        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip[0m
+  [0;34mascat_loci           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_loci_hg38.zip[0m
+  [0;34mascat_loci_gc        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/GC_G1000_hg38.zip[0m
+  [0;34mascat_loci_rt        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/RT_G1000_hg38.zip[0m
+  [0;34mbwa                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAIndex/[0m
+  [0;34mbwamem2              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAmem2Index/[0m
+  [0;34mchr_dir              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Chromosomes[0m
+  [0;34mdbsnp                : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdbsnp_tbi            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz.tbi[0m
+  [0;34mdbsnp_vqsr           : [0;32m--resource:dbsnp,known=false,training=true,truth=false,prior=2.0 dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdict                 : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict[0m
+  [0;34mdragmap              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/dragmap/[0m
+  [0;34mfasta                : [0;32m/home/ubuntu/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta[0m
+  [0;34mfasta_fai            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai[0m
+  [0;34mgermline_resource    : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz[0m
+  [0;34mgermline_resource_tbi: [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz.tbi[0m
+  [0;34mknown_indels         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz[0m
+  [0;34mknown_indels_tbi     : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz.tbi[0m
+  [0;34mknown_indels_vqsr    : [0;32m--resource:gatk,known=false,training=true,truth=true,prior=10.0 Homo_sapiens_assembly38.known_indels.vcf.gz --resource:mills,known=false,training=true,truth=true,prior=10.0 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz[0m
+  [0;34mknown_snps           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mknown_snps_tbi       : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz.tbi[0m
+  [0;34mknown_snps_vqsr      : [0;32m--resource:1000G,known=false,training=true,truth=true,prior=10.0 1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mmappability          : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/Control-FREEC/out100m2_hg38.gem[0m
+  [0;34msnpeff_db            : [0;32m105[0m
+  [0;34msnpeff_genome        : [0;32mGRCh38[0m
+  [0;34msnpeff_version       : [0;32m5.1[0m
+  [0;34mvep_genome           : [0;32mGRCh38[0m
+  [0;34mvep_species          : [0;32mhomo_sapiens[0m
+  [0;34mvep_cache_version    : [0;32m108[0m
+  [0;34mvep_version          : [0;32m108.2[0m
+  [0;34migenomes_base        : [0;32ms3://ngi-igenomes/igenomes[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+Displaying all reference genome parameters
+-[2m----------------------------------------------------[0m-
+If you use nf-core/sarek for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.12688/f1000research.16665.2
+  https://doi.org/10.5281/zenodo.4468605
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Feb-10 07:08:28.935 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Feb-10 07:08:29.853 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 2.1.4
+Feb-10 07:08:29.861 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@2.1.4' resolved
+Feb-10 07:08:29.861 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@2.1.4'
+Feb-10 07:08:29.873 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@2.1.4
+Feb-10 07:08:29.885 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Feb-10 07:08:29.885 [main] DEBUG nextflow.file.FileHelper - Started plugin 'nf-amazon' required to handle file: s3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip
+Feb-10 07:08:29.891 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+Feb-10 07:08:29.900 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+Feb-10 07:08:30.326 [main] DEBUG nextflow.cloud.aws.nio.S3Client - Setting S3 glacierRetrievalTier=null
+Feb-10 07:08:32.363 [main] DEBUG n.c.aws.util.S3CredentialsProvider - No AWS credentials available - falling back to anonymous access
+Feb-10 07:08:41.477 [main] WARN  nextflow.Nextflow - Default reference files not suited for running ASCAT on WES data. It's recommended to use the reference files provided here: https://github.com/Wedge-lab/battenberg#required-reference-files
+Feb-10 07:08:41.477 [main] WARN  nextflow.Nextflow - The default Panel-of-Normals provided by GATK is used for Mutect2.
+It is highly recommended to generate one from normal samples that are technical similar to the tumor ones.
+For more information: https://gatk.broadinstitute.org/hc/en-us/articles/360035890631-Panel-of-Normals-PON-
+Feb-10 07:08:43.157 [SIGINT handler] INFO  nextflow.Session - Adieu

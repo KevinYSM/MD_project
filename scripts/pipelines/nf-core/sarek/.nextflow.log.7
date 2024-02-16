@@ -1,0 +1,143 @@
+Dec-18 12:49:31.948 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/sarek --input samplesheet.csv --outdir /data/local/MD_scholarly/data/processed/nf-core/exome/ -profile singularity --genome GTK.GRCh38 --cpus 63 --tools Mutect2,HaploTypeCaller,ASCAT,ControlFREEC,MSIsensor --wes
+Dec-18 12:49:32.081 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Dec-18 12:49:32.238 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Dec-18 12:49:32.254 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-18 12:49:32.255 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-18 12:49:32.258 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-18 12:49:32.342 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-18 12:49:32.700 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ubuntu/.nextflow/scm
+Dec-18 12:49:35.566 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Dec-18 12:49:35.616 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Dec-18 12:49:35.809 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Dec-18 12:49:42.905 [main] INFO  nextflow.scm.AssetManager - NOTE: Your local project version looks outdated - a different revision is available in the remote repository [6aeac929c9]
+Dec-18 12:49:42.916 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Dec-18 12:49:42.917 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Dec-18 12:49:42.929 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Dec-18 12:49:46.258 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, uzl_omics, ifb_core, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, uge, rosalind_uge, lugh, test_full_germline, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, tigem, tubingen_apg, google, apollo, ipop_up, pdc_kth, googlels, use_gatk_spark, daisybio, eddie, medair, alignment_to_fastq, biowulf, apptainer, bi, bigpurple, adcra, cedars, tools, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, targeted, icr_davros, ceres, save_bam_mapped, munin, arm, rosalind, hasta, annotation, cfc, uzh, split_fastq, ebi_codon_slurm, ebc, ku_sund_dangpu, ccga_dx, variantcalling_channels, crick, recalibrate_bam, marvin, biohpc_gen, shifter, mana, mamba, unc_lccc, wehi, awsbatch, wustl_htcf, imperial, maestro, software_license, skip_bqsr, genotoul, nci_gadi, skip_markduplicates, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, create, sage, trimming, cambridge, tools_tumoronly, jex, podman, ebi_codon, cheaha, xanadu, test, prepare_recalibration_bam, computerome, ucd_sonic, tools_germline, seg_globe, sanger, dkfz, tools_somatic_ascat, pasteur, ethz_euler, test_full, imb, tuos_stanage, azurebatch, hki, crukmi, docker, engaging, gis, hypatia, psmn, umi, eva, nygc, markduplicates_bam, fgcz, conda, crg, singularity, self_hosted_runner, uw_hyak_pedslabs, prince, utd_sysbio, debug, genouest, tools_somatic, cbe, markduplicates_cram, test_cache, recalibrate_cram, no_intervals, prepare_recalibration_cram, pair, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac]
+Dec-18 12:49:46.400 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Dec-18 12:49:46.401 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/sarek` [magical_euler] DSL2 - revision: ed1cc84993 [master]
+Dec-18 12:49:46.402 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-18 12:49:46.402 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-18 12:49:46.405 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Dec-18 12:49:46.408 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4a86be01] - activable => nextflow.secret.LocalSecretsProvider@4a86be01
+Dec-18 12:49:47.074 [main] DEBUG nextflow.Session - Session UUID: 02af407c-e01b-4e7e-832b-1696621f9e9d
+Dec-18 12:49:47.074 [main] DEBUG nextflow.Session - Run name: magical_euler
+Dec-18 12:49:47.075 [main] DEBUG nextflow.Session - Executor pool size: 64
+Dec-18 12:49:47.178 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-18 12:49:47.337 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC 
+  System: Linux 5.4.0-167-generic
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 282981@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (86.6 GB) - Swap: 0 (0)
+Dec-18 12:49:47.412 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/work [ext2/ext3]
+Dec-18 12:49:47.412 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/.nextflow/assets/nf-core/sarek/bin
+Dec-18 12:49:47.470 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-18 12:49:47.506 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-18 12:49:48.329 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-18 12:49:48.439 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Dec-18 12:49:49.289 [main] DEBUG nextflow.Session - Session start
+Dec-18 12:49:49.295 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /data/local/MD_scholarly/data/processed/nf-core/exome/pipeline_info/execution_trace_2023-12-18_12-49-44.txt
+Dec-18 12:49:49.308 [main] DEBUG nextflow.Session - Using default localLib path: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Dec-18 12:49:49.343 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Dec-18 12:49:49.344 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib/nfcore_external_java_deps.jar
+Dec-18 12:49:50.735 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-18 12:49:50.995 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek v3.2.3-ged1cc84[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision       : [0;32mmaster[0m
+  [0;34mrunName        : [0;32mmagical_euler[0m
+  [0;34mcontainerEngine: [0;32msingularity[0m
+  [0;34mlaunchDir      : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/sarek[0m
+  [0;34mworkDir        : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/work[0m
+  [0;34mprojectDir     : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek[0m
+  [0;34muserName       : [0;32mubuntu[0m
+  [0;34mprofile        : [0;32msingularity[0m
+  [0;34mconfigFiles    : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32msamplesheet.csv[0m
+  [0;34moutdir         : [0;32m/data/local/MD_scholarly/data/processed/nf-core/exome/[0m
+
+[1mMain options[0m
+  [0;34mwes            : [0;32mtrue[0m
+  [0;34mtools          : [0;32mMutect2,HaploTypeCaller,ASCAT,ControlFREEC,MSIsensor[0m
+
+[1mReference genome options[0m
+  [0;34mgenome         : [0;32mGTK.GRCh38[0m
+  [0;34migenomes_base  : [0;32ms3://ngi-igenomes/igenomes[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+Displaying all reference genome parameters
+-[2m----------------------------------------------------[0m-
+If you use nf-core/sarek for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.12688/f1000research.16665.2
+  https://doi.org/10.5281/zenodo.4468605
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Dec-18 12:49:51.274 [main] ERROR nextflow.Nextflow - ERROR: Validation of pipeline parameters failed!
+Dec-18 12:49:51.281 [main] ERROR nextflow.Nextflow - * --tools: string [Mutect2,HaploTypeCaller,ASCAT,ControlFREEC,MSIsensor] does not match pattern ^((ascat|cnvkit|controlfreec|deepvariant|freebayes|haplotypecaller|manta|merge|mpileup|msisensorpro|mutect2|snpeff|strelka|tiddit|vep)?,?)*(?<!,)$ (Mutect2,HaploTypeCaller,ASCAT,ControlFREEC,MSIsensor)
+Dec-18 12:49:51.282 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --cpus: 63
+Dec-18 12:49:51.282 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "cpus" [0m
+Dec-18 12:49:51.285 [main] DEBUG nextflow.Session - Session aborted -- Cause: Exiting!
+Dec-18 12:49:51.438 [main] ERROR nextflow.cli.Launcher - @unknown
+nextflow.exception.WorkflowScriptErrorException: Exiting!
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.Nextflow.error(Nextflow.groovy:215)
+	at nextflow.Nextflow$error.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at NfcoreSchema.validateParameters(NfcoreSchema.groovy:182)
+	at NfcoreSchema.validateParameters(NfcoreSchema.groovy)
+	at NfcoreSchema$validateParameters$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)
+	at WorkflowMain.initialise(WorkflowMain.groovy:70)
+	at WorkflowMain$initialise$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)
+	at Script_c05744b2.runScript(Script_c05744b2:71)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:224)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:130)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:368)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)

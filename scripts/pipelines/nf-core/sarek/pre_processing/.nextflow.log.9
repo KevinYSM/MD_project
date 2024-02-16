@@ -1,0 +1,617 @@
+Dec-26 04:43:18.910 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Dec-26 04:43:19.334 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Dec-26 04:43:19.512 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Dec-26 04:43:19.532 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-26 04:43:19.533 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-26 04:43:19.538 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-26 04:43:19.684 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-26 04:43:19.793 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Dec-26 04:43:19.795 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Dec-26 04:43:19.920 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-26 04:43:21.774 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Dec-26 04:43:21.984 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [jolly_tuckerman] DSL2 - revision: 02aa555e32
+Dec-26 04:43:21.986 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-26 04:43:21.986 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-26 04:43:22.006 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Dec-26 04:43:22.013 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3bec5821] - activable => nextflow.secret.LocalSecretsProvider@3bec5821
+Dec-26 04:43:22.454 [main] DEBUG nextflow.Session - Session UUID: 6b45f658-0488-4e49-8efd-8a7b41a17f1a
+Dec-26 04:43:22.454 [main] DEBUG nextflow.Session - Run name: jolly_tuckerman
+Dec-26 04:43:22.455 [main] DEBUG nextflow.Session - Executor pool size: 64
+Dec-26 04:43:22.490 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-26 04:43:22.512 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-26 04:43:23.253 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC 
+  System: Linux 5.4.0-167-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 509240@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (149.6 GB) - Swap: 0 (0)
+Dec-26 04:43:23.493 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work [ext2/ext3]
+Dec-26 04:43:23.494 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/bin
+Dec-26 04:43:23.535 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-26 04:43:23.550 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-26 04:43:23.574 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-26 04:43:23.951 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Dec-26 04:43:25.889 [main] DEBUG nextflow.Session - Session start
+Dec-26 04:43:26.738 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-26 04:43:26.908 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-26 04:43:26.908 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-26 04:43:26.915 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Dec-26 04:43:26.922 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=251.7 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Dec-26 04:43:26.943 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Dec-26 04:43:27.044 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-26 04:43:27.045 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-26 04:43:27.051 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: AGENT_trim_umis, bbsplit, save_results
+Dec-26 04:43:27.051 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Dec-26 04:43:27.081 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > AGENT_trim_umis
+Dec-26 04:43:27.081 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /data/local/MD_scholarly/data/raw/exome/all/renamed/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Dec-26 04:43:27.083 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > bbsplit
+Dec-26 04:43:27.086 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_f49334b3385ec774: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/disambiguate.nf
+Dec-26 04:43:27.087 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Dec-26 04:43:27.087 [main] DEBUG nextflow.Session - Session await
+Dec-26 04:43:28.584 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.589 [Task submitter] INFO  nextflow.Session - [52/e7e99e] Submitted process > AGENT_trim_umis (2)
+Dec-26 04:43:28.660 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.661 [Task submitter] INFO  nextflow.Session - [54/55c08c] Submitted process > AGENT_trim_umis (7)
+Dec-26 04:43:28.666 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.667 [Task submitter] INFO  nextflow.Session - [4d/06eb8b] Submitted process > AGENT_trim_umis (13)
+Dec-26 04:43:28.673 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.674 [Task submitter] INFO  nextflow.Session - [3d/0d91f7] Submitted process > AGENT_trim_umis (15)
+Dec-26 04:43:28.688 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.689 [Task submitter] INFO  nextflow.Session - [2e/449174] Submitted process > AGENT_trim_umis (14)
+Dec-26 04:43:28.694 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.694 [Task submitter] INFO  nextflow.Session - [9e/5bf5e3] Submitted process > AGENT_trim_umis (10)
+Dec-26 04:43:28.697 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.698 [Task submitter] INFO  nextflow.Session - [d0/a00ba1] Submitted process > AGENT_trim_umis (4)
+Dec-26 04:43:28.701 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.702 [Task submitter] INFO  nextflow.Session - [4b/6b2071] Submitted process > AGENT_trim_umis (9)
+Dec-26 04:43:28.704 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.705 [Task submitter] INFO  nextflow.Session - [47/d3141f] Submitted process > AGENT_trim_umis (8)
+Dec-26 04:43:28.708 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 04:43:28.708 [Task submitter] INFO  nextflow.Session - [6a/9bae3f] Submitted process > AGENT_trim_umis (12)
+Dec-26 04:43:28.790 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [39/2ab135] Cached process > AGENT_trim_umis (5)
+Dec-26 04:43:28.805 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [3b/65c73e] Cached process > AGENT_trim_umis (3)
+Dec-26 04:43:28.822 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [26/0cae70] Cached process > AGENT_trim_umis (1)
+Dec-26 04:43:28.825 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [27/1ae917] Cached process > AGENT_trim_umis (6)
+Dec-26 04:43:28.827 [Actor Thread 56] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-26 04:43:28.912 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [c7/df2315] Cached process > AGENT_trim_umis (21)
+Dec-26 04:43:28.917 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [df/93853d] Cached process > AGENT_trim_umis (17)
+Dec-26 04:43:28.946 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [4f/e5bccc] Cached process > AGENT_trim_umis (20)
+Dec-26 04:43:28.962 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [70/8d3514] Cached process > AGENT_trim_umis (22)
+Dec-26 04:43:28.970 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [30/6008f2] Cached process > AGENT_trim_umis (26)
+Dec-26 04:43:28.977 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [95/c25d8a] Cached process > AGENT_trim_umis (31)
+Dec-26 04:43:28.982 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [11/dd6c1e] Cached process > AGENT_trim_umis (38)
+Dec-26 04:43:28.987 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [f1/e6c7e7] Cached process > AGENT_trim_umis (30)
+Dec-26 04:43:29.029 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [e8/a5d036] Cached process > AGENT_trim_umis (24)
+Dec-26 04:43:29.046 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [9f/e9764d] Cached process > AGENT_trim_umis (44)
+Dec-26 04:43:29.066 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [c7/13c58b] Cached process > AGENT_trim_umis (49)
+Dec-26 04:43:29.073 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [0d/bc8b73] Cached process > AGENT_trim_umis (46)
+Dec-26 04:43:29.074 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [2c/b7cffa] Cached process > AGENT_trim_umis (42)
+Dec-26 04:43:29.082 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [46/178e85] Cached process > AGENT_trim_umis (50)
+Dec-26 04:43:29.082 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [6f/7cba4c] Cached process > AGENT_trim_umis (43)
+Dec-26 04:43:29.083 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [35/595c1f] Cached process > AGENT_trim_umis (47)
+Dec-26 04:48:27.096 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 13; name: AGENT_trim_umis (13); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 10; name: AGENT_trim_umis (10); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 9; name: AGENT_trim_umis (9); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4b/6b20719a5156182e7aba06b6ea95e9]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 12; name: AGENT_trim_umis (12); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+Dec-26 04:48:28.917 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 20 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+.. remaining tasks omitted.
+Dec-26 04:53:27.135 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 13; name: AGENT_trim_umis (13); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 10; name: AGENT_trim_umis (10); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 9; name: AGENT_trim_umis (9); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4b/6b20719a5156182e7aba06b6ea95e9]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 12; name: AGENT_trim_umis (12); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+Dec-26 04:53:29.099 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 20 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+.. remaining tasks omitted.
+Dec-26 04:58:27.176 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 13; name: AGENT_trim_umis (13); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 10; name: AGENT_trim_umis (10); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 9; name: AGENT_trim_umis (9); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4b/6b20719a5156182e7aba06b6ea95e9]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 12; name: AGENT_trim_umis (12); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+Dec-26 04:58:29.255 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 20 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+.. remaining tasks omitted.
+Dec-26 05:03:27.215 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 13; name: AGENT_trim_umis (13); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 10; name: AGENT_trim_umis (10); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 9; name: AGENT_trim_umis (9); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4b/6b20719a5156182e7aba06b6ea95e9]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 12; name: AGENT_trim_umis (12); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+Dec-26 05:03:29.404 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 20 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+.. remaining tasks omitted.
+Dec-26 05:07:58.952 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: AGENT_trim_umis (9); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4b/6b20719a5156182e7aba06b6ea95e9]
+Dec-26 05:07:58.957 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:07:58.959 [Task submitter] INFO  nextflow.Session - [83/1d2146] Submitted process > AGENT_trim_umis (11)
+Dec-26 05:08:27.310 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 13; name: AGENT_trim_umis (13); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 10; name: AGENT_trim_umis (10); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 12; name: AGENT_trim_umis (12); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+Dec-26 05:08:29.973 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 19 -- tasks to be submitted are shown below
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+.. remaining tasks omitted.
+Dec-26 05:11:06.729 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: AGENT_trim_umis (12); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/6a/9bae3f1269910bc4f109baa4c55b9e]
+Dec-26 05:11:06.732 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:11:06.746 [Task submitter] INFO  nextflow.Session - [db/8b99ab] Submitted process > AGENT_trim_umis (16)
+Dec-26 05:12:00.729 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: AGENT_trim_umis (10); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/9e/5bf5e3a3f5731ffacc46c8191673c5]
+Dec-26 05:12:00.734 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:12:00.737 [Task submitter] INFO  nextflow.Session - [04/451a15] Submitted process > AGENT_trim_umis (19)
+Dec-26 05:12:02.582 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: AGENT_trim_umis (13); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/4d/06eb8b7b7c782d018df542fb39e9bb]
+Dec-26 05:12:02.590 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:12:02.594 [Task submitter] INFO  nextflow.Session - [27/b27295] Submitted process > AGENT_trim_umis (18)
+Dec-26 05:13:27.346 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 7; name: AGENT_trim_umis (7); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+~> TaskHandler[id: 15; name: AGENT_trim_umis (15); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+Dec-26 05:13:30.622 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 16 -- tasks to be submitted are shown below
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+.. remaining tasks omitted.
+Dec-26 05:15:35.330 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: AGENT_trim_umis (15); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/3d/0d91f76a2f0e94679f032c8f8dbc6a]
+Dec-26 05:15:35.337 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:15:35.338 [Task submitter] INFO  nextflow.Session - [43/a057b7] Submitted process > AGENT_trim_umis (23)
+Dec-26 05:15:50.921 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: AGENT_trim_umis (7); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/54/55c08c7e287c8863c205d686ce4793]
+Dec-26 05:15:50.926 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:15:50.927 [Task submitter] INFO  nextflow.Session - [7e/c16981] Submitted process > AGENT_trim_umis (25)
+Dec-26 05:18:27.365 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 14; name: AGENT_trim_umis (14); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 8; name: AGENT_trim_umis (8); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+Dec-26 05:18:31.013 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 14 -- tasks to be submitted are shown below
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+.. remaining tasks omitted.
+Dec-26 05:21:44.868 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: AGENT_trim_umis (8); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/47/d3141f11b9075075be58d708865bd1]
+Dec-26 05:21:44.873 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:21:44.885 [Task submitter] INFO  nextflow.Session - [1b/228d34] Submitted process > AGENT_trim_umis (28)
+Dec-26 05:22:32.481 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: AGENT_trim_umis (14); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/2e/4491744deb6a27c29d1b1aa9ed778f]
+Dec-26 05:22:32.485 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:22:32.485 [Task submitter] INFO  nextflow.Session - [72/49abce] Submitted process > AGENT_trim_umis (29)
+Dec-26 05:23:27.395 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+Dec-26 05:23:31.512 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+.. remaining tasks omitted.
+Dec-26 05:28:27.439 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: AGENT_trim_umis (2); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+Dec-26 05:28:31.646 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+.. remaining tasks omitted.
+Dec-26 05:31:58.045 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: AGENT_trim_umis (2); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/52/e7e99e6c74b1a4b2723d8712438b33]
+Dec-26 05:31:58.060 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:31:58.061 [Task submitter] INFO  nextflow.Session - [bf/aa929f] Submitted process > AGENT_trim_umis (32)
+Dec-26 05:33:27.443 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: AGENT_trim_umis (4); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 16; name: AGENT_trim_umis (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+Dec-26 05:33:32.141 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+Dec-26 05:36:30.060 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: AGENT_trim_umis (4); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d0/a00ba1ecd2979d96950ae3a195b497]
+Dec-26 05:36:30.066 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:36:30.067 [Task submitter] INFO  nextflow.Session - [8e/8c30e6] Submitted process > AGENT_trim_umis (37)
+Dec-26 05:37:08.039 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: AGENT_trim_umis (16); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/db/8b99ab89b17ad4169e1b1fc6a76d2d]
+Dec-26 05:37:08.043 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:37:08.044 [Task submitter] INFO  nextflow.Session - [5e/5e6212] Submitted process > AGENT_trim_umis (35)
+Dec-26 05:38:27.493 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 19; name: AGENT_trim_umis (19); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 25; name: AGENT_trim_umis (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+Dec-26 05:38:33.090 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 9 -- tasks to be submitted are shown below
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 05:42:26.216 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: AGENT_trim_umis (25); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/7e/c169811971620d14e0d5a53a001ca0]
+Dec-26 05:42:26.220 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:42:26.221 [Task submitter] INFO  nextflow.Session - [5c/5f5728] Submitted process > AGENT_trim_umis (34)
+Dec-26 05:42:28.124 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: AGENT_trim_umis (19); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/04/451a15a30623295e1aaaa04040e811]
+Dec-26 05:42:28.129 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:42:28.130 [Task submitter] INFO  nextflow.Session - [fd/fd8121] Submitted process > AGENT_trim_umis (36)
+Dec-26 05:43:27.531 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 18; name: AGENT_trim_umis (18); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+~> TaskHandler[id: 23; name: AGENT_trim_umis (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 29; name: AGENT_trim_umis (29); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+Dec-26 05:43:27.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: AGENT_trim_umis (29); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/72/49abcef237f99786f1f9966ddbd324]
+Dec-26 05:43:27.620 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:43:27.621 [Task submitter] INFO  nextflow.Session - [0c/36c2de] Submitted process > AGENT_trim_umis (33)
+Dec-26 05:43:33.625 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 6 -- tasks to be submitted are shown below
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 05:44:54.032 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: AGENT_trim_umis (18); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/27/b272953635c7c939fd6bb5c1d22574]
+Dec-26 05:44:54.036 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:44:54.037 [Task submitter] INFO  nextflow.Session - [92/444221] Submitted process > AGENT_trim_umis (27)
+Dec-26 05:45:17.517 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: AGENT_trim_umis (23); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/43/a057b7171f91b541ed02f4cc8d0f1a]
+Dec-26 05:45:17.520 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:45:17.528 [Task submitter] INFO  nextflow.Session - [83/6035d1] Submitted process > AGENT_trim_umis (39)
+Dec-26 05:48:27.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 32; name: AGENT_trim_umis (32); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+Dec-26 05:48:34.612 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 4 -- tasks to be submitted are shown below
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 05:52:31.694 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: AGENT_trim_umis (32); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/bf/aa929f955e68807a597322c7f2aa66]
+Dec-26 05:52:31.697 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:52:31.698 [Task submitter] INFO  nextflow.Session - [1d/715e52] Submitted process > AGENT_trim_umis (48)
+Dec-26 05:53:27.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 11; name: AGENT_trim_umis (11); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+Dec-26 05:53:34.723 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 05:58:21.909 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: AGENT_trim_umis (11); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/1d21469b11f141b1b55117a54c3b80]
+Dec-26 05:58:21.912 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 05:58:21.913 [Task submitter] INFO  nextflow.Session - [d9/3d2399] Submitted process > AGENT_trim_umis (40)
+Dec-26 05:58:27.595 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+Dec-26 05:58:34.917 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:03:27.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+Dec-26 06:03:35.069 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:08:27.687 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 28; name: AGENT_trim_umis (28); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+~> TaskHandler[id: 37; name: AGENT_trim_umis (37); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+~> TaskHandler[id: 35; name: AGENT_trim_umis (35); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+Dec-26 06:08:35.246 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 2 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:10:09.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: AGENT_trim_umis (37); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/8e/8c30e6689b883179bf8420fda71020]
+Dec-26 06:10:09.758 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 06:10:09.759 [Task submitter] INFO  nextflow.Session - [70/9bc6b6] Submitted process > AGENT_trim_umis (45)
+Dec-26 06:11:30.732 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: AGENT_trim_umis (35); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5e/5e6212144a2ec47562d012b39b8dd3]
+Dec-26 06:11:30.735 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-26 06:11:30.736 [Task submitter] INFO  nextflow.Session - [a1/fb22d3] Submitted process > AGENT_trim_umis (41)
+Dec-26 06:12:30.553 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: AGENT_trim_umis (28); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1b/228d34d7acb26938ad94ca73d6dabe]
+Dec-26 06:13:27.722 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 9 -- submitted tasks are shown below
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 36; name: AGENT_trim_umis (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 39; name: AGENT_trim_umis (39); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:17:01.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: AGENT_trim_umis (36); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/fd/fd81214778b8172520677ad3fce56e]
+Dec-26 06:17:29.244 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: AGENT_trim_umis (39); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/83/6035d1152239ebb68b7e9a5588468f]
+Dec-26 06:18:27.757 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 7 -- submitted tasks are shown below
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 27; name: AGENT_trim_umis (27); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:19:16.425 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: AGENT_trim_umis (27); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/92/444221254ad7b956b259c04096290f]
+Dec-26 06:23:27.795 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:28:27.848 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 34; name: AGENT_trim_umis (34); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+~> TaskHandler[id: 33; name: AGENT_trim_umis (33); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 40; name: AGENT_trim_umis (40); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:32:36.175 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: AGENT_trim_umis (33); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/0c/36c2de205c19c330296ca80c62169a]
+Dec-26 06:32:36.556 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: AGENT_trim_umis (40); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/d9/3d239980bb583b0ee15665f72f6d92]
+Dec-26 06:33:03.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: AGENT_trim_umis (34); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/5c/5f572828a8cff1bff8282ad816bb02]
+Dec-26 06:33:27.851 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: AGENT_trim_umis (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:35:03.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: AGENT_trim_umis (48); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/1d/715e52306e7b0853a838afe8ec5018]
+Dec-26 06:38:27.898 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+~> TaskHandler[id: 41; name: AGENT_trim_umis (41); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:43:02.697 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: AGENT_trim_umis (41); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/a1/fb22d34e4813ab421b0cecaa3fe029]
+Dec-26 06:43:27.959 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 45; name: AGENT_trim_umis (45); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+Dec-26 06:43:31.864 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: AGENT_trim_umis (45); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work/70/9bc6b61db8c6c6e186ae38e1602b8e]
+Dec-26 06:43:31.873 [main] DEBUG nextflow.Session - Session await > all processes finished
+Dec-26 06:43:31.965 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Dec-26 06:43:31.966 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-26 06:43:37.022 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (32 files)
+Dec-26 06:44:37.029 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (32 files)
+Dec-26 06:45:37.032 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (32 files)
+Dec-26 06:46:37.035 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (32 files)
+Dec-26 06:47:37.038 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (32 files)
+Dec-26 06:48:37.041 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (30 files)
+Dec-26 06:49:37.044 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (30 files)
+Dec-26 06:50:37.046 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (29 files)
+Dec-26 06:51:37.049 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (28 files)
+Dec-26 06:52:37.053 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:53:37.056 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:54:37.059 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:55:37.062 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:56:37.065 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:57:37.068 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:58:37.071 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (26 files)
+Dec-26 06:59:37.075 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (25 files)
+Dec-26 07:00:37.078 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:01:37.081 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:02:37.085 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:03:37.087 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:04:37.090 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:05:37.093 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (24 files)
+Dec-26 07:06:37.095 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (22 files)
+Dec-26 07:07:37.098 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (21 files)
+Dec-26 07:08:37.101 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (20 files)
+Dec-26 07:09:37.103 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (20 files)
+Dec-26 07:10:37.106 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (20 files)
+Dec-26 07:11:37.108 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (19 files)
+Dec-26 07:12:37.111 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (18 files)
+Dec-26 07:13:37.113 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (18 files)
+Dec-26 07:14:37.116 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (18 files)
+Dec-26 07:15:37.119 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (18 files)
+Dec-26 07:16:37.122 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (18 files)
+Dec-26 07:17:37.125 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (16 files)
+Dec-26 07:18:37.127 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (16 files)
+Dec-26 07:19:37.130 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (15 files)
+Dec-26 07:20:37.133 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (14 files)
+Dec-26 07:21:37.181 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (14 files)
+Dec-26 07:22:37.184 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (14 files)
+Dec-26 07:23:37.187 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (14 files)
+Dec-26 07:24:37.190 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (14 files)
+Dec-26 07:25:37.193 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (13 files)
+Dec-26 07:26:37.196 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (12 files)
+Dec-26 07:27:37.199 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (12 files)
+Dec-26 07:28:37.202 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (12 files)
+Dec-26 07:29:37.206 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (12 files)
+Dec-26 07:30:37.209 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (11 files)
+Dec-26 07:31:37.212 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (11 files)
+Dec-26 07:32:37.215 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (11 files)
+Dec-26 07:33:37.218 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (10 files)
+Dec-26 07:34:37.221 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (10 files)
+Dec-26 07:35:37.225 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (10 files)
+Dec-26 07:36:37.228 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (9 files)
+Dec-26 07:37:37.231 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (8 files)
+Dec-26 07:38:37.234 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (8 files)
+Dec-26 07:39:37.237 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (8 files)
+Dec-26 07:40:37.240 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (8 files)
+Dec-26 07:41:37.242 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (8 files)
+Dec-26 07:42:37.245 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (7 files)
+Dec-26 07:43:37.248 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Dec-26 07:44:37.251 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (2 files)
+Dec-26 07:45:37.254 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (2 files)
+Dec-26 07:46:27.950 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Dec-26 07:46:28.011 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=30; failedCount=0; ignoredCount=0; cachedCount=20; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=17h 31m 18s; failedDuration=0ms; cachedDuration=10h 27m 13s;loadCpus=0; loadMemory=0; peakRunning=10; peakCpus=10; peakMemory=0; ]
+Dec-26 07:46:28.179 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Dec-26 07:46:28.273 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Dec-26 07:46:28.274 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
