@@ -1,0 +1,1 @@
+sudo scp -i /home/ubuntu/.ssh/kevin_instance.pem /data/local/MD_scholarly/a.txt ubuntu@146.118.68.29:/home/ubuntu/scratch/melanoma
