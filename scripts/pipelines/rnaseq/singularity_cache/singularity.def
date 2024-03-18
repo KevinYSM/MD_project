@@ -1,0 +1,10 @@
+Bootstrap: library
+From: ubuntu:20.04
+%post
+    apt-get update -y
+    apt install wget -y
+    apt-get install unzip -y
+    apt-get install python3 -y
+    wget https://github.com/broadinstitute/gatk/releases/download/4.4.0.0/gatk-4.4.0.0.zip
+    unzip gatk-4.4.0.0.zip
+    

@@ -1,0 +1,213 @@
+Dec-18 13:05:55.052 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/sarek --input samplesheet.csv --outdir /data/local/MD_scholarly/data/processed/nf-core/exome/ -profile singularity --genome GATK.GRCh38 --cpus 63 --tools mutect2,haplotypecaller,ascat,controlfreec,msisensorpro --wes
+Dec-18 13:05:55.129 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Dec-18 13:05:55.152 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Dec-18 13:05:55.163 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-18 13:05:55.164 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-18 13:05:55.168 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-18 13:05:55.181 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-18 13:05:55.199 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ubuntu/.nextflow/scm
+Dec-18 13:05:56.280 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Dec-18 13:05:56.300 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Dec-18 13:05:56.308 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Dec-18 13:05:57.489 [main] INFO  nextflow.scm.AssetManager - NOTE: Your local project version looks outdated - a different revision is available in the remote repository [6aeac929c9]
+Dec-18 13:05:57.497 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Dec-18 13:05:57.498 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Dec-18 13:05:57.507 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Dec-18 13:06:00.072 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, uzl_omics, ifb_core, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, uge, rosalind_uge, lugh, test_full_germline, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, tigem, tubingen_apg, google, apollo, ipop_up, pdc_kth, googlels, use_gatk_spark, daisybio, eddie, medair, alignment_to_fastq, biowulf, apptainer, bi, bigpurple, adcra, cedars, tools, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, targeted, icr_davros, ceres, save_bam_mapped, munin, arm, rosalind, hasta, annotation, cfc, uzh, split_fastq, ebi_codon_slurm, ebc, ku_sund_dangpu, ccga_dx, variantcalling_channels, crick, recalibrate_bam, marvin, biohpc_gen, shifter, mana, mamba, unc_lccc, wehi, awsbatch, wustl_htcf, imperial, maestro, software_license, skip_bqsr, genotoul, nci_gadi, skip_markduplicates, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, create, sage, trimming, cambridge, tools_tumoronly, jex, podman, ebi_codon, cheaha, xanadu, test, prepare_recalibration_bam, computerome, ucd_sonic, tools_germline, seg_globe, sanger, dkfz, tools_somatic_ascat, pasteur, ethz_euler, test_full, imb, tuos_stanage, azurebatch, hki, crukmi, docker, engaging, gis, hypatia, psmn, umi, eva, nygc, markduplicates_bam, fgcz, conda, crg, singularity, self_hosted_runner, uw_hyak_pedslabs, prince, utd_sysbio, debug, genouest, tools_somatic, cbe, markduplicates_cram, test_cache, recalibrate_cram, no_intervals, prepare_recalibration_cram, pair, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac]
+Dec-18 13:06:00.121 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Dec-18 13:06:00.122 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/sarek` [sleepy_jones] DSL2 - revision: ed1cc84993 [master]
+Dec-18 13:06:00.123 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-18 13:06:00.123 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-18 13:06:00.126 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Dec-18 13:06:00.129 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@630c3af3] - activable => nextflow.secret.LocalSecretsProvider@630c3af3
+Dec-18 13:06:00.193 [main] DEBUG nextflow.Session - Session UUID: cf3545be-02a8-4685-bfcb-f5189f6f28fb
+Dec-18 13:06:00.193 [main] DEBUG nextflow.Session - Run name: sleepy_jones
+Dec-18 13:06:00.194 [main] DEBUG nextflow.Session - Executor pool size: 64
+Dec-18 13:06:00.204 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-18 13:06:00.227 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC 
+  System: Linux 5.4.0-167-generic
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 289099@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (85.8 GB) - Swap: 0 (0)
+Dec-18 13:06:00.241 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/work [ext2/ext3]
+Dec-18 13:06:00.242 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/.nextflow/assets/nf-core/sarek/bin
+Dec-18 13:06:00.253 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-18 13:06:00.263 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-18 13:06:00.342 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-18 13:06:00.354 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Dec-18 13:06:00.572 [main] DEBUG nextflow.Session - Session start
+Dec-18 13:06:00.579 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /data/local/MD_scholarly/data/processed/nf-core/exome/pipeline_info/execution_trace_2023-12-18_13-05-58.txt
+Dec-18 13:06:00.588 [main] DEBUG nextflow.Session - Using default localLib path: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Dec-18 13:06:00.591 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib
+Dec-18 13:06:00.592 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/sarek/lib/nfcore_external_java_deps.jar
+Dec-18 13:06:01.660 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-18 13:06:01.736 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek v3.2.3-ged1cc84[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision             : [0;32mmaster[0m
+  [0;34mrunName              : [0;32msleepy_jones[0m
+  [0;34mcontainerEngine      : [0;32msingularity[0m
+  [0;34mlaunchDir            : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/sarek[0m
+  [0;34mworkDir              : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/work[0m
+  [0;34mprojectDir           : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek[0m
+  [0;34muserName             : [0;32mubuntu[0m
+  [0;34mprofile              : [0;32msingularity[0m
+  [0;34mconfigFiles          : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config[0m
+
+[1mInput/output options[0m
+  [0;34minput                : [0;32msamplesheet.csv[0m
+  [0;34moutdir               : [0;32m/data/local/MD_scholarly/data/processed/nf-core/exome/[0m
+
+[1mMain options[0m
+  [0;34mwes                  : [0;32mtrue[0m
+  [0;34mintervals            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/intervals/wgs_calling_regions_noseconds.hg38.bed[0m
+  [0;34mtools                : [0;32mmutect2,haplotypecaller,ascat,controlfreec,msisensorpro[0m
+
+[1mVariant Calling[0m
+  [0;34mcf_chrom_len         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Length/Homo_sapiens_assembly38.len[0m
+  [0;34mpon                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz[0m
+  [0;34mpon_tbi              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz.tbi[0m
+
+[1mReference genome options[0m
+  [0;34mascat_genome         : [0;32mhg38[0m
+  [0;34mascat_alleles        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip[0m
+  [0;34mascat_loci           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_loci_hg38.zip[0m
+  [0;34mascat_loci_gc        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/GC_G1000_hg38.zip[0m
+  [0;34mascat_loci_rt        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/RT_G1000_hg38.zip[0m
+  [0;34mbwa                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAIndex/[0m
+  [0;34mbwamem2              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAmem2Index/[0m
+  [0;34mchr_dir              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Chromosomes[0m
+  [0;34mdbsnp                : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdbsnp_tbi            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz.tbi[0m
+  [0;34mdbsnp_vqsr           : [0;32m--resource:dbsnp,known=false,training=true,truth=false,prior=2.0 dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdict                 : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict[0m
+  [0;34mdragmap              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/dragmap/[0m
+  [0;34mfasta                : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta[0m
+  [0;34mfasta_fai            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai[0m
+  [0;34mgermline_resource    : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz[0m
+  [0;34mgermline_resource_tbi: [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz.tbi[0m
+  [0;34mknown_indels         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz[0m
+  [0;34mknown_indels_tbi     : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz.tbi[0m
+  [0;34mknown_indels_vqsr    : [0;32m--resource:gatk,known=false,training=true,truth=true,prior=10.0 Homo_sapiens_assembly38.known_indels.vcf.gz --resource:mills,known=false,training=true,truth=true,prior=10.0 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz[0m
+  [0;34mknown_snps           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mknown_snps_tbi       : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz.tbi[0m
+  [0;34mknown_snps_vqsr      : [0;32m--resource:1000G,known=false,training=true,truth=true,prior=10.0 1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mmappability          : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/Control-FREEC/out100m2_hg38.gem[0m
+  [0;34msnpeff_db            : [0;32m105[0m
+  [0;34msnpeff_genome        : [0;32mGRCh38[0m
+  [0;34msnpeff_version       : [0;32m5.1[0m
+  [0;34mvep_genome           : [0;32mGRCh38[0m
+  [0;34mvep_species          : [0;32mhomo_sapiens[0m
+  [0;34mvep_cache_version    : [0;32m108[0m
+  [0;34mvep_version          : [0;32m108.2[0m
+  [0;34migenomes_base        : [0;32ms3://ngi-igenomes/igenomes[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+Displaying all reference genome parameters
+-[2m----------------------------------------------------[0m-
+If you use nf-core/sarek for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.12688/f1000research.16665.2
+  https://doi.org/10.5281/zenodo.4468605
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Dec-18 13:06:01.943 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --cpus: 63
+Dec-18 13:06:01.944 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "cpus" [0m
+Dec-18 13:06:05.439 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 1.16.2
+Dec-18 13:06:05.448 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@1.16.2' resolved
+Dec-18 13:06:05.448 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@1.16.2'
+Dec-18 13:06:05.462 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@1.16.2
+Dec-18 13:06:05.477 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Dec-18 13:06:05.477 [main] DEBUG nextflow.file.FileHelper - Started plugin 'nf-amazon' required to handle file: s3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip
+Dec-18 13:06:05.485 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+Dec-18 13:06:05.492 [main] DEBUG nextflow.file.FileHelper - AWS S3 config details: {max_error_retry=5}
+Dec-18 13:06:05.860 [main] DEBUG com.upplication.s3fs.AmazonS3Client - Setting S3 glacierRetrievalTier=null
+Dec-18 13:07:32.667 [main] DEBUG nextflow.Session - Session aborted -- Cause: Not a valid S3 file system provider file attribute view: java.nio.file.attribute.BasicWithKeyFileAttributeView
+Dec-18 13:07:32.695 [main] ERROR nextflow.cli.Launcher - @unknown
+java.lang.UnsupportedOperationException: Not a valid S3 file system provider file attribute view: java.nio.file.attribute.BasicWithKeyFileAttributeView
+	at com.upplication.s3fs.S3FileSystemProvider.getFileAttributeView(S3FileSystemProvider.java:733)
+	at java.base/java.nio.file.Files.getFileAttributeView(Files.java:1776)
+	at java.base/java.nio.file.FileTreeWalker.getAttributes(FileTreeWalker.java:221)
+	at java.base/java.nio.file.FileTreeWalker.visit(FileTreeWalker.java:282)
+	at java.base/java.nio.file.FileTreeWalker.walk(FileTreeWalker.java:328)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2792)
+	at nextflow.file.FileHelper.visitFiles(FileHelper.groovy:825)
+	at nextflow.file.FileHelper$visitFiles$4.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)
+	at nextflow.Nextflow.fileNamePattern(Nextflow.groovy:74)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:149)
+	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:100)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:249)
+	at nextflow.Nextflow.file(Nextflow.groovy:120)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at Script_a8c21ca9.runScript(Script_a8c21ca9:56)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:215)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:205)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:151)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:123)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_c05744b2.runScript(Script_c05744b2:79)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:224)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:130)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:368)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)

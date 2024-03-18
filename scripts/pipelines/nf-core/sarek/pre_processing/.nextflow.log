@@ -1,0 +1,110 @@
+Jan-01 05:21:21.091 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Jan-01 05:21:21.624 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Jan-01 05:21:21.817 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Jan-01 05:21:21.836 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-01 05:21:21.838 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-01 05:21:21.842 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jan-01 05:21:21.971 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-01 05:21:22.012 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Jan-01 05:21:22.013 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Jan-01 05:21:22.084 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-01 05:21:23.860 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Jan-01 05:21:25.599 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [sleepy_lattes] DSL2 - revision: d61dd33ad9
+Jan-01 05:21:25.599 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-01 05:21:25.600 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-01 05:21:25.622 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Jan-01 05:21:25.645 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7f608e21] - activable => nextflow.secret.LocalSecretsProvider@7f608e21
+Jan-01 05:21:26.096 [main] DEBUG nextflow.Session - Session UUID: 6b45f658-0488-4e49-8efd-8a7b41a17f1a
+Jan-01 05:21:26.097 [main] DEBUG nextflow.Session - Run name: sleepy_lattes
+Jan-01 05:21:26.097 [main] DEBUG nextflow.Session - Executor pool size: 64
+Jan-01 05:21:26.292 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-01 05:21:26.301 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jan-01 05:21:27.038 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC 
+  System: Linux 5.4.0-167-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 852903@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (1.4 GB) - Swap: 0 (0)
+Jan-01 05:21:27.223 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work [ext2/ext3]
+Jan-01 05:21:27.223 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/bin
+Jan-01 05:21:27.339 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-01 05:21:27.356 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-01 05:21:27.394 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-01 05:21:27.807 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Jan-01 05:21:31.194 [main] DEBUG nextflow.Session - Session start
+Jan-01 05:21:31.932 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-01 05:21:32.085 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jan-01 05:21:32.085 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jan-01 05:21:32.091 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jan-01 05:21:32.098 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=251.7 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Jan-01 05:21:32.141 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jan-01 05:21:32.221 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: AGENT_trim_umis, bbsplit, save_results
+Jan-01 05:21:32.221 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Jan-01 05:21:32.226 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > AGENT_trim_umis
+Jan-01 05:21:32.227 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /data/local/MD_scholarly/data/raw/exome/all/renamed/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Jan-01 05:21:32.228 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_64fa3687c77e7651: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/disambiguate.nf
+Jan-01 05:21:32.228 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jan-01 05:21:32.228 [main] DEBUG nextflow.Session - Session await
+Jan-01 05:21:33.450 [Actor Thread 42] INFO  nextflow.processor.TaskProcessor - [47/d3141f] Cached process > AGENT_trim_umis (9)
+Jan-01 05:21:33.450 [Actor Thread 65] INFO  nextflow.processor.TaskProcessor - [5e/5e6212] Cached process > AGENT_trim_umis (36)
+Jan-01 05:21:33.450 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [d0/a00ba1] Cached process > AGENT_trim_umis (5)
+Jan-01 05:21:33.450 [Actor Thread 54] INFO  nextflow.processor.TaskProcessor - [7e/c16981] Cached process > AGENT_trim_umis (26)
+Jan-01 05:21:33.451 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [72/49abce] Cached process > AGENT_trim_umis (30)
+Jan-01 05:21:33.451 [Actor Thread 53] INFO  nextflow.processor.TaskProcessor - [2e/449174] Cached process > AGENT_trim_umis (15)
+Jan-01 05:21:33.451 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [95/c25d8a] Cached process > AGENT_trim_umis (32)
+Jan-01 05:21:33.451 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [11/dd6c1e] Cached process > AGENT_trim_umis (39)
+Jan-01 05:21:33.451 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [04/451a15] Cached process > AGENT_trim_umis (20)
+Jan-01 05:21:33.451 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [da/66bb74] Cached process > AGENT_trim_umis (4)
+Jan-01 05:21:33.451 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [8e/8c30e6] Cached process > AGENT_trim_umis (38)
+Jan-01 05:21:33.451 [Actor Thread 56] INFO  nextflow.processor.TaskProcessor - [db/8b99ab] Cached process > AGENT_trim_umis (17)
+Jan-01 05:21:33.451 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [83/1d2146] Cached process > AGENT_trim_umis (12)
+Jan-01 05:21:33.451 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [35/595c1f] Cached process > AGENT_trim_umis (48)
+Jan-01 05:21:33.452 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [27/1ae917] Cached process > AGENT_trim_umis (7)
+Jan-01 05:21:33.458 [Actor Thread 44] INFO  nextflow.processor.TaskProcessor - [66/9a8d15] Cached process > AGENT_trim_umis (10)
+Jan-01 05:21:33.473 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [9e/5bf5e3] Cached process > AGENT_trim_umis (11)
+Jan-01 05:21:33.474 [Actor Thread 60] INFO  nextflow.processor.TaskProcessor - [27/b27295] Cached process > AGENT_trim_umis (19)
+Jan-01 05:21:33.475 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [a1/fb22d3] Cached process > AGENT_trim_umis (42)
+Jan-01 05:21:33.475 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [83/6035d1] Cached process > AGENT_trim_umis (40)
+Jan-01 05:21:33.473 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [54/55c08c] Cached process > AGENT_trim_umis (8)
+Jan-01 05:21:33.473 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [1d/715e52] Cached process > AGENT_trim_umis (49)
+Jan-01 05:21:33.476 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [9f/e9764d] Cached process > AGENT_trim_umis (45)
+Jan-01 05:21:33.476 [Actor Thread 55] INFO  nextflow.processor.TaskProcessor - [3d/0d91f7] Cached process > AGENT_trim_umis (16)
+Jan-01 05:21:33.476 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [4d/06eb8b] Cached process > AGENT_trim_umis (14)
+Jan-01 05:21:33.476 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [d9/3d2399] Cached process > AGENT_trim_umis (41)
+Jan-01 05:21:33.476 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [70/9bc6b6] Cached process > AGENT_trim_umis (46)
+Jan-01 05:21:33.475 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [0c/36c2de] Cached process > AGENT_trim_umis (34)
+Jan-01 05:21:33.476 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [70/8d3514] Cached process > AGENT_trim_umis (23)
+Jan-01 05:21:33.477 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [52/e7e99e] Cached process > AGENT_trim_umis (2)
+Jan-01 05:21:33.477 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [6a/9bae3f] Cached process > AGENT_trim_umis (13)
+Jan-01 05:21:33.477 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [43/a057b7] Cached process > AGENT_trim_umis (24)
+Jan-01 05:21:33.477 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [1b/228d34] Cached process > AGENT_trim_umis (29)
+Jan-01 05:21:33.477 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [bf/aa929f] Cached process > AGENT_trim_umis (33)
+Jan-01 05:21:33.477 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [92/444221] Cached process > AGENT_trim_umis (28)
+Jan-01 05:21:33.477 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [fd/fd8121] Cached process > AGENT_trim_umis (37)
+Jan-01 05:21:33.478 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [5c/5f5728] Cached process > AGENT_trim_umis (35)
+Jan-01 05:21:33.478 [Actor Thread 58] INFO  nextflow.processor.TaskProcessor - [21/397128] Cached process > AGENT_trim_umis (18)
+Jan-01 05:21:33.478 [Actor Thread 51] INFO  nextflow.processor.TaskProcessor - [30/6008f2] Cached process > AGENT_trim_umis (27)
+Jan-01 05:21:33.478 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [e8/a5d036] Cached process > AGENT_trim_umis (25)
+Jan-01 05:21:33.479 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [c7/13c58b] Cached process > AGENT_trim_umis (50)
+Jan-01 05:21:33.487 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [46/178e85] Cached process > AGENT_trim_umis (51)
+Jan-01 05:21:33.496 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [2c/b7cffa] Cached process > AGENT_trim_umis (43)
+Jan-01 05:21:33.521 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [4f/e5bccc] Cached process > AGENT_trim_umis (21)
+Jan-01 05:21:33.510 [Actor Thread 55] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jan-01 05:21:33.525 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [26/0cae70] Cached process > AGENT_trim_umis (1)
+Jan-01 05:21:33.555 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [f1/e6c7e7] Cached process > AGENT_trim_umis (31)
+Jan-01 05:21:33.558 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [c7/df2315] Cached process > AGENT_trim_umis (22)
+Jan-01 05:21:33.563 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [3b/65c73e] Cached process > AGENT_trim_umis (3)
+Jan-01 05:21:33.593 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [0d/bc8b73] Cached process > AGENT_trim_umis (47)
+Jan-01 05:21:33.593 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [6f/7cba4c] Cached process > AGENT_trim_umis (44)
+Jan-01 05:21:33.610 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [39/2ab135] Cached process > AGENT_trim_umis (6)
+Jan-01 05:21:33.615 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jan-01 05:21:33.671 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jan-01 05:21:33.672 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-01 05:21:33.678 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jan-01 05:21:33.686 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=51; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=1d 4h 38m 18s;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jan-01 05:21:33.769 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jan-01 05:21:33.792 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jan-01 05:21:33.793 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

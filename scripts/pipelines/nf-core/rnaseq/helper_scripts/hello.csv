@@ -1,0 +1,10 @@
+sample,fastq_1,fastq_2,strandedness
+PCB-50,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-50-PDX_S9_L004_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-50-PDX_S9_L004_R2_001.fastq.gz,auto
+PCB-31,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-31-PDX_S6_L004_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-31-PDX_S6_L004_R2_001.fastq.gz,auto
+PCB60,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB60-PDX_S4_L001_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB60-PDX_S4_L001_R2_001.fastq.gz,auto
+PCB-54,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-54-PDX_S10_L004_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-54-PDX_S10_L004_R2_001.fastq.gz,auto
+PCB64,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB64-PDX_S5_L001_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB64-PDX_S5_L001_R2_001.fastq.gz,auto
+PCB13,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB138-PDX_S9_L001_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB138-PDX_S9_L001_R2_001.fastq.gz,auto
+PCB-1,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-16-PDX_S2_L004_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-16-PDX_S2_L004_R2_001.fastq.gz,auto
+PCB3,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB37-PDX_S2_L001_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB37-PDX_S2_L001_R2_001.fastq.gz,auto
+PCB-20,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-20-PDX_S3_L004_R1_001.fastq.gz,/data/local/MD_scholarly/data/raw/rnaseq/fastqs/PCB-20-PDX_S3_L004_R2_001.fastq.gz,auto

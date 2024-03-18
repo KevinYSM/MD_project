@@ -1,0 +1,50 @@
+Dec-26 10:58:10.606 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Dec-26 10:58:10.928 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Dec-26 10:58:11.156 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Dec-26 10:58:11.214 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-26 10:58:11.248 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-26 10:58:11.303 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-26 10:58:11.478 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-26 10:58:11.501 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Dec-26 10:58:11.502 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/exome.config
+Dec-26 10:58:11.522 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-26 10:58:13.025 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Dec-26 10:58:13.346 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [spontaneous_ardinghelli] DSL2 - revision: 794024e909
+Dec-26 10:58:13.348 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-26 10:58:13.348 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-26 10:58:13.463 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Dec-26 10:58:13.485 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@3bec5821] - activable => nextflow.secret.LocalSecretsProvider@3bec5821
+Dec-26 10:58:13.927 [main] DEBUG nextflow.Session - Session UUID: 6b45f658-0488-4e49-8efd-8a7b41a17f1a
+Dec-26 10:58:13.928 [main] DEBUG nextflow.Session - Run name: spontaneous_ardinghelli
+Dec-26 10:58:13.928 [main] DEBUG nextflow.Session - Executor pool size: 64
+Dec-26 10:58:14.024 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-26 10:58:14.049 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-26 10:58:14.816 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC 
+  System: Linux 5.4.0-167-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 529920@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (1.6 GB) - Swap: 0 (0)
+Dec-26 10:58:15.222 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/work [ext2/ext3]
+Dec-26 10:58:15.223 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/bin
+Dec-26 10:58:15.368 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-26 10:58:15.456 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-26 10:58:15.478 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-26 10:58:15.646 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Dec-26 10:58:17.098 [main] DEBUG nextflow.Session - Session start
+Dec-26 10:58:17.760 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-26 10:58:18.187 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: AGENT_trim_umis, bbsplit, save_results
+Dec-26 10:58:18.187 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Dec-26 10:58:18.269 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_c695a85d8124f558: /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/pre_processing/disambiguate.nf
+Dec-26 10:58:18.269 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Dec-26 10:58:18.269 [main] DEBUG nextflow.Session - Session await
+Dec-26 10:58:18.269 [main] DEBUG nextflow.Session - Session await > all processes finished
+Dec-26 10:58:18.269 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-26 10:58:18.270 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /data/local/MD_scholarly/data/raw/exome/all/renamed/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Dec-26 10:58:18.708 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Dec-26 10:58:18.784 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Dec-26 10:58:18.812 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Dec-26 10:58:18.813 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

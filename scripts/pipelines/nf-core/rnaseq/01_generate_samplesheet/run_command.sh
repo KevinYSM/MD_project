@@ -1,0 +1,1 @@
+python3 /home/ubuntu/data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/helper_scripts/01_generate_samplesheets.py -g /home/ubuntu/data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/01_generate_samplesheet/rnaseq_new.csv /home/ubuntu/data/local/MD_scholarly/data/raw/rnaseq/fastqs

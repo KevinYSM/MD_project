@@ -1,0 +1,170 @@
+Sep-24 13:42:22.381 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/rnaseq —-bbsplit_fasta_list /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/fasta_list.csv --save_reference --input /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/helper_scripts/hello.csv --outdir outdir --email kevinsmansouri@gmail.com --save_merged_fastq true -profile singularity -resume -r 3.12.0 --bbsplit_fasta_list fasta_list.csv --gtf /data/local/reference/igenomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/genes.gtf -c rna.config --rseqc_modules bam_stat,inner_distance,infer_experiment,junction_saturation,read_distribution,read_duplication --save_bbsplit_reads --skip_bbsplit false
+Sep-24 13:42:22.464 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Sep-24 13:42:22.484 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Sep-24 13:42:22.494 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-24 13:42:22.495 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-24 13:42:22.498 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-24 13:42:22.509 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-24 13:42:22.523 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ubuntu/.nextflow/scm
+Sep-24 13:42:23.506 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/rnaseq.git
+Sep-24 13:42:23.525 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Sep-24 13:42:23.533 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/rnaseq.git
+Sep-24 13:42:24.625 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/nextflow.config
+Sep-24 13:42:24.627 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/rna.config
+Sep-24 13:42:24.628 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/nextflow.config
+Sep-24 13:42:24.628 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/rna.config
+Sep-24 13:42:24.637 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Sep-24 13:42:26.003 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Sep-24 13:42:26.026 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, ifb_core, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, uge, rosalind_uge, lugh, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, public_aws_ecr, tigem, tubingen_apg, google, apollo, ipop_up, googlels, eddie, medair, biowulf, apptainer, bi, bigpurple, test_full_gcp, adcra, cedars, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, icr_davros, ceres, munin, arm, rosalind, hasta, cfc, uzh, test_full_aws, ebi_codon_slurm, ebc, ku_sund_dangpu, ccga_dx, crick, marvin, biohpc_gen, shifter, mana, mamba, unc_lccc, wehi, awsbatch, wustl_htcf, imperial, maestro, software_license, genotoul, nci_gadi, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, sage, cambridge, podman, ebi_codon, cheaha, xanadu, test, computerome, ucd_sonic, seg_globe, sanger, dkfz, pasteur, ethz_euler, test_full, tuos_stanage, azurebatch, hki, crukmi, docker, engaging, gis, hypatia, psmn, test_full_azure, eva, fgcz, conda, crg, singularity, uw_hyak_pedslabs, prince, utd_sysbio, debug, genouest, cbe, test_cache, phoenix, gitpod, seawulf, fub_curta, uct_hpc, aws_tower, binac]
+Sep-24 13:42:26.081 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Sep-24 13:42:26.082 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/rnaseq` [drunk_swirles] DSL2 - revision: 3bec2331ca [3.12.0]
+Sep-24 13:42:26.083 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-24 13:42:26.083 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Sep-24 13:42:26.086 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Sep-24 13:42:26.089 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@38e46765] - activable => nextflow.secret.LocalSecretsProvider@38e46765
+Sep-24 13:42:26.159 [main] DEBUG nextflow.Session - Session UUID: 1994fb20-292f-498e-92e6-b8baefb77d1c
+Sep-24 13:42:26.159 [main] DEBUG nextflow.Session - Run name: drunk_swirles
+Sep-24 13:42:26.160 [main] DEBUG nextflow.Session - Executor pool size: 64
+Sep-24 13:42:26.171 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Sep-24 13:42:26.196 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC 
+  System: Linux 5.4.0-159-generic
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 3939532@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (105.4 GB) - Swap: 0 (0)
+Sep-24 13:42:26.221 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/work [ext2/ext3]
+Sep-24 13:42:26.257 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-24 13:42:26.268 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-24 13:42:26.354 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Sep-24 13:42:26.368 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Sep-24 13:42:26.823 [main] DEBUG nextflow.Session - Session start
+Sep-24 13:42:26.832 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/outdir/pipeline_info/execution_trace_2023-09-24_13-42-25.txt
+Sep-24 13:42:26.845 [main] DEBUG nextflow.Session - Using default localLib path: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/lib
+Sep-24 13:42:26.849 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/lib
+Sep-24 13:42:26.850 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/ubuntu/.nextflow/assets/nf-core/rnaseq/lib/nfcore_external_java_deps.jar
+Sep-24 13:42:27.734 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-24 13:42:27.799 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/rnaseq v3.12.0-g3bec233[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision          : [0;32m3.12.0[0m
+  [0;34mrunName           : [0;32mdrunk_swirles[0m
+  [0;34mcontainerEngine   : [0;32msingularity[0m
+  [0;34mlaunchDir         : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq[0m
+  [0;34mworkDir           : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/work[0m
+  [0;34mprojectDir        : [0;32m/home/ubuntu/.nextflow/assets/nf-core/rnaseq[0m
+  [0;34muserName          : [0;32mubuntu[0m
+  [0;34mprofile           : [0;32msingularity[0m
+  [0;34mconfigFiles       : [0;32m/home/ubuntu/.nextflow/assets/nf-core/rnaseq/nextflow.config, /data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/rna.config[0m
+
+[1mInput/output options[0m
+  [0;34minput             : [0;32m/data/local/MD_scholarly/scripts/pipelines/nf-core/rnaseq/helper_scripts/hello.csv[0m
+  [0;34moutdir            : [0;32moutdir[0m
+  [0;34memail             : [0;32mkevinsmansouri@gmail.com[0m
+  [0;34msave_merged_fastq : [0;32mtrue[0m
+
+[1mRead filtering options[0m
+  [0;34mbbsplit_fasta_list: [0;32mfasta_list.csv[0m
+  [0;34msave_bbsplit_reads: [0;32mtrue[0m
+  [0;34mskip_bbsplit      : [0;32mfalse[0m
+
+[1mReference genome options[0m
+  [0;34mgtf               : [0;32m/data/local/reference/igenomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/genes.gtf[0m
+  [0;34msave_reference    : [0;32mtrue[0m
+
+[1mProcess skipping options[0m
+  [0;34mrseqc_modules     : [0;32mbam_stat,inner_distance,infer_experiment,junction_saturation,read_distribution,read_duplication[0m
+
+[1mMax job request options[0m
+  [0;34mmax_cpus          : [0;32m61[0m
+  [0;34mmax_memory        : [0;32m240 GB[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/rnaseq for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.1400710
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/rnaseq/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Sep-24 13:42:27.801 [main] WARN  nextflow.Nextflow - ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Multiple config files detected!
+  Please provide pipeline parameters via the CLI or Nextflow '-params-file' option.
+  Custom config files including those provided by the '-c' Nextflow option can be
+  used to provide any configuration except for parameters.
+
+  Docs: https://nf-co.re/usage/configuration#custom-configuration-files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sep-24 13:42:29.033 [main] DEBUG nextflow.Session - Session aborted -- Cause: Genome fasta file not specified with e.g. '--fasta genome.fa' or via a detectable config file.
+Sep-24 13:42:29.064 [main] ERROR nextflow.cli.Launcher - @unknown
+nextflow.exception.WorkflowScriptErrorException: Genome fasta file not specified with e.g. '--fasta genome.fa' or via a detectable config file.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.Nextflow.error(Nextflow.groovy:215)
+	at nextflow.Nextflow$error.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at WorkflowRnaseq.initialise(WorkflowRnaseq.groovy:19)
+	at WorkflowRnaseq$initialise.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)
+	at Script_f626ecbd.runScript(Script_f626ecbd:17)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:215)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:205)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:151)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:123)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_33353ce4.runScript(Script_33353ce4:46)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:224)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:130)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:368)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)
