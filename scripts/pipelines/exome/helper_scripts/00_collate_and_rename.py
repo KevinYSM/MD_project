@@ -1,10 +1,11 @@
 import pandas as pd
 import os
 import re
+import sys
 
-raw_exome_folder="/home/ubuntu/data/local/MD_scholarly/data/raw/exome"
-rename_table="/home/ubuntu/data/local/MD_scholarly/data/raw/exome/all/file_rename_table.csv"
-sex_table="/data/local/MD_scholarly/data/raw/exome/all/patient_sex.csv"
+raw_exome_folder=sys.argv[1]
+rename_table="/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/file_rename_table.csv"
+sex_table="/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/patient_sex.csv"
 
 def verify_rename(old_file_loc, new_file_loc):
     
@@ -80,7 +81,7 @@ def main(raw_exome_folder):
                         print(old_file_loc+" not found")
                         return
                 else:
-                        new_file_loc="/home/ubuntu/data/local/MD_scholarly/data/raw/exome/all/renamed/"+new_name_with_sex
+                        new_file_loc="/home/ubuntu/scratch/MD_project/data/exome/raw/unbatched/"+new_name_with_sex
                         
                         if (verify_rename(old_file_loc, new_file_loc)):
                                 if (os.path.isfile(new_file_loc)):
