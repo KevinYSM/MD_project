@@ -6,9 +6,9 @@ import shutil
 trimmed_umis_folder="/home/ubuntu/data/local/MD_scholarly/data/processed/exome/01_trimmed_umis"
 rename_table="/home/ubuntu/data/local/MD_scholarly/data/raw/exome/all/file_rename_tumis_table.csv"
 sex_table="/data/local/MD_scholarly/data/raw/exome/all/patient_sex.csv"
-failed_list=["P126_L002_tumour1_R1_B952_tumis.fastq.gz","P126_L002_tumour1_R2_B952_tumis.fastq.gz","P37_L002_tumour1_R1_B693_tumis.fastq.gz","P37_L002_tumour1_R2_B693_tumis.fastq.gz"
-             ,"P37_L002_normal1_R1_B693_tumis.fastq.gz","P37_L002_normal1_R2_B693_tumis.fastq.gz","P39_L001_tumour1_R1_B374_tumis.fastq.gz","P39_L001_tumour1_R2_B374_tumis.fastq.gz","P50_L001_tumour1_R1_B374_tumis.fastq.gz"
-             ,"P50_L001_tumour1_R2_B374_tumis.fastq.gz","P54_L002_normal1_R1_B952_tumis.fastq.gz","P54_L002_normal1_R2_B952_tumis.fastq.gz"]
+#failed_list=["P126_L002_tumour1_R1_B952_tumis.fastq.gz","P126_L002_tumour1_R2_B952_tumis.fastq.gz","P37_L002_tumour1_R1_B693_tumis.fastq.gz","P37_L002_tumour1_R2_B693_tumis.fastq.gz"
+  #           ,"P37_L002_normal1_R1_B693_tumis.fastq.gz","P37_L002_normal1_R2_B693_tumis.fastq.gz","P39_L001_tumour1_R1_B374_tumis.fastq.gz","P39_L001_tumour1_R2_B374_tumis.fastq.gz","P50_L001_tumour1_R1_B374_tumis.fastq.gz"
+ #            ,"P50_L001_tumour1_R2_B374_tumis.fastq.gz","P54_L002_normal1_R1_B952_tumis.fastq.gz","P54_L002_normal1_R2_B952_tumis.fastq.gz"]
 
 def verify_rename(old_file_loc, new_file_loc):
     

@@ -1,0 +1,210 @@
+Mar-24 12:50:49.987 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Mar-24 12:50:50.066 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Mar-24 12:50:50.083 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Mar-24 12:50:50.092 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-24 12:50:50.092 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-24 12:50:50.095 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-24 12:50:50.103 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-24 12:50:50.120 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-24 12:50:50.121 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-24 12:50:50.142 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-24 12:50:50.585 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-24 12:50:50.598 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [pensive_galileo] DSL2 - revision: 0f4e43face
+Mar-24 12:50:50.599 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-24 12:50:50.599 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-24 12:50:50.607 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Mar-24 12:50:50.610 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7b948f3e] - activable => nextflow.secret.LocalSecretsProvider@7b948f3e
+Mar-24 12:50:50.656 [main] DEBUG nextflow.Session - Session UUID: 8219dd17-e0f4-408f-9985-1b9e28dcd2a4
+Mar-24 12:50:50.656 [main] DEBUG nextflow.Session - Run name: pensive_galileo
+Mar-24 12:50:50.657 [main] DEBUG nextflow.Session - Executor pool size: 8
+Mar-24 12:50:50.663 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-24 12:50:50.684 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.1 build 5891
+  Created: 12-01-2024 22:01 UTC 
+  System: Linux 5.15.0-76-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 21-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1110048@kevin-melanoma [127.0.1.1]
+  CPUs: 8 - Mem: 31.3 GB (3 GB) - Swap: 0 (0) - Virtual threads ON
+Mar-24 12:50:50.712 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work [ext2/ext3]
+Mar-24 12:50:50.712 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/bin
+Mar-24 12:50:50.722 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-24 12:50:50.732 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-24 12:50:50.750 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-24 12:50:50.758 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Mar-24 12:50:51.155 [main] DEBUG nextflow.Session - Session start
+Mar-24 12:50:51.450 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-24 12:50:51.592 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-24 12:50:51.592 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-24 12:50:51.597 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-24 12:50:51.603 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Mar-24 12:50:51.606 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-24 12:50:51.664 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: test_rename, bbsplit, save_results
+Mar-24 12:50:51.665 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Mar-24 12:50:51.670 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ubuntu/scratch/MD_project/data/exome/processed/01_trimmed_umis/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Mar-24 12:50:51.670 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > test_rename
+Mar-24 12:50:51.671 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_9c780b4fb33da83e: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/disambiguate.nf
+Mar-24 12:50:51.671 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-24 12:50:51.671 [main] DEBUG nextflow.Session - Session await
+Mar-24 12:50:51.893 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.895 [Task submitter] INFO  nextflow.Session - [56/4ab9d4] Submitted process > test_rename (1)
+Mar-24 12:50:51.911 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.911 [Task submitter] INFO  nextflow.Session - [48/94f478] Submitted process > test_rename (8)
+Mar-24 12:50:51.919 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.919 [Task submitter] INFO  nextflow.Session - [c4/bac7c5] Submitted process > test_rename (3)
+Mar-24 12:50:51.931 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.932 [Task submitter] INFO  nextflow.Session - [a9/6a3685] Submitted process > test_rename (5)
+Mar-24 12:50:51.941 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.941 [Task submitter] INFO  nextflow.Session - [a8/0a1e5d] Submitted process > test_rename (4)
+Mar-24 12:50:51.945 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.946 [Task submitter] INFO  nextflow.Session - [92/e867f3] Submitted process > test_rename (6)
+Mar-24 12:50:51.948 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.949 [Task submitter] INFO  nextflow.Session - [9b/812a25] Submitted process > test_rename (9)
+Mar-24 12:50:51.951 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:51.952 [Task submitter] INFO  nextflow.Session - [96/912560] Submitted process > test_rename (2)
+Mar-24 12:50:52.956 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: test_rename (8); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/48/94f478332aca6b301a1066f6a97770]
+Mar-24 12:50:52.960 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:52.960 [Task submitter] INFO  nextflow.Session - [ac/6fae5f] Submitted process > test_rename (7)
+Mar-24 12:50:53.052 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: test_rename (3); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c4/bac7c5ab3ce0cb76a083f5d9548d54]
+Mar-24 12:50:53.056 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.056 [Task submitter] INFO  nextflow.Session - [66/876618] Submitted process > test_rename (12)
+Mar-24 12:50:53.071 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: test_rename (5); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a9/6a3685a3883fde7c44120338bc4d68]
+Mar-24 12:50:53.088 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.094 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: test_rename (4); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a8/0a1e5d45c6059d3af1ced5eb8dab94]
+Mar-24 12:50:53.098 [Task submitter] INFO  nextflow.Session - [2d/268db9] Submitted process > test_rename (10)
+Mar-24 12:50:53.103 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.104 [Task submitter] INFO  nextflow.Session - [b8/eb9aa6] Submitted process > test_rename (11)
+Mar-24 12:50:53.110 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: test_rename (6); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/92/e867f329fa1eee00b461c3e7da4300]
+Mar-24 12:50:53.112 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.113 [Task submitter] INFO  nextflow.Session - [23/694c4d] Submitted process > test_rename (14)
+Mar-24 12:50:53.130 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: test_rename (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/56/4ab9d4f29f32bc8c71091f2b40b63a]
+Mar-24 12:50:53.133 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.133 [Task submitter] INFO  nextflow.Session - [8e/9d4f72] Submitted process > test_rename (13)
+Mar-24 12:50:53.165 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: test_rename (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/96/9125603a212ce903a90e54ed3c85d9]
+Mar-24 12:50:53.169 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.169 [Task submitter] INFO  nextflow.Session - [66/b7a87e] Submitted process > test_rename (15)
+Mar-24 12:50:53.211 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: test_rename (9); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/9b/812a254bb4a924293263136fdcd3df]
+Mar-24 12:50:53.214 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:53.215 [Task submitter] INFO  nextflow.Session - [d6/88fea5] Submitted process > test_rename (16)
+Mar-24 12:50:54.194 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: test_rename (7); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ac/6fae5fca3aaf1e9a84b406dd52e6c2]
+Mar-24 12:50:54.198 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.198 [Task submitter] INFO  nextflow.Session - [f5/d04991] Submitted process > test_rename (18)
+Mar-24 12:50:54.248 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: test_rename (11); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/b8/eb9aa6ad66fef6bef4f5a011613805]
+Mar-24 12:50:54.255 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.255 [Task submitter] INFO  nextflow.Session - [bb/595352] Submitted process > test_rename (20)
+Mar-24 12:50:54.259 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: test_rename (14); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/23/694c4d56a4d3f85b35d22094d8101c]
+Mar-24 12:50:54.265 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.265 [Task submitter] INFO  nextflow.Session - [55/c906be] Submitted process > test_rename (17)
+Mar-24 12:50:54.313 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: test_rename (12); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/66/87661842a21d264c6b5f3534a5fbf3]
+Mar-24 12:50:54.316 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.318 [Task submitter] INFO  nextflow.Session - [65/0d01f1] Submitted process > test_rename (19)
+Mar-24 12:50:54.360 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: test_rename (16); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d6/88fea5bf44e6d0b33adae90a3e900f]
+Mar-24 12:50:54.374 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.374 [Task submitter] INFO  nextflow.Session - [5a/bfedf6] Submitted process > test_rename (21)
+Mar-24 12:50:54.395 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: test_rename (13); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/9d4f725c99c4070f76e2eea8e60730]
+Mar-24 12:50:54.399 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.400 [Task submitter] INFO  nextflow.Session - [65/e82ef2] Submitted process > test_rename (24)
+Mar-24 12:50:54.422 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: test_rename (10); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2d/268db9c63b16f5656fbbc4010b5500]
+Mar-24 12:50:54.424 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.425 [Task submitter] INFO  nextflow.Session - [1d/95189e] Submitted process > test_rename (22)
+Mar-24 12:50:54.452 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: test_rename (15); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/66/b7a87e99baf8daa18cefde3c28be37]
+Mar-24 12:50:54.455 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:54.455 [Task submitter] INFO  nextflow.Session - [1a/15608a] Submitted process > test_rename (25)
+Mar-24 12:50:55.290 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: test_rename (18); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f5/d0499123eee73251f50c877924aa46]
+Mar-24 12:50:55.294 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.294 [Task submitter] INFO  nextflow.Session - [d7/4ea610] Submitted process > test_rename (23)
+Mar-24 12:50:55.462 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: test_rename (20); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/bb/5953520b3d0a52441224942154ae5e]
+Mar-24 12:50:55.465 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.465 [Task submitter] INFO  nextflow.Session - [d6/509d5f] Submitted process > test_rename (27)
+Mar-24 12:50:55.517 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: test_rename (19); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/0d01f14233c2d3155bc01cbf4c5553]
+Mar-24 12:50:55.521 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.521 [Task submitter] INFO  nextflow.Session - [c8/58b441] Submitted process > test_rename (26)
+Mar-24 12:50:55.633 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: test_rename (21); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5a/bfedf6cfff8d452f3201e007d2f072]
+Mar-24 12:50:55.636 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.637 [Task submitter] INFO  nextflow.Session - [0f/913e3b] Submitted process > test_rename (29)
+Mar-24 12:50:55.697 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: test_rename (17); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/55/c906be0d89b2afcb273e9e6e804aaf]
+Mar-24 12:50:55.701 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.701 [Task submitter] INFO  nextflow.Session - [c0/b5ac5a] Submitted process > test_rename (28)
+Mar-24 12:50:55.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: test_rename (24); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/e82ef20f716eca9e982e88b835ebf7]
+Mar-24 12:50:55.714 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.714 [Task submitter] INFO  nextflow.Session - [3b/dc0209] Submitted process > test_rename (30)
+Mar-24 12:50:55.758 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: test_rename (25); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/1a/15608a8c9a6d634e007522c444514d]
+Mar-24 12:50:55.761 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.761 [Task submitter] INFO  nextflow.Session - [3a/46f652] Submitted process > test_rename (32)
+Mar-24 12:50:55.823 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: test_rename (22); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/1d/95189e0e849f7a583bb5b4e0755ecc]
+Mar-24 12:50:55.827 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:55.829 [Task submitter] INFO  nextflow.Session - [02/f26dfb] Submitted process > test_rename (31)
+Mar-24 12:50:56.444 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: test_rename (27); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d6/509d5f990f036b6b4c643f6a6c4b3f]
+Mar-24 12:50:56.446 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.446 [Task submitter] INFO  nextflow.Session - [3f/918bd1] Submitted process > test_rename (34)
+Mar-24 12:50:56.524 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: test_rename (23); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d7/4ea6107b5883dc690abe0bc8c6fd7e]
+Mar-24 12:50:56.527 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.527 [Task submitter] INFO  nextflow.Session - [42/1671ce] Submitted process > test_rename (33)
+Mar-24 12:50:56.653 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: test_rename (26); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c8/58b441c5e1b585fb3bf9e0045c23fc]
+Mar-24 12:50:56.656 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.656 [Task submitter] INFO  nextflow.Session - [ca/102bb0] Submitted process > test_rename (36)
+Mar-24 12:50:56.762 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: test_rename (29); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/0f/913e3b47f5a428c92aeae3eb098779]
+Mar-24 12:50:56.765 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.765 [Task submitter] INFO  nextflow.Session - [25/a511c7] Submitted process > test_rename (35)
+Mar-24 12:50:56.918 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: test_rename (32); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3a/46f652fc3afbd18d876cbad7f48226]
+Mar-24 12:50:56.921 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.921 [Task submitter] INFO  nextflow.Session - [68/420693] Submitted process > test_rename (37)
+Mar-24 12:50:56.985 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: test_rename (30); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/dc0209dcaa5b741dd064b8ff60172d]
+Mar-24 12:50:56.987 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:56.988 [Task submitter] INFO  nextflow.Session - [4f/02881c] Submitted process > test_rename (38)
+Mar-24 12:50:56.996 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: test_rename (31); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/02/f26dfb111df36ed9acb71d12ad3d15]
+Mar-24 12:50:57.000 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.001 [Task submitter] INFO  nextflow.Session - [a9/e010e0] Submitted process > test_rename (39)
+Mar-24 12:50:57.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: test_rename (28); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/b5ac5a801e01b675e43372daf3b010]
+Mar-24 12:50:57.038 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.038 [Task submitter] INFO  nextflow.Session - [06/1aaa6f] Submitted process > test_rename (42)
+Mar-24 12:50:57.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: test_rename (33); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/42/1671ce730ee27c29acf09c882e49b8]
+Mar-24 12:50:57.564 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.565 [Task submitter] INFO  nextflow.Session - [91/9a1e86] Submitted process > test_rename (40)
+Mar-24 12:50:57.790 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: test_rename (34); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3f/918bd1020a83a398cc9443477450f3]
+Mar-24 12:50:57.792 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.792 [Task submitter] INFO  nextflow.Session - [a5/9acca6] Submitted process > test_rename (41)
+Mar-24 12:50:57.906 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: test_rename (36); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ca/102bb0e6967edbb5c98e9a5604c519]
+Mar-24 12:50:57.910 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.910 [Task submitter] INFO  nextflow.Session - [e5/4abcb2] Submitted process > test_rename (43)
+Mar-24 12:50:57.926 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: test_rename (35); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/a511c7b9c8c9aeee7a8535d96e015a]
+Mar-24 12:50:57.929 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:57.929 [Task submitter] INFO  nextflow.Session - [82/818620] Submitted process > test_rename (45)
+Mar-24 12:50:58.040 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: test_rename (37); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/68/420693e0ccdcf5296ef70544996577]
+Mar-24 12:50:58.042 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:58.042 [Task submitter] INFO  nextflow.Session - [78/a45007] Submitted process > test_rename (44)
+Mar-24 12:50:58.129 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: test_rename (38); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4f/02881c27d9fd914339230eaac587ba]
+Mar-24 12:50:58.132 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:58.132 [Task submitter] INFO  nextflow.Session - [fd/6d6d5d] Submitted process > test_rename (46)
+Mar-24 12:50:58.342 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: test_rename (39); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a9/e010e0b923f0babdb784dc5643a22e]
+Mar-24 12:50:58.345 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:58.346 [Task submitter] INFO  nextflow.Session - [07/933b55] Submitted process > test_rename (47)
+Mar-24 12:50:58.378 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: test_rename (42); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/06/1aaa6f5abbef9772cf0c0950a29a1b]
+Mar-24 12:50:58.382 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:58.382 [Task submitter] INFO  nextflow.Session - [8a/e51a95] Submitted process > test_rename (48)
+Mar-24 12:50:58.887 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: test_rename (40); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/91/9a1e86db73caee2c503647f3f88669]
+Mar-24 12:50:58.890 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:58.890 [Task submitter] INFO  nextflow.Session - [e2/85b0df] Submitted process > test_rename (49)
+Mar-24 12:50:59.000 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: test_rename (41); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a5/9acca69ab5301ef0a5e12faf455023]
+Mar-24 12:50:59.003 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:59.003 [Task submitter] INFO  nextflow.Session - [06/b0b4df] Submitted process > test_rename (50)
+Mar-24 12:50:59.107 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: test_rename (44); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/78/a45007535fb77bd16a86764ce2b770]
+Mar-24 12:50:59.110 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-24 12:50:59.111 [Task submitter] INFO  nextflow.Session - [1d/0ee47c] Submitted process > test_rename (51)
+Mar-24 12:50:59.312 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: test_rename (46); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fd/6d6d5d747a7bc58dea5dc7a2da0c52]
+Mar-24 12:50:59.362 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: test_rename (43); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/e5/4abcb2271ba6d706bdfa50e2bb1d31]
+Mar-24 12:50:59.384 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: test_rename (45); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/82/818620e8a8534b82de5c0bfafde522]
+Mar-24 12:50:59.427 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: test_rename (47); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/07/933b55ef5e9165d0ea1fab439d638d]
+Mar-24 12:50:59.495 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: test_rename (48); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8a/e51a95c2c68dcd2030eaa077dae3fc]
+Mar-24 12:50:59.859 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: test_rename (49); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/e2/85b0df9e7cf7f786382654549b62b2]
+Mar-24 12:50:59.879 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: test_rename (50); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/06/b0b4df2f3350487be4a92e1c4e6623]
+Mar-24 12:50:59.907 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: test_rename (51); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/1d/0ee47c13cd86fb1a486d778ba41278]
+Mar-24 12:50:59.910 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-24 12:51:00.009 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-24 12:51:00.009 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-24 12:51:00.012 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Mar-24 12:51:00.018 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=51; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=56.9s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=8; peakCpus=8; peakMemory=0; ]
+Mar-24 12:51:00.146 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-24 12:51:00.155 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Mar-24 12:51:00.156 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

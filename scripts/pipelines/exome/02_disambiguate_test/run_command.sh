@@ -1,5 +1,5 @@
 #!/bin/bash
-nextflow run trim_umis.nf \
+nextflow run disambiguate.nf \
 -resume \
 -c exome.config \
 /
