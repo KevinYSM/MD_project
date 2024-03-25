@@ -54,7 +54,7 @@ process bbsplit_batch{
     echo ${TRIMMED_read_pair[1]} >> \${rename_1}.txt
     
 
-    bbsplit.sh -Xmx35 in=${TRIMMED_read_pair[1]} \\
+    bbsplit.sh -Xmx20g -Xms15g in=${TRIMMED_read_pair[1]} \\
     in2=${TRIMMED_read_pair[2]} ref=${params.human_fasta},${params.mouse_fasta} basename=o%.fastq.gz\\
     scafstats=\${rename_1}.scafstats.txt refstats=\${rename_1}.refstats.txt \\
     outu1=\${rename_1}_clean1.fastq.gz outu2=\${rename_2}_clean2.fastq.gz
@@ -68,7 +68,7 @@ process bbsplit_batch{
 }
 
 process bbsplit{
-     maxForks 1
+        maxForks 1
         
         publishDir params.disambiguated_dir, mode: 'copy'
     input:
