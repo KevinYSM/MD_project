@@ -1,3 +1,4 @@
+*.log*
 outdir/bbsplit/*.fastq.gz
 *.fastqc.zip
 *.fastq.gz
