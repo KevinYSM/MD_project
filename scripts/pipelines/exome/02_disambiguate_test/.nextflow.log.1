@@ -1,190 +1,863 @@
-Mar-25 03:40:13.209 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
-Mar-25 03:40:13.319 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
-Mar-25 03:40:13.338 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
-Mar-25 03:40:13.347 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Mar-25 03:40:13.348 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Mar-25 03:40:13.351 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-Mar-25 03:40:13.361 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Mar-25 03:40:13.382 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
-Mar-25 03:40:13.382 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
-Mar-25 03:40:13.405 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Mar-25 03:40:13.963 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
-Mar-25 03:40:13.979 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [focused_meninsky] DSL2 - revision: 81bcbfcdb9
-Mar-25 03:40:13.980 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Mar-25 03:40:13.980 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Mar-25 03:40:13.989 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
-Mar-25 03:40:13.992 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2a369e14] - activable => nextflow.secret.LocalSecretsProvider@2a369e14
-Mar-25 03:40:14.044 [main] DEBUG nextflow.Session - Session UUID: 8219dd17-e0f4-408f-9985-1b9e28dcd2a4
-Mar-25 03:40:14.044 [main] DEBUG nextflow.Session - Run name: focused_meninsky
-Mar-25 03:40:14.045 [main] DEBUG nextflow.Session - Executor pool size: 8
-Mar-25 03:40:14.051 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Mar-25 03:40:14.055 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Mar-25 03:40:14.076 [main] DEBUG nextflow.cli.CmdRun - 
-  Version: 23.10.1 build 5891
-  Created: 12-01-2024 22:01 UTC 
-  System: Linux 5.15.0-76-generic
-  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.22+7-post-Ubuntu-0ubuntu222.04.1
+Mar-26 10:21:15.592 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Mar-26 10:21:15.690 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Mar-26 10:21:15.711 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Mar-26 10:21:15.722 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-26 10:21:15.723 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-26 10:21:15.726 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-26 10:21:15.737 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-26 10:21:15.759 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-26 10:21:15.759 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-26 10:21:15.781 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-26 10:21:16.393 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-26 10:21:16.413 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [romantic_mcclintock] DSL2 - revision: c13f5861be
+Mar-26 10:21:16.414 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-26 10:21:16.414 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-26 10:21:16.425 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Mar-26 10:21:16.428 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@119b0892] - activable => nextflow.secret.LocalSecretsProvider@119b0892
+Mar-26 10:21:16.494 [main] DEBUG nextflow.Session - Session UUID: 5838b6bd-5c1e-41ce-b370-3283623ba5ad
+Mar-26 10:21:16.494 [main] DEBUG nextflow.Session - Run name: romantic_mcclintock
+Mar-26 10:21:16.494 [main] DEBUG nextflow.Session - Executor pool size: 64
+Mar-26 10:21:16.503 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-26 10:21:16.508 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-26 10:21:16.538 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC 
+  System: Linux 5.4.0-169-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
   Encoding: UTF-8 (UTF-8)
-  Process: 1339255@kevin-melanoma [127.0.1.1]
-  CPUs: 8 - Mem: 31.3 GB (29 GB) - Swap: 0 (0)
-Mar-25 03:40:14.107 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work [ext2/ext3]
-Mar-25 03:40:14.108 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/bin
-Mar-25 03:40:14.116 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Mar-25 03:40:14.125 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Mar-25 03:40:14.143 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Mar-25 03:40:14.151 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-Mar-25 03:40:14.596 [main] DEBUG nextflow.Session - Session start
-Mar-25 03:40:14.962 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Mar-25 03:40:15.104 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Mar-25 03:40:15.104 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Mar-25 03:40:15.109 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Mar-25 03:40:15.114 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
-Mar-25 03:40:15.116 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Mar-25 03:40:15.179 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: bbsplit_batch, test_rename, bbsplit, save_results
-Mar-25 03:40:15.180 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
-Mar-25 03:40:15.185 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ubuntu/scratch/MD_project/data/exome/processed/01_trimmed_umis/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
-Mar-25 03:40:15.186 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > bbsplit_batch
-Mar-25 03:40:15.187 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_572dbe64739fd770: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/disambiguate.nf
-Mar-25 03:40:15.187 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Mar-25 03:40:15.187 [main] DEBUG nextflow.Session - Session await
-Mar-25 03:40:15.574 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:15.588 [Task submitter] INFO  nextflow.Session - [af/71ce06] Submitted process > bbsplit_batch (8)
-Mar-25 03:40:16.484 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: bbsplit_batch (8); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/af/71ce06b9c212f12c25cd9b997d6526]
-Mar-25 03:40:16.488 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:16.488 [Task submitter] INFO  nextflow.Session - [12/6bea38] Submitted process > bbsplit_batch (1)
-Mar-25 03:40:16.503 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Mar-25 03:40:17.343 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: bbsplit_batch (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/12/6bea3855fd67dad27217b01d786cd7]
-Mar-25 03:40:17.346 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:17.347 [Task submitter] INFO  nextflow.Session - [7b/f8b159] Submitted process > bbsplit_batch (6)
-Mar-25 03:40:18.222 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: bbsplit_batch (6); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/7b/f8b159d0d77c8b6cd529dbd4d0d7c8]
-Mar-25 03:40:18.225 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:18.226 [Task submitter] INFO  nextflow.Session - [b7/6d5d68] Submitted process > bbsplit_batch (5)
-Mar-25 03:40:19.101 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: bbsplit_batch (5); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/b7/6d5d68ffd98e074cc31c4ee30e54dc]
-Mar-25 03:40:19.104 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:19.105 [Task submitter] INFO  nextflow.Session - [d2/d2fb72] Submitted process > bbsplit_batch (9)
-Mar-25 03:40:19.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: bbsplit_batch (9); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d2/d2fb722fb5d3f3019f2f5b2dea8f94]
-Mar-25 03:40:19.951 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:19.951 [Task submitter] INFO  nextflow.Session - [33/606fb2] Submitted process > bbsplit_batch (3)
-Mar-25 03:40:20.815 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: bbsplit_batch (3); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/606fb2b3ad1c2d69068bb4e78bf521]
-Mar-25 03:40:20.818 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:20.818 [Task submitter] INFO  nextflow.Session - [cb/5c6b1f] Submitted process > bbsplit_batch (2)
-Mar-25 03:40:21.685 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: bbsplit_batch (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/cb/5c6b1f14a6e78c473bbb03e910def2]
-Mar-25 03:40:21.688 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:40:21.688 [Task submitter] INFO  nextflow.Session - [65/920bc0] Submitted process > bbsplit_batch (10)
-Mar-25 03:45:15.305 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
-~> TaskHandler[id: 10; name: bbsplit_batch (10); status: RUNNING; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/920bc02958c189e114afc949e36578]
-Mar-25 03:45:15.759 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 43 -- tasks to be submitted are shown below
-~> TaskHandler[id: 12; name: bbsplit_batch (12); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/80e286b12f2fb8fc56e0e188e8d9b0]
-~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/da/da9bb7718a5555683473d9f17b9c95]
-~> TaskHandler[id: 13; name: bbsplit_batch (13); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3f/2cc7b817d530525e04681bc9d9de0b]
-~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a5/4f6b6b9ddd9467ec331ef41704b7b9]
-~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/e3/d5dd7a48cfbf6d4752e0d99bdde72a]
-~> TaskHandler[id: 20; name: bbsplit_batch (20); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/64/5dd58a31e49a7cf7fb9369ca37e676]
-~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/9d/2ce938f89cb8b40088f45470b58d5a]
-~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/39/c7ce4677d9cbadccc4da56a9838ed7]
-~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/06/abdbd10a091ec89364046bcda45586]
-~> TaskHandler[id: 18; name: bbsplit_batch (18); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/e0/80fe83212d970e797360ff9bd18b0f]
+  Process: 1548326@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (3.1 GB) - Swap: 0 (0)
+Mar-26 10:21:16.569 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work [ext2/ext3]
+Mar-26 10:21:16.569 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/bin
+Mar-26 10:21:16.644 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-26 10:21:16.656 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-26 10:21:16.678 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-26 10:21:16.691 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Mar-26 10:21:17.254 [main] DEBUG nextflow.Session - Session start
+Mar-26 10:21:17.701 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-26 10:21:17.883 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-26 10:21:17.883 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-26 10:21:17.892 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-26 10:21:17.898 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=251.7 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Mar-26 10:21:17.901 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-26 10:21:17.975 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: bbsplit_batch, test_rename, bbsplit, save_results
+Mar-26 10:21:17.975 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Mar-26 10:21:17.981 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > bbsplit_batch
+Mar-26 10:21:17.981 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /data/local/MD_project/data/exome/processed/01_trimmed_umis/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Mar-26 10:21:17.983 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_32abf09ed6c0e6b6: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/disambiguate.nf
+Mar-26 10:21:17.984 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-26 10:21:17.984 [main] DEBUG nextflow.Session - Session await
+Mar-26 10:21:18.645 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:18.648 [Task submitter] INFO  nextflow.Session - [10/19ac36] Submitted process > bbsplit_batch (42)
+Mar-26 10:21:18.655 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:18.656 [Task submitter] INFO  nextflow.Session - [5b/14eeed] Submitted process > bbsplit_batch (1)
+Mar-26 10:21:19.840 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: bbsplit_batch (42); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/10/19ac36ffc7601d0040a64be6101db3]
+Mar-26 10:21:19.845 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:19.846 [Task submitter] INFO  nextflow.Session - [1d/7c2187] Submitted process > bbsplit_batch (28)
+Mar-26 10:21:19.867 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-26 10:21:19.904 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: bbsplit_batch (1); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5b/14eeedfeb4276ce6ea6f23c6eaa735]
+Mar-26 10:21:19.907 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:19.933 [Task submitter] INFO  nextflow.Session - [3e/8d873a] Submitted process > bbsplit_batch (13)
+Mar-26 10:21:20.976 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: bbsplit_batch (28); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/1d/7c2187a1ad6ee496d33d290f3ae284]
+Mar-26 10:21:20.979 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:20.979 [Task submitter] INFO  nextflow.Session - [c8/efbf1c] Submitted process > bbsplit_batch (6)
+Mar-26 10:21:21.154 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: bbsplit_batch (13); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3e/8d873ab1d78ee2a29b3bf2d2f6cfee]
+Mar-26 10:21:21.157 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:21.157 [Task submitter] INFO  nextflow.Session - [e2/919787] Submitted process > bbsplit_batch (8)
+Mar-26 10:21:22.097 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: bbsplit_batch (6); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c8/efbf1c2f27ddadfe2757dc497c2df9]
+Mar-26 10:21:22.101 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:22.102 [Task submitter] INFO  nextflow.Session - [6a/1538a8] Submitted process > bbsplit_batch (39)
+Mar-26 10:21:22.214 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: bbsplit_batch (8); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/e2/919787a1d65fb91eb6b438618f1348]
+Mar-26 10:21:22.217 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:22.218 [Task submitter] INFO  nextflow.Session - [f0/758217] Submitted process > bbsplit_batch (5)
+Mar-26 10:21:23.351 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: bbsplit_batch (39); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/1538a8278963e4257a058246b21ee9]
+Mar-26 10:21:23.354 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:23.354 [Task submitter] INFO  nextflow.Session - [b0/3a069a] Submitted process > bbsplit_batch (31)
+Mar-26 10:21:23.481 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: bbsplit_batch (5); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f0/7582174d4416c8d0549c956a0efc80]
+Mar-26 10:21:23.484 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:23.485 [Task submitter] INFO  nextflow.Session - [be/8267ec] Submitted process > bbsplit_batch (46)
+Mar-26 10:21:24.589 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: bbsplit_batch (31); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/b0/3a069a1fbf3fa71de6a9068fbfc5ef]
+Mar-26 10:21:24.592 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:24.593 [Task submitter] INFO  nextflow.Session - [4d/ae82a3] Submitted process > bbsplit_batch (40)
+Mar-26 10:21:24.647 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: bbsplit_batch (46); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/8267eccca84983ef525a4f3c317086]
+Mar-26 10:21:24.649 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:24.649 [Task submitter] INFO  nextflow.Session - [45/687a49] Submitted process > bbsplit_batch (4)
+Mar-26 10:21:25.775 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: bbsplit_batch (40); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/ae82a3e30916544387dea6b654ba86]
+Mar-26 10:21:25.779 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:25.779 [Task submitter] INFO  nextflow.Session - [ee/3faa29] Submitted process > bbsplit_batch (9)
+Mar-26 10:21:25.807 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: bbsplit_batch (4); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/45/687a49b40717b595a3a6beaeb0564b]
+Mar-26 10:21:25.809 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:25.809 [Task submitter] INFO  nextflow.Session - [58/7ab419] Submitted process > bbsplit_batch (20)
+Mar-26 10:21:26.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: bbsplit_batch (9); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ee/3faa29be6ce193aaf280d0966f042e]
+Mar-26 10:21:26.995 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:26.995 [Task submitter] INFO  nextflow.Session - [05/592a0b] Submitted process > bbsplit_batch (43)
+Mar-26 10:21:27.054 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: bbsplit_batch (20); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/58/7ab41961b65a4d7fe3745443b351ec]
+Mar-26 10:21:27.058 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:27.058 [Task submitter] INFO  nextflow.Session - [8d/cd4723] Submitted process > bbsplit_batch (18)
+Mar-26 10:21:28.219 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: bbsplit_batch (18); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8d/cd47234799220d74434b801cdd2f37]
+Mar-26 10:21:28.223 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:28.224 [Task submitter] INFO  nextflow.Session - [70/75a420] Submitted process > bbsplit_batch (48)
+Mar-26 10:21:28.266 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: bbsplit_batch (43); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/592a0b47285e2ac24315ebfe0a8092]
+Mar-26 10:21:28.270 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:21:28.276 [Task submitter] INFO  nextflow.Session - [c7/dbc576] Submitted process > bbsplit_batch (21)
+Mar-26 10:26:18.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:26:19.377 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
 .. remaining tasks omitted.
-Mar-25 03:50:05.540 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: bbsplit_batch (10); status: COMPLETED; exit: 137; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/920bc02958c189e114afc949e36578]
-Mar-25 03:50:05.734 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=bbsplit_batch (10); work-dir=/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/920bc02958c189e114afc949e36578
-  error [nextflow.exception.ProcessFailedException]: Process `bbsplit_batch (10)` terminated with an error exit status (137)
-Mar-25 03:50:05.863 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 03:50:05.863 [Task submitter] INFO  nextflow.Session - [87/80e286] Submitted process > bbsplit_batch (12)
-Mar-25 03:50:06.106 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'bbsplit_batch (10)'
-
-Caused by:
-  Process `bbsplit_batch (10)` terminated with an error exit status (137)
-
-Command executed:
-
-  rename_1=$(basename $(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
-  rename_2=$(basename $(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
-  batch=$(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz)
-  
-  
-  if  [[ "${batch}" == "374" ]]
-  then
-  echo 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz >> ${rename_1}.txt
-  
-  
-  bbsplit.sh -Xmx33g -Xms30g in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz \
-  in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gz\
-  scafstats=${rename_1}.scafstats.txt refstats=${rename_1}.refstats.txt \
-  outu1=${rename_1}_clean1.fastq.gz outu2=${rename_2}_clean2.fastq.gz
-  
-  fi
-  
-  touch a.txt
-
-Command exit status:
-  137
-
-Command output:
-  (empty)
-
-Command error:
-  Writing chunk 11
-  Writing chunk 12
-  Writing chunk 13
-  Set genome to 1
-  
-  Loaded Reference:	0.016 seconds.
-  Loading index for chunk 1-13, build 1
-  No index available; generating from reference genome: ref/index/1/chr1-3_index_k13_c2_b1.block
-  No index available; generating from reference genome: ref/index/1/chr4-7_index_k13_c2_b1.block
-  Indexing threads started for block 4-7
-  Indexing threads started for block 0-3
-  /home/ubuntu/bin/bbmap/bbsplit.sh: line 128: 1339811 Killed                  java -ea -Xmx33g -Xms30g -cp /home/ubuntu/bin/bbmap/current/ align2.BBSplitter ow=t fastareadlen=500 minhits=1 minratio=0.56 maxindel=20 qtrim=rl untrim=t trimq=6 -Xmx33g -Xms30g in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gzscafstats=P1601.1710874524654_Cut_0.fastq.gz in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz
-  Executing align2.BBSplitter [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, -Xmx33g, -Xms30g, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna, basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz]
-  
-  Converted arguments to [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz, ref_GCF_000001405.40_GRCh38.p14_genomic=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna, ref_GCF_000001635.27_GRCm39_genomic=/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna]
-  Creating merged reference file ref/genome/1/merged_ref_4120913699124498.fa.gz
-  Ref merge time:     	462.774 seconds.
-  Executing align2.BBMap [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz, ref=ref/genome/1/merged_ref_4120913699124498.fa.gz, out_GCF_000001405.40_GRCh38.p14_genomic=oGCF_000001405.40_GRCh38.p14_genomic.fastq.gzscafstats, out_GCF_000001635.27_GRCm39_genomic=oGCF_000001635.27_GRCm39_genomic.fastq.gzscafstats]
-  Version 39.06
-  
-  Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.560
-  Reference set statistics will be written to P16_L001_tumour1_R1_B374_tumis.refstats.txt
-  Retaining first best site only for ambiguous mappings.
-  NOTE:	Deleting contents of ref/genome/1 because reference is specified and overwrite=true
-  Writing reference.
-  Executing dna.FastaToChromArrays2 [ref/genome/1/merged_ref_4120913699124498.fa.gz, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
-  
-  Set genScaffoldInfo=true
-  Writing chunk 1
-  Writing chunk 2
-  Writing chunk 3
-  Writing chunk 4
-  Writing chunk 5
-  Writing chunk 6
-  Writing chunk 7
-  Writing chunk 8
-  Writing chunk 9
-  Writing chunk 10
-  Writing chunk 11
-  Writing chunk 12
-  Writing chunk 13
-  Set genome to 1
-  
-  Loaded Reference:	0.016 seconds.
-  Loading index for chunk 1-13, build 1
-  No index available; generating from reference genome: ref/index/1/chr1-3_index_k13_c2_b1.block
-  No index available; generating from reference genome: ref/index/1/chr4-7_index_k13_c2_b1.block
-  Indexing threads started for block 4-7
-  Indexing threads started for block 0-3
-  /home/ubuntu/bin/bbmap/bbsplit.sh: line 128: 1339811 Killed                  java -ea -Xmx33g -Xms30g -cp /home/ubuntu/bin/bbmap/current/ align2.BBSplitter ow=t fastareadlen=500 minhits=1 minratio=0.56 maxindel=20 qtrim=rl untrim=t trimq=6 -Xmx33g -Xms30g in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz
-
-Work dir:
-  /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/920bc02958c189e114afc949e36578
-
-Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
-Mar-25 03:50:06.320 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `bbsplit_batch (10)` terminated with an error exit status (137)
-Mar-25 03:50:06.558 [main] DEBUG nextflow.Session - Session await > all processes finished
-Mar-25 03:50:06.559 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Mar-25 03:50:06.559 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Mar-25 03:50:06.780 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
-Mar-25 03:50:07.035 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=7; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=42; submittedCount=1; runningCount=-1; retriesCount=0; abortedCount=1; succeedDuration=5.5s; failedDuration=9m 44s; cachedDuration=0ms;loadCpus=-1; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
-Mar-25 03:50:07.392 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Mar-25 03:50:07.618 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Mar-26 10:31:18.120 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:31:19.456 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 10:36:18.191 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:36:19.531 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 10:41:18.228 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:41:19.601 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 10:46:18.286 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:46:19.655 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 10:51:18.351 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:51:19.725 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 10:56:18.369 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 10:56:19.811 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 11:01:18.419 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 11:01:19.894 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 11:06:18.433 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 48; name: bbsplit_batch (48); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+~> TaskHandler[id: 21; name: bbsplit_batch (21); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 11:06:20.002 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 33 -- tasks to be submitted are shown below
+~> TaskHandler[id: 45; name: bbsplit_batch (45); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+.. remaining tasks omitted.
+Mar-26 11:06:46.269 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: bbsplit_batch (48); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/70/75a42097c070b4a5982882b21e2b65]
+Mar-26 11:06:46.272 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:06:46.291 [Task submitter] INFO  nextflow.Session - [65/847f43] Submitted process > bbsplit_batch (45)
+Mar-26 11:06:51.552 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: bbsplit_batch (45); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/65/847f4379178fccba180febb23a1641]
+Mar-26 11:06:51.555 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:06:51.567 [Task submitter] INFO  nextflow.Session - [be/fe551e] Submitted process > bbsplit_batch (16)
+Mar-26 11:08:34.625 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: bbsplit_batch (21); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9]
+Mar-26 11:08:34.630 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:08:34.631 [Task submitter] INFO  nextflow.Session - [3c/38ece0] Submitted process > bbsplit_batch (36)
+Mar-26 11:11:18.502 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:11:20.669 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:16:18.570 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:16:20.748 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:21:18.662 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:21:20.841 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:23:20.002 [PublishDir-6] WARN  nextflow.processor.PublishDir - Failed to publish file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c7/dbc5764c93662f7b226ad1630281c9/ref; to: /data/local/MD_project/data/exome/processed/02_disambiguated/ref [copy] -- See log file for details
+java.nio.file.FileAlreadyExistsException: /data/local/MD_project/data/exome/processed/02_disambiguated/ref/index/1/chr8-11_index_k13_c2_b1.block
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:573)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:258)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:85)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:134)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:108)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2800)
+	at nextflow.file.CopyMoveHelper.copyDirectory(CopyMoveHelper.java:140)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:948)
+	at nextflow.processor.PublishDir.processFileImpl(PublishDir.groovy:459)
+	at nextflow.processor.PublishDir.processFile(PublishDir.groovy:383)
+	at nextflow.processor.PublishDir.safeProcessFile(PublishDir.groovy:353)
+	at jdk.internal.reflect.GeneratedMethodAccessor843.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.processor.PublishDir$_apply1_closure1.doCall(PublishDir.groovy:326)
+	at nextflow.processor.PublishDir$_apply1_closure1.call(PublishDir.groovy)
+	at groovy.lang.Closure.run(Closure.java:498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Mar-26 11:26:18.665 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:26:20.917 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:31:18.737 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:31:21.032 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:36:18.752 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:36:21.114 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:41:18.795 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:41:21.190 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:46:18.864 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:46:21.271 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:51:18.907 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:51:21.372 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:56:18.912 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 16; name: bbsplit_batch (16); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+~> TaskHandler[id: 36; name: bbsplit_batch (36); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:56:21.473 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 27; name: bbsplit_batch (27); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+~> TaskHandler[id: 49; name: bbsplit_batch (49); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+~> TaskHandler[id: 29; name: bbsplit_batch (29); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+~> TaskHandler[id: 38; name: bbsplit_batch (38); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+~> TaskHandler[id: 10; name: bbsplit_batch (10); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+~> TaskHandler[id: 3; name: bbsplit_batch (3); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+~> TaskHandler[id: 14; name: bbsplit_batch (14); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+.. remaining tasks omitted.
+Mar-26 11:56:27.782 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: bbsplit_batch (16); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/be/fe551e03f8015ebfaaf02f79d5a5f2]
+Mar-26 11:56:27.786 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:56:27.795 [Task submitter] INFO  nextflow.Session - [4d/c317d9] Submitted process > bbsplit_batch (26)
+Mar-26 11:57:33.693 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: bbsplit_batch (36); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528]
+Mar-26 11:57:33.696 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:33.697 [Task submitter] INFO  nextflow.Session - [6a/90f9ca] Submitted process > bbsplit_batch (27)
+Mar-26 11:57:34.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: bbsplit_batch (27); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6a/90f9ca64c5c3e65baaf8b491219ec9]
+Mar-26 11:57:34.974 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:34.975 [Task submitter] INFO  nextflow.Session - [33/9ed5a9] Submitted process > bbsplit_batch (49)
+Mar-26 11:57:35.108 [PublishDir-5] WARN  nextflow.processor.PublishDir - Failed to publish file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3c/38ece0569681db461dfd4ab7018528/ref; to: /data/local/MD_project/data/exome/processed/02_disambiguated/ref [copy] -- See log file for details
+java.nio.file.DirectoryNotEmptyException: /data/local/MD_project/data/exome/processed/02_disambiguated/ref/index/1
+	at java.base/sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:247)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:105)
+	at java.base/java.nio.file.Files.delete(Files.java:1142)
+	at nextflow.file.FileHelper$3.postVisitDirectory(FileHelper.groovy:999)
+	at nextflow.file.FileHelper$3.postVisitDirectory(FileHelper.groovy)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2818)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2872)
+	at nextflow.file.FileHelper.deleteDir0(FileHelper.groovy:991)
+	at nextflow.file.FileHelper.deletePath(FileHelper.groovy:983)
+	at nextflow.processor.PublishDir.processFile(PublishDir.groovy:382)
+	at nextflow.processor.PublishDir.safeProcessFile(PublishDir.groovy:353)
+	at jdk.internal.reflect.GeneratedMethodAccessor843.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.processor.PublishDir$_apply1_closure1.doCall(PublishDir.groovy:326)
+	at nextflow.processor.PublishDir$_apply1_closure1.call(PublishDir.groovy)
+	at groovy.lang.Closure.run(Closure.java:498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Mar-26 11:57:36.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: bbsplit_batch (49); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/33/9ed5a9134dbd828c43530bf2780e37]
+Mar-26 11:57:36.223 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:36.224 [Task submitter] INFO  nextflow.Session - [76/c8a43e] Submitted process > bbsplit_batch (15)
+Mar-26 11:57:37.302 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: bbsplit_batch (15); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/76/c8a43e255a9d3f70f3bc8885886ce0]
+Mar-26 11:57:37.305 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:37.306 [Task submitter] INFO  nextflow.Session - [05/ab88e1] Submitted process > bbsplit_batch (29)
+Mar-26 11:57:38.453 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: bbsplit_batch (29); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/05/ab88e141976223b0783c5556fa189b]
+Mar-26 11:57:38.457 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:38.457 [Task submitter] INFO  nextflow.Session - [00/e62a1a] Submitted process > bbsplit_batch (38)
+Mar-26 11:57:39.569 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: bbsplit_batch (38); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/00/e62a1aa2e35c604e26f16d94c35993]
+Mar-26 11:57:39.604 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:39.605 [Task submitter] INFO  nextflow.Session - [4b/4cca66] Submitted process > bbsplit_batch (10)
+Mar-26 11:57:40.758 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: bbsplit_batch (10); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4b/4cca669e0afd0daebf8f31aa34de5f]
+Mar-26 11:57:40.761 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:40.762 [Task submitter] INFO  nextflow.Session - [c0/7ca15c] Submitted process > bbsplit_batch (3)
+Mar-26 11:57:41.976 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: bbsplit_batch (3); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c0/7ca15cd0ca0df60af5d8b40e2f9cbb]
+Mar-26 11:57:41.980 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:41.980 [Task submitter] INFO  nextflow.Session - [d8/77659d] Submitted process > bbsplit_batch (17)
+Mar-26 11:57:43.122 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: bbsplit_batch (17); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/d8/77659d959ff3fc6b810d9f65a545da]
+Mar-26 11:57:43.169 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:43.170 [Task submitter] INFO  nextflow.Session - [6d/c4b314] Submitted process > bbsplit_batch (14)
+Mar-26 11:57:44.326 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: bbsplit_batch (14); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/6d/c4b3148839401c35a836835b93aca8]
+Mar-26 11:57:44.348 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:44.349 [Task submitter] INFO  nextflow.Session - [f4/e15dce] Submitted process > bbsplit_batch (12)
+Mar-26 11:57:45.497 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: bbsplit_batch (12); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f4/e15dcee7db61560385381290ac12b3]
+Mar-26 11:57:45.501 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:45.501 [Task submitter] INFO  nextflow.Session - [f7/f99419] Submitted process > bbsplit_batch (32)
+Mar-26 11:57:46.691 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: bbsplit_batch (32); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f7/f99419e20973d426fde333b4d77fb0]
+Mar-26 11:57:46.737 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:46.738 [Task submitter] INFO  nextflow.Session - [2e/1e57dd] Submitted process > bbsplit_batch (50)
+Mar-26 11:57:47.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: bbsplit_batch (50); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2e/1e57dde597a7a22b715b3f4843c29c]
+Mar-26 11:57:47.848 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:47.848 [Task submitter] INFO  nextflow.Session - [67/7872d7] Submitted process > bbsplit_batch (33)
+Mar-26 11:57:48.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: bbsplit_batch (33); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/67/7872d72d5fd47e98a4b0934cd7e87b]
+Mar-26 11:57:48.995 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 11:57:48.995 [Task submitter] INFO  nextflow.Session - [25/57abfe] Submitted process > bbsplit_batch (47)
+Mar-26 12:01:19.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:01:22.035 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:06:19.067 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:06:22.096 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:11:19.154 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:11:22.196 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:16:19.204 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:16:22.262 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:21:19.256 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:21:22.335 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:26:19.270 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:26:22.429 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:31:19.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:31:22.685 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:36:19.372 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 47; name: bbsplit_batch (47); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:36:22.908 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 15 -- tasks to be submitted are shown below
+~> TaskHandler[id: 19; name: bbsplit_batch (19); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+~> TaskHandler[id: 35; name: bbsplit_batch (35); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+.. remaining tasks omitted.
+Mar-26 12:39:38.200 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: bbsplit_batch (47); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/25/57abfeee57f2e5311c4eaa43f58796]
+Mar-26 12:39:38.204 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:39:38.212 [Task submitter] INFO  nextflow.Session - [63/43ff01] Submitted process > bbsplit_batch (19)
+Mar-26 12:39:45.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: bbsplit_batch (19); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/63/43ff01b36bed1b4fd6b145152b06cf]
+Mar-26 12:39:45.656 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:39:45.667 [Task submitter] INFO  nextflow.Session - [81/f02b0c] Submitted process > bbsplit_batch (35)
+Mar-26 12:39:47.865 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: bbsplit_batch (35); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/81/f02b0c5ce5257917a0c53e6469cf61]
+Mar-26 12:39:47.888 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:39:47.899 [Task submitter] INFO  nextflow.Session - [90/e9c38b] Submitted process > bbsplit_batch (23)
+Mar-26 12:41:19.469 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+Mar-26 12:41:22.917 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+~> TaskHandler[id: 22; name: bbsplit_batch (22); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ed/bc71d56be127c14005975002fb4863]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+.. remaining tasks omitted.
+Mar-26 12:46:19.560 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: bbsplit_batch (26); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+Mar-26 12:46:23.035 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 30; name: bbsplit_batch (30); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+~> TaskHandler[id: 24; name: bbsplit_batch (24); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+~> TaskHandler[id: 7; name: bbsplit_batch (7); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+~> TaskHandler[id: 37; name: bbsplit_batch (37); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+~> TaskHandler[id: 44; name: bbsplit_batch (44); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+~> TaskHandler[id: 2; name: bbsplit_batch (2); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+~> TaskHandler[id: 34; name: bbsplit_batch (34); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+~> TaskHandler[id: 22; name: bbsplit_batch (22); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ed/bc71d56be127c14005975002fb4863]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+.. remaining tasks omitted.
+Mar-26 12:48:56.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: bbsplit_batch (26); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5]
+Mar-26 12:48:56.250 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:48:56.251 [Task submitter] INFO  nextflow.Session - [fe/663885] Submitted process > bbsplit_batch (30)
+Mar-26 12:48:57.417 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: bbsplit_batch (30); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fe/6638858fe9d5af6bb3633744d30b7a]
+Mar-26 12:48:57.447 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:48:57.448 [Task submitter] INFO  nextflow.Session - [c1/83cfcc] Submitted process > bbsplit_batch (24)
+Mar-26 12:48:58.598 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: bbsplit_batch (24); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c1/83cfccf59b0629a9da2ab989988964]
+Mar-26 12:48:58.602 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:48:58.604 [Task submitter] INFO  nextflow.Session - [2f/ee8f5b] Submitted process > bbsplit_batch (7)
+Mar-26 12:48:59.671 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: bbsplit_batch (7); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2f/ee8f5b77e642d37c5b680d34e7c42a]
+Mar-26 12:48:59.710 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:48:59.711 [Task submitter] INFO  nextflow.Session - [83/389e40] Submitted process > bbsplit_batch (37)
+Mar-26 12:49:00.758 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: bbsplit_batch (37); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/83/389e4015d9a74a7458c77e3a466f4f]
+Mar-26 12:49:01.000 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:49:01.001 [Task submitter] INFO  nextflow.Session - [09/c5c95e] Submitted process > bbsplit_batch (44)
+Mar-26 12:49:02.069 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: bbsplit_batch (44); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/09/c5c95e5dc22863c193bdd897ca9fae]
+Mar-26 12:49:02.163 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:49:02.164 [Task submitter] INFO  nextflow.Session - [fa/8f391f] Submitted process > bbsplit_batch (2)
+Mar-26 12:49:03.196 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: bbsplit_batch (2); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/fa/8f391f09c6f2986cd06501ef1c43b6]
+Mar-26 12:49:03.201 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:49:03.203 [Task submitter] INFO  nextflow.Session - [3b/94f00b] Submitted process > bbsplit_batch (34)
+Mar-26 12:49:04.299 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: bbsplit_batch (34); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/3b/94f00b1e921de4a4c2ec6dc7186bdd]
+Mar-26 12:49:04.326 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:49:04.328 [Task submitter] INFO  nextflow.Session - [ed/bc71d5] Submitted process > bbsplit_batch (22)
+Mar-26 12:49:05.387 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: bbsplit_batch (22); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ed/bc71d56be127c14005975002fb4863]
+Mar-26 12:49:05.419 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 12:49:05.420 [Task submitter] INFO  nextflow.Session - [71/2dfd68] Submitted process > bbsplit_batch (25)
+Mar-26 12:51:19.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 12:51:23.445 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 12:56:19.640 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 12:56:23.486 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:01:19.657 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:01:23.570 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:06:19.710 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:06:23.606 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:11:19.744 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:11:23.643 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:15:48.270 [PublishDir-3] WARN  nextflow.processor.PublishDir - Failed to publish file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/4d/c317d9a7a2f5b8492eb1d8a230c5c5/ref; to: /data/local/MD_project/data/exome/processed/02_disambiguated/ref [copy] -- See log file for details
+java.nio.file.FileAlreadyExistsException: /data/local/MD_project/data/exome/processed/02_disambiguated/ref/index/1/chr1-3_index_k13_c2_b1.block
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:573)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:258)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:85)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:134)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:108)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2800)
+	at nextflow.file.CopyMoveHelper.copyDirectory(CopyMoveHelper.java:140)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:948)
+	at nextflow.processor.PublishDir.processFileImpl(PublishDir.groovy:459)
+	at nextflow.processor.PublishDir.processFile(PublishDir.groovy:383)
+	at nextflow.processor.PublishDir.safeProcessFile(PublishDir.groovy:353)
+	at jdk.internal.reflect.GeneratedMethodAccessor843.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.processor.PublishDir$_apply1_closure1.doCall(PublishDir.groovy:326)
+	at nextflow.processor.PublishDir$_apply1_closure1.call(PublishDir.groovy)
+	at groovy.lang.Closure.run(Closure.java:498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Mar-26 13:16:19.770 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:16:23.705 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:21:19.860 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:21:23.758 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:26:19.941 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: bbsplit_batch (23); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+~> TaskHandler[id: 25; name: bbsplit_batch (25); status: RUNNING; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:26:23.803 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 3 -- tasks to be submitted are shown below
+~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+~> TaskHandler[id: 41; name: bbsplit_batch (41); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+~> TaskHandler[id: 51; name: bbsplit_batch (51); status: NEW; exit: -; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:27:18.620 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: bbsplit_batch (23); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/90/e9c38b4a30ac45ab8a0d4047bc2c15]
+Mar-26 13:27:18.751 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 13:27:18.763 [Task submitter] INFO  nextflow.Session - [8e/0e3a16] Submitted process > bbsplit_batch (11)
+Mar-26 13:27:30.153 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: bbsplit_batch (11); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8e/0e3a163cc6ec1e6fc30c319274fca8]
+Mar-26 13:27:30.344 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 13:27:30.355 [Task submitter] INFO  nextflow.Session - [5f/b57093] Submitted process > bbsplit_batch (41)
+Mar-26 13:27:32.105 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: bbsplit_batch (41); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/5f/b570936014e7f8442a4011939c74f4]
+Mar-26 13:27:32.177 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 13:27:32.187 [Task submitter] INFO  nextflow.Session - [87/99f263] Submitted process > bbsplit_batch (51)
+Mar-26 13:27:34.133 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: bbsplit_batch (51); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/87/99f26306ac73b515315298fd15b43d]
+Mar-26 13:30:51.132 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: bbsplit_batch (25); status: COMPLETED; exit: 0; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee]
+Mar-26 13:30:51.139 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-26 13:30:51.231 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-26 13:30:51.232 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-26 13:30:56.313 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Mar-26 13:31:56.315 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Mar-26 13:32:56.317 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Mar-26 13:33:56.319 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Mar-26 13:34:56.321 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (5 files)
+Mar-26 13:35:56.323 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:36:56.326 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:37:56.328 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:38:56.331 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:39:56.333 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:40:56.335 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:41:56.338 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:42:56.340 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:43:56.342 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (4 files)
+Mar-26 13:44:14.797 [PublishDir-3] WARN  nextflow.processor.PublishDir - Failed to publish file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/71/2dfd6806f0c40d7d16d743d726e6ee/ref; to: /data/local/MD_project/data/exome/processed/02_disambiguated/ref [copy] -- See log file for details
+java.nio.file.FileAlreadyExistsException: /data/local/MD_project/data/exome/processed/02_disambiguated/ref/index/1/chr1-3_index_k13_c2_b1.block2.gz
+	at java.base/sun.nio.fs.UnixCopyFile.copy(UnixCopyFile.java:573)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.copy(UnixFileSystemProvider.java:258)
+	at nextflow.file.CopyMoveHelper.copyFile(CopyMoveHelper.java:85)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:134)
+	at nextflow.file.CopyMoveHelper$1.visitFile(CopyMoveHelper.java:108)
+	at java.base/java.nio.file.Files.walkFileTree(Files.java:2800)
+	at nextflow.file.CopyMoveHelper.copyDirectory(CopyMoveHelper.java:140)
+	at nextflow.file.FileHelper.copyPath(FileHelper.groovy:948)
+	at nextflow.processor.PublishDir.processFileImpl(PublishDir.groovy:459)
+	at nextflow.processor.PublishDir.processFile(PublishDir.groovy:383)
+	at nextflow.processor.PublishDir.safeProcessFile(PublishDir.groovy:353)
+	at jdk.internal.reflect.GeneratedMethodAccessor843.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1036)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1019)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.processor.PublishDir$_apply1_closure1.doCall(PublishDir.groovy:326)
+	at nextflow.processor.PublishDir$_apply1_closure1.call(PublishDir.groovy)
+	at groovy.lang.Closure.run(Closure.java:498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Mar-26 13:44:56.344 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:45:56.346 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:46:56.348 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:47:56.349 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:48:56.351 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:49:56.353 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:50:56.355 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (3 files)
+Mar-26 13:51:56.358 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (2 files)
+Mar-26 13:52:56.360 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (2 files)
+Mar-26 13:53:56.362 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:54:56.363 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:55:56.365 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:56:56.366 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:57:56.368 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:58:56.369 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 13:59:56.371 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:00:56.373 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:01:56.375 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:02:56.377 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:03:56.379 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:04:56.381 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:05:56.385 [main] DEBUG nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+Mar-26 14:06:53.947 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Mar-26 14:06:54.234 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=51; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=6h 15m 42s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Mar-26 14:06:55.134 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-26 14:06:55.746 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Mar-26 14:06:55.747 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

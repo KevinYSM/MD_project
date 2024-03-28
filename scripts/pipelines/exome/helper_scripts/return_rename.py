@@ -5,7 +5,7 @@ import re
 import shutil
 import sys
 
-rename_table="/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv"
+rename_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv"
 
 
 def return_new_name(current_name):
