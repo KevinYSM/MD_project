@@ -26,3 +26,7 @@ processed
 *.fa.gz
 *.gz
 data/
+*.nextflow.*
+
+scripts/pipelines/exome/02_disambiguate_test/.nextflow.log
+scripts/pipelines/exome/02_disambiguate_test/.nextflow.log.1

@@ -1,118 +1,73 @@
-Mar-25 00:56:18.486 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
-Mar-25 00:56:18.708 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
-Mar-25 00:56:18.877 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
-Mar-25 00:56:18.903 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Mar-25 00:56:18.904 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Mar-25 00:56:18.907 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-Mar-25 00:56:18.944 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Mar-25 00:56:18.976 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
-Mar-25 00:56:18.976 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
-Mar-25 00:56:19.103 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Mar-25 00:56:20.425 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
-Mar-25 00:56:20.998 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [marvelous_picasso] DSL2 - revision: ed8e4a5a7a
-Mar-25 00:56:21.000 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Mar-25 00:56:21.000 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Mar-25 00:56:21.016 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
-Mar-25 00:56:21.022 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@60c8a093] - activable => nextflow.secret.LocalSecretsProvider@60c8a093
-Mar-25 00:56:21.345 [main] DEBUG nextflow.Session - Session UUID: 8219dd17-e0f4-408f-9985-1b9e28dcd2a4
-Mar-25 00:56:21.345 [main] DEBUG nextflow.Session - Run name: marvelous_picasso
-Mar-25 00:56:21.346 [main] DEBUG nextflow.Session - Executor pool size: 8
-Mar-25 00:56:21.382 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Mar-25 00:56:21.389 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Mar-25 00:56:22.479 [main] DEBUG nextflow.cli.CmdRun - 
-  Version: 23.10.1 build 5891
-  Created: 12-01-2024 22:01 UTC 
-  System: Linux 5.15.0-76-generic
-  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.22+7-post-Ubuntu-0ubuntu222.04.1
+Mar-26 10:14:37.953 [main] DEBUG nextflow.cli.Launcher - $> nextflow run disambiguate.nf -resume -c exome.config /
+Mar-26 10:14:38.041 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Mar-26 10:14:38.062 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Mar-26 10:14:38.073 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-26 10:14:38.074 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-26 10:14:38.077 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-26 10:14:38.088 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-26 10:14:38.110 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-26 10:14:38.111 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/exome.config
+Mar-26 10:14:38.133 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-26 10:14:38.667 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-26 10:14:38.685 [main] INFO  nextflow.cli.CmdRun - Launching `disambiguate.nf` [determined_mayer] DSL2 - revision: 6938987ab5
+Mar-26 10:14:38.685 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-26 10:14:38.686 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-26 10:14:38.695 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Mar-26 10:14:38.698 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@5a8c93] - activable => nextflow.secret.LocalSecretsProvider@5a8c93
+Mar-26 10:14:38.760 [main] DEBUG nextflow.Session - Session UUID: 5838b6bd-5c1e-41ce-b370-3283623ba5ad
+Mar-26 10:14:38.760 [main] DEBUG nextflow.Session - Run name: determined_mayer
+Mar-26 10:14:38.761 [main] DEBUG nextflow.Session - Executor pool size: 64
+Mar-26 10:14:38.769 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-26 10:14:38.773 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-26 10:14:38.802 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC 
+  System: Linux 5.4.0-169-generic
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
   Encoding: UTF-8 (UTF-8)
-  Process: 1298330@kevin-melanoma [127.0.1.1]
-  CPUs: 8 - Mem: 31.3 GB (29.9 GB) - Swap: 0 (0)
-Mar-25 00:56:22.521 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work [ext2/ext3]
-Mar-25 00:56:22.521 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/bin
-Mar-25 00:56:22.576 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Mar-25 00:56:22.587 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Mar-25 00:56:22.604 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Mar-25 00:56:22.686 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-Mar-25 00:56:24.843 [main] DEBUG nextflow.Session - Session start
-Mar-25 00:56:25.248 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Mar-25 00:56:25.536 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Mar-25 00:56:25.537 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Mar-25 00:56:25.542 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Mar-25 00:56:25.547 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
-Mar-25 00:56:25.573 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Mar-25 00:56:25.636 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: bbsplit_batch, test_rename, bbsplit, save_results
-Mar-25 00:56:25.636 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
-Mar-25 00:56:25.641 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > bbsplit_batch
-Mar-25 00:56:25.641 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ubuntu/scratch/MD_project/data/exome/processed/01_trimmed_umis/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
-Mar-25 00:56:25.642 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_0501130415f0ccad: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/disambiguate.nf
-Mar-25 00:56:25.642 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Mar-25 00:56:25.642 [main] DEBUG nextflow.Session - Session await
-Mar-25 00:56:26.322 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:26.327 [Task submitter] INFO  nextflow.Session - [a4/b0db85] Submitted process > bbsplit_batch (6)
-Mar-25 00:56:38.915 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: bbsplit_batch (6); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a4/b0db856339ad1d6db9f86b545b7984]
-Mar-25 00:56:38.920 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:38.920 [Task submitter] INFO  nextflow.Session - [37/138096] Submitted process > bbsplit_batch (7)
-Mar-25 00:56:38.936 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Mar-25 00:56:39.815 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: bbsplit_batch (7); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/37/1380968d5ef095cdc5c85f9cb51bc1]
-Mar-25 00:56:39.818 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:39.819 [Task submitter] INFO  nextflow.Session - [8c/46ccb0] Submitted process > bbsplit_batch (5)
-Mar-25 00:56:40.737 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: bbsplit_batch (5); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/8c/46ccb0d22f4d08af978ceff6f4163e]
-Mar-25 00:56:40.741 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:40.742 [Task submitter] INFO  nextflow.Session - [11/1b0135] Submitted process > bbsplit_batch (3)
-Mar-25 00:56:41.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: bbsplit_batch (3); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/11/1b01353da78ca815386df23f85cf8e]
-Mar-25 00:56:41.630 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:41.630 [Task submitter] INFO  nextflow.Session - [c3/33b322] Submitted process > bbsplit_batch (2)
-Mar-25 00:56:42.576 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: bbsplit_batch (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c3/33b32225c7f7042d2962a5f2af9718]
-Mar-25 00:56:42.579 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:42.580 [Task submitter] INFO  nextflow.Session - [02/22f7ad] Submitted process > bbsplit_batch (8)
-Mar-25 00:56:43.533 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: bbsplit_batch (8); status: COMPLETED; exit: 0; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/02/22f7addebf2ecd107d1c4f3e47c4a7]
-Mar-25 00:56:43.536 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 00:56:43.536 [Task submitter] INFO  nextflow.Session - [ab/e3259f] Submitted process > bbsplit_batch (10)
-Mar-25 01:01:25.713 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
-~> TaskHandler[id: 10; name: bbsplit_batch (10); status: RUNNING; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ab/e3259f1df2f2cb9ff8488078c0b930]
-Mar-25 01:01:26.602 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 44 -- tasks to be submitted are shown below
-~> TaskHandler[id: 12; name: bbsplit_batch (12); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a0/20c74082579cfe6fcf52e6e81db226]
-~> TaskHandler[id: 1; name: bbsplit_batch (1); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/04/1cd2496ccc29b98f92997f576f448f]
-~> TaskHandler[id: 4; name: bbsplit_batch (4); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/88/706bc41e6fe74f667e26df91eb188f]
-~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/27/79270eda7d353cd7f35a4f8791e759]
-~> TaskHandler[id: 13; name: bbsplit_batch (13); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/12/a0d17866e50b89643b70a1efa213dd]
-~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/97/376c95abf581bd585a973ae6e98ea0]
-~> TaskHandler[id: 9; name: bbsplit_batch (9); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c9/e65ae1dca364544dc5510e8648072a]
-~> TaskHandler[id: 18; name: bbsplit_batch (18); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/27/b16b5dada0fee59739cd0057b3e3ed]
-~> TaskHandler[id: 20; name: bbsplit_batch (20); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f0/87be040ce065dff2f895e00c471578]
-~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2e/559049cebdad6c865692b6cd274815]
-.. remaining tasks omitted.
-Mar-25 01:06:25.776 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
-~> TaskHandler[id: 10; name: bbsplit_batch (10); status: RUNNING; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ab/e3259f1df2f2cb9ff8488078c0b930]
-Mar-25 01:06:26.658 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 44 -- tasks to be submitted are shown below
-~> TaskHandler[id: 12; name: bbsplit_batch (12); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/a0/20c74082579cfe6fcf52e6e81db226]
-~> TaskHandler[id: 1; name: bbsplit_batch (1); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/04/1cd2496ccc29b98f92997f576f448f]
-~> TaskHandler[id: 4; name: bbsplit_batch (4); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/88/706bc41e6fe74f667e26df91eb188f]
-~> TaskHandler[id: 11; name: bbsplit_batch (11); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/27/79270eda7d353cd7f35a4f8791e759]
-~> TaskHandler[id: 13; name: bbsplit_batch (13); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/12/a0d17866e50b89643b70a1efa213dd]
-~> TaskHandler[id: 15; name: bbsplit_batch (15); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/97/376c95abf581bd585a973ae6e98ea0]
-~> TaskHandler[id: 9; name: bbsplit_batch (9); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/c9/e65ae1dca364544dc5510e8648072a]
-~> TaskHandler[id: 18; name: bbsplit_batch (18); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/27/b16b5dada0fee59739cd0057b3e3ed]
-~> TaskHandler[id: 20; name: bbsplit_batch (20); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/f0/87be040ce065dff2f895e00c471578]
-~> TaskHandler[id: 17; name: bbsplit_batch (17); status: NEW; exit: -; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/2e/559049cebdad6c865692b6cd274815]
-.. remaining tasks omitted.
-Mar-25 01:11:12.484 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: bbsplit_batch (10); status: COMPLETED; exit: 1; error: -; workDir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ab/e3259f1df2f2cb9ff8488078c0b930]
-Mar-25 01:11:12.658 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Mar-25 01:11:12.658 [Task submitter] INFO  nextflow.Session - [a0/20c740] Submitted process > bbsplit_batch (12)
-Mar-25 01:11:12.659 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=bbsplit_batch (10); work-dir=/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ab/e3259f1df2f2cb9ff8488078c0b930
-  error [nextflow.exception.ProcessFailedException]: Process `bbsplit_batch (10)` terminated with an error exit status (1)
-Mar-25 01:11:12.867 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'bbsplit_batch (10)'
+  Process: 1540967@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (2.1 GB) - Swap: 0 (0)
+Mar-26 10:14:38.830 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work [ext2/ext3]
+Mar-26 10:14:38.830 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/bin
+Mar-26 10:14:38.873 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-26 10:14:38.884 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-26 10:14:38.904 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-26 10:14:38.916 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+Mar-26 10:14:40.177 [main] DEBUG nextflow.Session - Session start
+Mar-26 10:14:40.625 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-26 10:14:40.783 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-26 10:14:40.784 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-26 10:14:40.789 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-26 10:14:40.795 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=251.7 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+Mar-26 10:14:40.797 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-26 10:14:40.867 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: bbsplit_batch, test_rename, bbsplit, save_results
+Mar-26 10:14:40.868 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
+Mar-26 10:14:40.873 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > bbsplit_batch
+Mar-26 10:14:40.873 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
+Mar-26 10:14:40.875 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_16338561fb51718a: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/disambiguate.nf
+Mar-26 10:14:40.876 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-26 10:14:40.876 [main] DEBUG nextflow.Session - Session await
+Mar-26 10:14:41.389 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:14:41.391 [Task submitter] INFO  nextflow.Session - [74/528f55] Submitted process > bbsplit_batch (36)
+Mar-26 10:14:41.398 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:14:41.399 [Task submitter] INFO  nextflow.Session - [a4/212bb0] Submitted process > bbsplit_batch (24)
+Mar-26 10:14:58.626 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: bbsplit_batch (36); status: COMPLETED; exit: 1; error: -; workDir: /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/74/528f5595c48c19cb212ee6bd586621]
+Mar-26 10:14:58.630 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-26 10:14:58.630 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=bbsplit_batch (36); work-dir=/data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/74/528f5595c48c19cb212ee6bd586621
+  error [nextflow.exception.ProcessFailedException]: Process `bbsplit_batch (36)` terminated with an error exit status (1)
+Mar-26 10:14:58.631 [Task submitter] INFO  nextflow.Session - [c7/7290ba] Submitted process > bbsplit_batch (22)
+Mar-26 10:14:58.677 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'bbsplit_batch (36)'
 
 Caused by:
-  Process `bbsplit_batch (10)` terminated with an error exit status (1)
+  Process `bbsplit_batch (36)` terminated with an error exit status (1)
 
 Command executed:
 
-  rename_1=$(basename $(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
-  rename_2=$(basename $(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
-  batch=$(python3 /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz)
+  rename_1=$(basename $(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
+  rename_2=$(basename $(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py 16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz) .fastq.gz)
+  batch=$(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz)
   
   
   if  [[ "${batch}" == "374" ]]
@@ -120,8 +75,8 @@ Command executed:
   echo 16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz >> ${rename_1}.txt
   
   
-  bbsplit.sh -Xmx25g in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz \
-  in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gz\
+  bbsplit.sh -Xmx50g in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz \
+  in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/data/local/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/data/local/MD_project/data/reference/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gz\
   scafstats=${rename_1}.scafstats.txt refstats=${rename_1}.refstats.txt \
   outu1=${rename_1}_clean1.fastq.gz outu2=${rename_2}_clean2.fastq.gz
   
@@ -136,66 +91,66 @@ Command output:
   (empty)
 
 Command error:
-  	at shared.KillSwitch.allocInt1D(KillSwit10874524654_Cut_0.fastq.gz in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz
-  Executing align2.BBSplitter [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, -Xmx25g, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, ref=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna,/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna, basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz]
-  
-  Converted arguments to [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, basename=o%.fastq.gzscafstats=P16_L001_tumour1_R1_B374_tumis.scafstats.txt, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz, ref_GCF_000001405.40_GRCh38.p14_genomic=/home/ubuntu/scratch/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna, ref_GCF_000001635.27_GRCm39_genomic=/home/ubuntu/scratch/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna]
-  Creating merged reference file ref/genome/1/merged_ref_4120913699124498.fa.gz
-  Ref merge time:     	536.236 seconds.
-  Executing align2.BBMap [ow=t, fastareadlen=500, minhits=1, minratio=0.56, maxindel=20, qtrim=rl, untrim=t, trimq=6, in=16-PDX_S1_L001_R1_001.1710874524654_Cut_0.fastq.gz, in2=16-PDX_S1_L001_R2_001.1710874524654_Cut_0.fastq.gz, refstats=P16_L001_tumour1_R1_B374_tumis.refstats.txt, outu1=P16_L001_tumour1_R1_B374_tumis_clean1.fastq.gz, outu2=P16_L001_tumour1_R2_B374_tumis_clean2.fastq.gz, ref=ref/genome/1/merged_ref_4120913699124498.fa.gz, out_GCF_000001405.40_GRCh38.p14_genomic=oGCF_000001405.40_GRCh38.p14_genomic.fastq.gzscafstats, out_GCF_000001635.27_GRCm39_genomic=oGCF_000001635.27_GRCm39_genomic.fastq.gzscafstats]
-  Version 39.06
-  
-  Set MINIMUM_ALIGNMENT_SCORE_RATIO to 0.560
-  Reference set statistics will be written to P16_L001_tumour1_R1_B374_tumis.refstats.txt
-  Retaining first best site only for ambiguous mappings.
-  NOTE:	Deleting contents of ref/genome/1 because reference is specified and overwrite=true
-  Writing reference.
-  Executing dna.FastaToChromArrays2 [ref/genome/1/merged_ref_4120913699124498.fa.gz, 1, writeinthread=false, genscaffoldinfo=true, retain, waitforwriting=false, gz=true, maxlen=536670912, writechroms=true, minscaf=1, midpad=300, startpad=8000, stoppad=8000, nodisk=false]
-  
-  Set genScaffoldInfo=true
-  Writing chunk 1
-  Writing chunk 2
-  Writing chunk 3
-  Writing chunk 4
-  Writing chunk 5
-  Writing chunk 6
-  Writing chunk 7
-  Writing chunk 8
-  Writing chunk 9
-  Writing chunk 10
-  Writing chunk 11
-  Writing chunk 12
-  Writing chunk 13
-  Set genome to 1
-  
-  Loaded Reference:	0.012 seconds.
-  Loading index for chunk 1-13, build 1
-  No index available; generating from reference genome: ref/index/1/chr1-3_index_k13_c2_b1.block
-  No index available; generating from reference genome: ref/index/1/chr4-7_index_k13_c2_b1.block
-  Indexing threads started for block 4-7
-  Indexing threads started for block 0-3
-  Indexing threads finished for block 0-3
-  No index available; generating from reference genome: ref/index/1/chr8-11_index_k13_c2_b1.block
-  Indexing threads started for block 8-11
-  Indexing threads finished for block 4-7
-  No index available; generating from reference genome: ref/index/1/chr12-13_index_k13_c2_b1.block
-  Indexing threads started for block 12-13
-  java.lang.OutOfMemoryError: Java heap space
-  	at shared.KillSwitch.allocInt1D(KillSwitch.java:207)
-  	at align2.IndexMaker4$BlockMaker$CountThread.run(IndexMaker4.java:277)
-  
-  This program ran out of memory.
-  Try increasing the -Xmx flag and using tool-specific memory-related parameters.
+      print(return_new_name(args[0]))
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py", line 14, in return_new_name
+      df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+      return _read(filepath_or_buffer, kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 577, in _read
+      parser = TextFileReader(filepath_or_buffer, **kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+      self._engine = self._make_engine(f, self.engine)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+      self.handles = get_handle(
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/common.py", line 859, in get_handle
+      handle = open(
+  FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv'
+  Traceback (most recent call last):
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py", line 32, in <module>
+      main(sys.argv[1:])
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py", line 27, in main
+      print(return_new_name(args[0]))
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py", line 14, in return_new_name
+      df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+      return _read(filepath_or_buffer, kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 577, in _read
+      parser = TextFileReader(filepath_or_buffer, **kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+      self._engine = self._make_engine(f, self.engine)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+      self.handles = get_handle(
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/common.py", line 859, in get_handle
+      handle = open(
+  FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv'
+  Traceback (most recent call last):
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py", line 32, in <module>
+      main(sys.argv[1:])
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py", line 27, in main
+      print(return_batch(args[0]))
+    File "/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py", line 14, in return_batch
+      df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+      return _read(filepath_or_buffer, kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 577, in _read
+      parser = TextFileReader(filepath_or_buffer, **kwds)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+      self._engine = self._make_engine(f, self.engine)
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+      self.handles = get_handle(
+    File "/usr/local/lib/python3.8/dist-packages/pandas/io/common.py", line 859, in get_handle
+      handle = open(
+  FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/scratch/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv'
 
 Work dir:
-  /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/ab/e3259f1df2f2cb9ff8488078c0b930
+  /data/local/MD_project/scripts/pipelines/exome/02_disambiguate_test/work/74/528f5595c48c19cb212ee6bd586621
 
-Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
-Mar-25 01:11:12.908 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `bbsplit_batch (10)` terminated with an error exit status (1)
-Mar-25 01:11:13.022 [main] DEBUG nextflow.Session - Session await > all processes finished
-Mar-25 01:11:13.023 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Mar-25 01:11:13.023 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Mar-25 01:11:13.076 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
-Mar-25 01:11:13.133 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=6; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=43; submittedCount=1; runningCount=-1; retriesCount=0; abortedCount=1; succeedDuration=16.7s; failedDuration=14m 29s; cachedDuration=0ms;loadCpus=-1; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
-Mar-25 01:11:13.339 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Mar-25 01:11:13.473 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Mar-26 10:14:58.683 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `bbsplit_batch (36)` terminated with an error exit status (1)
+Mar-26 10:14:58.695 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-26 10:14:58.697 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-26 10:14:58.697 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-26 10:14:58.709 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Mar-26 10:14:58.762 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=48; submittedCount=1; runningCount=-1; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=17.2s; cachedDuration=0ms;loadCpus=-1; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Mar-26 10:14:58.893 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-26 10:14:58.901 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
