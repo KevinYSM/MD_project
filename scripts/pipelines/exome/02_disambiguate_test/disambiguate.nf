@@ -1,4 +1,4 @@
-params.disambiguated_dir="/data/local/MD_project/data/exome/processed/02_disambiguated"
+params.disambiguated_dir="/data/local/MD_project/data/exome/processed/02_disambiguated_new"
 
 
 params.trimmed_umis="/data/local/MD_project/data/exome/processed/01_trimmed_umis/*_R{1,2}_*.fastq.gz"
@@ -65,7 +65,7 @@ process bbsplit_batch{
 }
 
 process bbsplit{
-        maxForks 1
+        maxForks 2
         
         publishDir params.disambiguated_dir, mode: 'copy'
     input:
@@ -73,10 +73,19 @@ process bbsplit{
     output:
         file '*'
     """
-    bbsplit.sh in=${TRIMMED_read_pair[1]} \\
-    in2=${TRIMMED_read_pair[2]} ref=${params.human_fasta},${params.mouse_fasta} basename=o%.fastq.gz\\
-    scafstats=${TRIMMED_read_pair[1]}.scafstats.txt refstats=${TRIMMED_read_pair[1]}.refstats.txt \\
-    outu1=${TRIMMED_read_pair[1]}_clean1.fastq.gz outu2=${TRIMMED_read_pair[1]}_clean2.fastq.gz
+    rename_1=\$(basename \$(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py ${TRIMMED_read_pair[1]}) .fastq.gz)
+    rename_2=\$(basename \$(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_rename.py ${TRIMMED_read_pair[2]}) .fastq.gz)
+    batch=\$(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_batch.py ${TRIMMED_read_pair[1]})
+    tumour=\$(python3 /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/helper_scripts/return_tumour.py ${TRIMMED_read_pair[1]})
+    
+    if  [[ "\${tumour}" == "tumour" ]]
+    then
+    bbsplit.sh -Xmx50g in=${TRIMMED_read_pair[1]} \\
+    in2=${TRIMMED_read_pair[2]} ref_human=${params.human_fasta} ref_mouse=${params.mouse_fasta} basename=out_%_\${rename_1}_#.fastq.gz scafstats=\${rename_1}.scafstats.txt refstats=\${rename_1}.refstats.txt 
+    
+    fi
+    touch a.txt
+
 """
 }
 
@@ -97,7 +106,7 @@ workflow{
     trimmed_umis_ch=Channel.fromFilePairs(params.trimmed_umis,flat:true)
     
     //test_rename(trimmed_umis_ch)
-    bbsplit_batch(trimmed_umis_ch)
+    bbsplit(trimmed_umis_ch)
     
 
 }

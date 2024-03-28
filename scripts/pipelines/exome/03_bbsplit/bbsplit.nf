@@ -16,7 +16,7 @@ process bbsplit{
     base=\$(echo ${TRIMMED_read_pair[1]} | rev | cut -c 1-9 | rev)
     
     /data/local/MD_scholarly/scripts/pipelines/nf-core/sarek/bin/bbmap/bbsplit.sh in=${TRIMMED_read_pair[1]} \\
-     in2=${TRIMMED_read_pair[2]} ref=${params.human_fasta},${params.mouse_fasta} basename=o%.fastq.gz\\
+     in2=${TRIMMED_read_pair[2]} ref=${params.human_fasta},${params.mouse_fasta} basename=o%.fastq.gz \\
     scafstats=${TRIMMED_read_pair[1]}.scafstats.txt refstats=${TRIMMED_read_pair[1]}.refstats.txt \\
     outu1=${TRIMMED_read_pair[1]}_clean1.fastq.gz outu2=${TRIMMED_read_pair[1]}_clean2.fastq.gz
     """
