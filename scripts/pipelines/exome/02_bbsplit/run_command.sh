@@ -1,5 +1,5 @@
 #!/bin/bash
-nextflow run disambiguate.nf \
+nextflow run bbsplit.nf \
 -resume \
 -c exome.config \
 /
