@@ -10,8 +10,8 @@ P50,L001,tumour1,R1,B374,50-PDX_S5_L001_R1_001.fastq.gz,P50_L001_tumour1_R1_B374
 P50,L001,tumour1,R2,B374,50-PDX_S5_L001_R2_001.fastq.gz,P50_L001_tumour1_R2_B374.fastq.gz,P50_L001_tumour1_R2_B374_tumis.fastq.gz
 P54,L001,tumour1,R1,B374,54-PDX_S6_L001_R1_001.fastq.gz,P54_L001_tumour1_R1_B374.fastq.gz,P54_L001_tumour1_R1_B374_tumis.fastq.gz
 P54,L001,tumour1,R2,B374,54-PDX_S6_L001_R2_001.fastq.gz,P54_L001_tumour1_R2_B374.fastq.gz,P54_L001_tumour1_R2_B374_tumis.fastq.gz
-P73,L001,normal1,R1,B374,73-PBMC_S7_L001_R1_001.fastq.gz,P73_L001_normal1_R1_B374.fastq.gz,P73_L001_normal1_R1_B374_tumis.fastq.gz
-P73,L001,normal1,R2,B374,73-PBMC_S7_L001_R2_001.fastq.gz,P73_L001_normal1_R2_B374.fastq.gz,P73_L001_normal1_R2_B374_tumis.fastq.gz
+P73,L001,tumour1,R1,B374,73-PBMC_S7_L001_R1_001.fastq.gz,P73_L001_normal1_R1_B374.fastq.gz,P73_L001_normal1_R1_B374_tumis.fastq.gz
+P73,L001,tumour1,R2,B374,73-PBMC_S7_L001_R2_001.fastq.gz,P73_L001_normal1_R2_B374.fastq.gz,P73_L001_normal1_R2_B374_tumis.fastq.gz
 P73,L001,normal1,R1,B374,73-biopsy_S8_L001_R1_001.fastq.gz,P73_L001_tumour1_R1_B374.fastq.gz,P73_L001_tumour1_R1_B374_tumis.fastq.gz
 P73,L001,normal1,R2,B374,73-biopsy_S8_L001_R2_001.fastq.gz,P73_L001_tumour1_R2_B374.fastq.gz,P73_L001_tumour1_R2_B374_tumis.fastq.gz
 P9,L001,tumour1,R1,B335,PCB-09-PDX_S1_L001_R1_001.fastq.gz,P9_L001_tumour1_R1_B335.fastq.gz,P9_L001_tumour1_R1_B335_tumis.fastq.gz
@@ -28,8 +28,8 @@ P126,L002,tumour1,R1,B952,PCB-126-PDX_S110_L002_R1_001.fastq.gz,P126_L002_tumour
 P126,L002,tumour1,R2,B952,PCB-126-PDX_S110_L002_R2_001.fastq.gz,P126_L002_tumour1_R2_B952.fastq.gz,P126_L002_tumour1_R2_B952_tumis.fastq.gz
 P126,L002,normal1,R1,B952,PCB-126-TIL_S111_L002_R1_001.fastq.gz,P126_L002_normal1_R1_B952.fastq.gz,P126_L002_normal1_R1_B952_tumis.fastq.gz
 P126,L002,normal1,R2,B952,PCB-126-TIL_S111_L002_R2_001.fastq.gz,P126_L002_normal1_R2_B952.fastq.gz,P126_L002_normal1_R2_B952_tumis.fastq.gz
-P138,L002,tumour1,R1,B952,PCB-138-PBMC_S114_L002_R1_001.fastq.gz,P138_L002_normal1_R1_B952.fastq.gz,P138_L002_normal1_R1_B952_tumis.fastq.gz
-P138,L002,tumour1,R2,B952,PCB-138-PBMC_S114_L002_R2_001.fastq.gz,P138_L002_normal1_R2_B952.fastq.gz,P138_L002_normal1_R2_B952_tumis.fastq.gz
+P138,L002,normal1,R1,B952,PCB-138-PBMC_S114_L002_R1_001.fastq.gz,P138_L002_normal1_R1_B952.fastq.gz,P138_L002_normal1_R1_B952_tumis.fastq.gz
+P138,L002,normal1,R2,B952,PCB-138-PBMC_S114_L002_R2_001.fastq.gz,P138_L002_normal1_R2_B952.fastq.gz,P138_L002_normal1_R2_B952_tumis.fastq.gz
 P138,L002,tumour1,R1,B952,PCB-138-PDX_S113_L002_R1_001.fastq.gz,P138_L002_tumour1_R1_B952.fastq.gz,P138_L002_tumour1_R1_B952_tumis.fastq.gz
 P138,L002,tumour1,R2,B952,PCB-138-PDX_S113_L002_R2_001.fastq.gz,P138_L002_tumour1_R2_B952.fastq.gz,P138_L002_tumour1_R2_B952_tumis.fastq.gz
 P141,L002,tumour1,R1,B952,PCB-141-PDX_S115_L002_R1_001.fastq.gz,P141_L002_tumour1_R1_B952.fastq.gz,P141_L002_tumour1_R1_B952_tumis.fastq.gz

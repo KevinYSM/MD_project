@@ -117,7 +117,8 @@ def create_all_samplesheet(all_samples):
                             
                                 if (attributes_1["ID"]==attributes_2["ID"]
                                 and attributes_1["status"]==attributes_2["status"]
-                                and attributes_2["read"]=="2"):
+                                and attributes_2["read"]=="2"
+                                and attributes_1["lane"]==attributes_2["lane"]):
                                         pair=[sample_1,sample_2]
                                         paired.insert(0,pair)
                                         pair_count=pair_count+1
@@ -173,7 +174,8 @@ def get_attributes(samplesheet_name):
         if ((re.search("tumour",samplesheet_name)!=None)):
                 attributes["status"]="tumour"
         elif ((re.search("normal",samplesheet_name)!=None)):
-                attributes["status"]="normal"
+                attributes["status"]="normal"\
+        
  
         return attributes
 
@@ -228,6 +230,7 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                         lane="ERROR"
            
                         print("ERROR with lane attribute")
+                        print(read1,read2)
                         return 0
 
                 sex=attributes_1["sex"] 
@@ -246,9 +249,9 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                         return 0
                 
                 if ("normal2" in read1):
-                        sample=patient+"_"+attributes_1["status"]+"sample_2"
+                        sample=patient+"_"+attributes_1["status"]+"_sample_2"
                 elif("tumour2" in read1):
-                        sample=patient+"_"+attributes_1["status"]+"sample_2"
+                        sample=patient+"_"+attributes_1["status"]+"_sample_2"
                 else:   
                         sample=patient+"_"+attributes_1["status"]+"_sample" 
                 
@@ -260,6 +263,7 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                                         read1=trimmed_umis_dir+"/"+f[0]
                 else:
                         read1=bbsplit_dir+"/"+read1
+                        print(read1)
                 if ("normal" in read2):
                         for f in normal_fastqs:
                                 tumi_name=f[1]
@@ -267,6 +271,7 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                                         read2=trimmed_umis_dir+"/"+f[0]
                 else:
                         read2=bbsplit_dir+"/"+read2
+                        
 
                 if ("clean" in read1):
                         basedir=bbsplit_dir

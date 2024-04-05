@@ -1,7 +1,7 @@
 params.disambiguated_dir="/data/local/MD_project/data/exome/processed/02_disambiguated_new"
 
 
-params.trimmed_umis="/data/local/MD_project/data/exome/processed/01_trimmed_umis/*_R{1,2}_*.fastq.gz"
+params.trimmed_umis="/data/local/MD_project/data/exome/processed/01_trimmed_umis/73*_R{1,2}_*.fastq.gz"
 params.mouse_fasta="/data/local/MD_project/data/reference/mouse/ncbi_dataset/data/GCF_000001635.27/GCF_000001635.27_GRCm39_genomic.fna"
 params.human_fasta="/data/local/MD_project/data/reference/human/ncbi_dataset/data/GCF_000001405.40/GCF_000001405.40_GRCh38.p14_genomic.fna"
 

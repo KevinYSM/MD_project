@@ -8,6 +8,7 @@ star_salmon
 outdir2
 .nextflow
 work
+work2
 scripts/pipelines/nf-core/rnaseq/.nextflow.log*
 scripts/pipelines/nf-core/rnaseq/.nextflow.log.4
 scripts/pipelines/nf-core/rnaseq/.nextflow.log
@@ -30,3 +31,5 @@ data/
 
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log.1
+pipeline_tmp
+results
