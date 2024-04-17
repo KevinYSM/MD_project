@@ -27,14 +27,14 @@ SINGULARITY_LOCALCACHEDIR="/data/local/MD_project/scripts/pipelines/exome/05_sar
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work/batch_1 \
+    -w work_disambiguate/batch_1 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/batch_1.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim \
+    --input inputs_disambiguate/batch_1.csv \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \
@@ -42,74 +42,74 @@ nextflow run nf-core/sarek \
     --wes \
     --tmp-dir /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/pipeline_tmp/s_tmp
 
-
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work/batch_2 \
+    -w work_disambiguate/batch_2 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/batch_2.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim \
+    --input inputs_disambiguate/batch_2.csv \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \
     --tools mutect2,controlfreec,cnvkit,msisensorpro,vep,tiddit,haplotypecaller,manta,snpeff \
-    --wes
-
+    --wes \
+    --tmp-dir /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/pipeline_tmp/s_tmp
 
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work/batch_3 \
+    -w work_disambiguate/batch_3 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/batch_3.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim \
+    --input inputs_disambiguate/batch_3.csv \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \
     --tools mutect2,controlfreec,cnvkit,msisensorpro,vep,tiddit,haplotypecaller,manta,snpeff \
-    --wes
-
+    --wes \
+    --tmp-dir /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/pipeline_tmp/s_tmp
 
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work/batch_4 \
+    -w work_disambiguate/batch_4 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/batch_4.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim \
+    --input inputs_disambiguate/batch_4.csv \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate_2 \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \
     --tools mutect2,controlfreec,cnvkit,msisensorpro,vep,tiddit,haplotypecaller,manta,snpeff \
-    --wes
-
+    --wes \
+    --tmp-dir /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/pipeline_tmp/s_tmp
 
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work/batch_5 \
+    -w work_disambiguate/batch_5 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/batch_5.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim \
+    --input inputs_disambiguate/batch_5.csv \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \
     --tools mutect2,controlfreec,cnvkit,msisensorpro,vep,tiddit,haplotypecaller,manta,snpeff \
-    --wes
+    --wes \
+    --tmp-dir /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/pipeline_tmp/s_tmp

@@ -1,0 +1,1 @@
+cat file.fa | awk '$0 ~ ">" {print c;c=0} $0 !~ ">" {c+=length($0);} END { print c; }' | sed '/^$/d' | sort | uniq -c | awk '{print $1,$2}'
