@@ -53,3 +53,4 @@ scripts/pipelines/exome/05_sarek/work2
 **/results_disambiguate/
 **/results_*/
 **/work*/
+file_transfer.sh
