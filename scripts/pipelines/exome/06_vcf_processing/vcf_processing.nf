@@ -1,5 +1,5 @@
-params.vcf_files="/data/local/proj/bioinformatics_project/data/processed/variant_calling_workflow_nextflow/*.vcf.gz"
-params.outdir="/data/local/proj/bioinformatics_project/data/processed/vcf_processing_workflow/"
+params.vcf_files="/home/ubuntu/scratch/MD_project/data/exome/processed/variant_calling/mutect2/*/*.filtered.vcf.gz"
+params.outdir="/home/ubuntu/scratch/MD_project/data/exome/processed/maf/"
 
 process VEP {
     publishDir "${params.outdir}", mode: 'copy'
@@ -12,29 +12,24 @@ process VEP {
     script:
     """
     vcf=\$(basename "${vcf_gz}" ".vcf.gz").vcf
-    bgzip -d -c -f "${vcf_gz}" > "\$vcf"
+    bgzip -dcf "${vcf_gz}" > "\$vcf"
 
- 
+    echo \$vcf
 
     if [ ! -d output_vep_updated ]
     then
         mkdir output_vep_updated
+
     fi
-    singularity exec \
-        -B \$(pwd)/output_vep_updated:/output_vep_updated \
-        -B /data/vep_cache:/.vep \
-        -B "\$vcf":/\$(basename "\$vcf") \
-        /home/ubuntu/vep.sif /opt/vep/src/ensembl-vep/vep \
+    vep \
         --species homo_sapiens \
         --assembly GRCh38 \
-        --offline \
-        --cache \
-        --dir /.vep \
-        --input_file /\$(basename "\$vcf") \
-        --output_file /output_vep_updated/\$(basename "\$vcf" ".vcf").ann.vcf \
+        --dir /home/ubuntu/.vep \
+        --input_file \$(basename "\$vcf") \
+        --output_file output_vep_updated/\$(basename "\$vcf" ".vcf").ann.vcf \
         --everything \
         --vcf \
-        --fasta /.vep/homo_sapiens/105_GRCh38/Homo_sapiens_assembly38.fasta \
+        --database \
         --force_overwrite
     """
 }
@@ -51,12 +46,12 @@ process VCF2MAF {
     script:
     """
     tumor_id=\$(basename "${vcf}" ".ann.vcf" |  awk -F"_L004" '{print \$1}')
-    vcf2maf.pl \
+    perl /home/ubuntu/bin/mskcc-vcf2maf-754d68a/vcf2maf.pl \
         --inhibit-vep \
         --input-vcf "${vcf}" \
         --output-maf \$(basename "${vcf}" ".vcf").maf \
         --tumor-id "\$tumor_id" \
-        --ref-fasta /data/vep_cache/homo_sapiens/105_GRCh38/Homo_sapiens_assembly38.fasta \
+        --ref-fasta /home/ubuntu/scratch/MD_project/data/reference/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
         --ncbi-build GRCh38
     """
 }
