@@ -25,7 +25,7 @@ process VEP {
         --species homo_sapiens \
         --assembly GRCh38 \
         --dir /home/ubuntu/.vep \
-        --input_file \$(basename "\$vcf") \
+        --input_file \$vcf \
         --output_file output_vep_updated/\$(basename "\$vcf" ".vcf").ann.vcf \
         --everything \
         --vcf \

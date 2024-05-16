@@ -22,5 +22,5 @@ SINGULARITY_LOCALCACHEDIR="/data/local/MD_project/scripts/pipelines/exome/05_sar
 
 nextflow run vcf_processing.nf \
     -resume \
-    --max_memory '120.GB' \
-    --max_cpus 63 
+    --max_memory '32.GB' \
+    --max_cpus 8 
