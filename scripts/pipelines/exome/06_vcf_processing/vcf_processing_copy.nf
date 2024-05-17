@@ -1,4 +1,4 @@
-params.vcf_files="/home/ubuntu/scratch/MD_project/data/exome/processed/variant_calling_0605/04_sarek_joakim_disambiguate/variant_calling/mutect2/*/*.filtered.vcf.gz"
+params.vcf_files="/home/ubuntu/scratch/MD_project/data/exome/processed/variant_calling_0605/mutect2/*/*.filtered.vcf.gz"
 params.outdir="/home/ubuntu/scratch/MD_project/data/exome/processed/maf/"
 
 process VEP {
@@ -24,11 +24,12 @@ process VEP {
     vep \
         --species homo_sapiens \
         --assembly GRCh38 \
+        --dir /home/ubuntu/.vep \
         --input_file \$vcf \
         --output_file output_vep_updated/\$(basename "\$vcf" ".vcf").ann.vcf \
         --everything \
         --vcf \
-        --cache \
+        --database \
         --force_overwrite
     """
 }
@@ -57,7 +58,5 @@ process VCF2MAF {
 
 workflow{
     VEP_ch=Channel.fromPath(params.vcf_files)
-    VCF_ch=VEP(VEP_ch)
-    VCF_ch.view()
-    VCF2MAF(VCF_ch)
+    VEP_ch.view()
 }
