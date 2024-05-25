@@ -4,7 +4,7 @@ import re
 import shutil
 import csv
 
-bbsplit_dir="/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit"
+bbsplit_dir="/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated"
 normal_dir="/data/local/MD_scholarly/data/processed/exome/02_renamed"
 batch_ids=["335","374","693","952"]
 
