@@ -57,7 +57,7 @@ process VCF2MAF {
 
 workflow{
     VEP_ch=Channel.fromPath(params.vcf_files)
-    VCF_ch=VEP(VEP_ch)
-    VCF_ch.view()
-    VCF2MAF(VCF_ch)
+    //VCF_ch=VEP(VEP_ch)
+    //VCF_ch.view()
+    VCF2MAF(VEP_ch)
 }
