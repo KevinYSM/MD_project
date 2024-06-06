@@ -1,4 +1,4 @@
-params.vcf_files="/home/ubuntu/scratch/MD_project/data/exome/processed/variant_calling_0605/04_sarek_joakim_disambiguate/variant_calling/mutect2/*/*.filtered.vcf.gz"
+params.vcf_files="/home/ubuntu/scratch/MD_project/data/exome/processed/variant_calling_0605/04_sarek_joakim_disambiguate/annotation/mutect2/*/*_VEP.ann.vcf.gz"
 params.outdir="/home/ubuntu/scratch/MD_project/data/exome/processed/maf/"
 
 process VEP {
