@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+for f in *.fastq.gz; do fastqc -t 6 $f -o /home/ubuntu/scratch/MD_project/data/exome/processed/01_fastqcs &>> /home/ubuntu/scratch/MD_project/data/exome/processed/01_fastqcs/output.txt; done

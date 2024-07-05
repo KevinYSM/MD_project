@@ -1,0 +1,3 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+9,XY,1,9_tumour_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P9M_L001_tumour1_R1_B335_tumis.fastq.gz_clean1.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P9M_L001_tumour1_R1_B335_tumis.fastq.gz_clean2.fastq.gz
+9,XY,0,9_normal_sample,1,/data/local/MD_scholarly/data/processed/exome/02_renamed/P9M_L001_normal1_R1_B335_tumis.fastq.gz,/data/local/MD_scholarly/data/processed/exome/02_renamed/P9M_L001_normal1_R2_B335_tumis.fastq.gz
