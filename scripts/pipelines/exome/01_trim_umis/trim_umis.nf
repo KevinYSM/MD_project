@@ -1,4 +1,4 @@
-params.EXOME_raw_reads_directory="/home/ubuntu/scratch/MD_project/data/exome/raw/unbatched/*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads_directory="/home/ubuntu/scratch/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 
 
 
