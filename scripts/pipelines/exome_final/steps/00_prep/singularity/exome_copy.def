@@ -1,0 +1,14 @@
+Bootstrap: localimage
+From: exome.sif
+
+%files
+
+%environment
+        
+        export PATH=$PATH:/java/jdk-21.0.3/bin
+
+%post
+    
+
+%runscript
+ 
