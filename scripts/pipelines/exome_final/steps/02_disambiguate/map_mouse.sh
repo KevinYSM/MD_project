@@ -3,7 +3,7 @@ if [ ! -d "logs" ]
 then
     mkdir logs
 fi
-log_file=logs/$(basename "$0").$(date +"%r%d%h%y" | awk '{print $1"_"$2}')."$RANDOM".log
+log_file=logs/$(basename "$0").$(date +"%r%d%h%y" )."$RANDOM".log
 exec &> >(tee -a "$log_file")
 
 echo "$CONDA_PREFIX"
@@ -18,13 +18,13 @@ set -o verbose
 nextflow run nf-core/sarek \
     -profile singularity \
     -c custom.config \
-    -w work_mouse \
+    -w $1 \
     -resume \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
     --input inputs/tumi_tumour.csv \
-    --outdir results_mouse \
+    --outdir $2 \
     --genome GRCm38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \

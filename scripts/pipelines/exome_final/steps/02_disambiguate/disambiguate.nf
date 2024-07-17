@@ -2,11 +2,6 @@
 
 nextflow.enable.dsl=2
 
-params.cram_human = '/data/local/MD_project/scripts/pipelines/exome/02_disambiguate_joakim/results_human/preprocessing/mapped/*/*.cram'
-params.cram_mouse = '/data/local/MD_project/scripts/pipelines/exome/02_disambiguate_joakim/results_mouse/preprocessing/mapped/*/*.cram'
-params.outdir = 'results_disambiguate'
-params.fasta_human = '/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta'
-params.fasta_mouse = '/data/local/reference/aws/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa'
 
 cram_human_ch = Channel.fromFilePairs( params.cram_human, size: 1)
 cram_mouse_ch = Channel.fromFilePairs( params.cram_mouse, size: 1)
