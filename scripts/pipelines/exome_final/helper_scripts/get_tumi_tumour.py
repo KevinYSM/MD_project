@@ -5,27 +5,26 @@ import shutil
 import csv
 
 bbsplit_dir="/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new"
-trimmed_umis_dir="/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis"
+trimmed_umis_dir="/home/ubuntu/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone"
 batch_ids=["335","374","693","952"]
-rename_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv"
+rename_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/file_rename_tumis_table.csv"
 sex_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/patient_sex.csv"
 def main():
         #normal_fastqs=get_normal_fastqs(trimmed_umis_dir)
        # print(normal_fastqs[1][1])
-        all_samples=get_fastqs(bbsplit_dir,trimmed_umis_dir)
-     
-        generate_samplesheets(all_samples)
+        
+
+
+        pattern=re.compile(r'.*\.fastq\.gz')
+        all_fastqs=get_all_fastqs(trimmed_umis_dir)
+        print(all_fastqs)
+        create_all_samplesheet(all_fastqs)
        
-   
+        
         return 0
 
 
-def generate_samplesheets(all_samples): 
-        paired={}
-        create_all_samplesheet(all_samples)
-        #for batch in batches:
-        #      create_paired_samplesheet(batch)
-              
+
 def get_batches(filtered_files, batch_ids):
         batches=[]
 
@@ -58,6 +57,41 @@ def get_tumour_fastqs(dir):
        
         return tumour_fastqs_with_key
 
+def get_all_fastqs(dir):
+        df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
+        sex_df=pd.read_csv(sex_table, names=["Patient_ID","Sex"])
+        
+
+        
+        count=0
+        failed_fastqs=[]
+        all_fastqs=[]
+        for basename in os.listdir(dir):
+                f=os.path.join(dir, basename)
+                if os.path.isfile(f) and f.endswith(".fastq.gz"):
+                        print(basename)
+                        print(basename[:-29])
+                     
+                        row=df.loc[df['Raw_name'].str.contains(basename[:-29])]     
+                                
+                       
+                        
+
+                        if not (row.empty):
+                                tumi_name=row["Tumi_name"].values.tolist()[0]
+                                all_fastqs.append(tumi_name)
+                                count=count+1
+                        else:
+                                failed_fastqs.append(basename)
+                        
+                        
+                                  
+        with open("/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/failed_fastqs.csv", 'w') as myfile:
+                wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+                for fastq in failed_fastqs:
+                        wr.writerow([fastq])
+        return all_fastqs
+
 def get_normal_fastqs(dir):
         df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
         sex_df=pd.read_csv(sex_table, names=["Patient_ID","Sex"])
@@ -82,7 +116,7 @@ def get_normal_fastqs(dir):
         return normal_fastqs_with_key
 
 
-def get_fastqs(bbsplit_dir, trimmed_umis_dir):
+def get_fastqs(trimmed_umis_dir):
         
         tumour_samples_paired= get_tumour_fastqs(trimmed_umis_dir)
         tumour_samples_tumi_name=[]
@@ -123,7 +157,7 @@ def get_fastqs(bbsplit_dir, trimmed_umis_dir):
 
 def create_all_samplesheet(all_samples):
         print(len(all_samples))
-        all_csv="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/04_samplesheets/samplesheets/"+"tumi_tumour.csv"
+        all_csv="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/tumi_tumour.csv"
         if (os.path.exists(all_csv)):
                 f=open(all_csv,"w")
                 f.truncate()
@@ -134,7 +168,7 @@ def create_all_samplesheet(all_samples):
                 batch_id=get_attributes(sample_1)["batch"]
                 
                
-                
+               
                 attributes_1=get_attributes(sample_1)
                 for sample_2 in all_samples:
                         attributes_2=get_attributes(sample_2)
@@ -148,6 +182,7 @@ def create_all_samplesheet(all_samples):
                                         pair=[sample_1,sample_2]
                                         paired.insert(0,pair)
                                         pair_count=pair_count+1
+                        
                                         
         print("Number of paired fastqs: "+str(pair_count))
     
@@ -170,6 +205,7 @@ def get_sex(patient_id):
 
   
 def get_attributes(samplesheet_name):
+      
       
         attributes={}
      
@@ -313,15 +349,12 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                        
                         
 
-                if ("clean" in read1):
-                        basedir=bbsplit_dir
-                else:
-                        basedir="/data/local/MD_scholarly/data/processed/exome/02_renamed"
-                if (status=="1"):
-                        row=str(attributes_1["ID"]+","+sex+","+status+","+sample+","+lane+","+read1+","+read2)
-                   
-                        i=i+1
-                        writer.writerow([row])
+                basedir="/data/local/MD_scholarly/data/processed/exome/02_renamed"
+                
+                row=str(attributes_1["ID"]+","+sex+","+status+","+sample+","+lane+","+read1+","+read2)
+                
+                i=i+1
+                writer.writerow([row])
          
                 #writer.writerow([str(element+","+"/data/local/MD_scholarly/data/raw/rnaseq/fastqs/"+fastq_pair[0]+","+"/data/local/MD_scholarly/data/raw/rnaseq/fastqs/"+fastq_pair[1]+",auto")])
    

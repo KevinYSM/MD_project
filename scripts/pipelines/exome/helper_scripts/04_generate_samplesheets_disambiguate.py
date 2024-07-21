@@ -5,7 +5,7 @@ import shutil
 import csv
 
 bbsplit_dir="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/02_disambiguate_joakim/results_disambiguate/bam_to_fastq/"
-trimmed_umis_dir="/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/"
+trimmed_umis_dir=sys.argv[1]
 batch_ids=["335","374","693","952"]
 rename_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/file_rename_tumis_table.csv"
 sex_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome/patient_sex.csv"
