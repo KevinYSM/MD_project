@@ -16,14 +16,13 @@ set -o xtrace
 set -o verbose
 
 nextflow run nf-core/sarek \
-    -profile singularity \
-    -c custom.config \
+    -with-singularity $SIF \
     -w $1 \
     -resume \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input inputs/tumi_tumour.csv \
+    --input /home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/tumi_tumour.csv \
     --outdir $2 \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \

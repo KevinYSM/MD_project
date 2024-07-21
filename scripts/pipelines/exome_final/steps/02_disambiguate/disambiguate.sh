@@ -27,4 +27,3 @@ nextflow run disambiguate.nf \
  -w work_disambiguate \
  --max_memory '120.GB' \
  --max_cpus 63 \
- -c disambiguate.config

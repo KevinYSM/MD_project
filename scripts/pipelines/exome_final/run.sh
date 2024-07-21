@@ -6,19 +6,24 @@ JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 
 SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome.sif"
 EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
-TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis"
+TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone"
 
 
 
 #01_Trim UMIs
 TRIM_UMIS_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/01_trim_umis/trim_umis.nf"
-nextflow run $TRIM_UMIS_NF -with-singularity $SIF --EXOME_RAW_READS $EXOME_RAW_READS --TRIMMED_DIR $TRIMMED_DIR
+TRIM_UMIS_WORK="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/work/01_trim_umis"
+#nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
+
+
+#Generate Sample Sheets
+python3 /data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/04_generate_samplesheets_disambiguate.py $TRIMMED_DIR
 
 #02_Disambiguate
-WORK_HUMAN_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/work_human"
+WORK_HUMAN_DIR="/data/local/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/human"
 RESULTS_HUMAN_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_human"
 
-WORK_MOUSE_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/work_mouse"
+WORK_MOUSE_DIR="/data/local/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/mouse"
 RESULTS_MOUSE_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_mouse"
 RESULTS_DISAMBIGUATE_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_disambiguate"
 
@@ -39,6 +44,8 @@ DISAMBIGUATE_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_d
 
 
 #nextflow run $DISAMBIGUATE_NF -with-singularity $SIF --cram_human $CRAM_HUMAN --cram_mouse $CRAM_MOUSE --fasta_human $FASTA_HUMAN --fasta_mouse $FASTA_MOUSE --outdir $RESULTS_DISAMBIGUATE_DIR
+
+
 #03_Prepare Samplesheets
 
 #SAREK

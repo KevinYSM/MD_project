@@ -1,14 +1,14 @@
-params.EXOME_raw_reads_directory="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads_directory_old="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
+
+params.EXOME_raw_reads=  "/data/local/MD_project/data/exome/raw/*/fastqs/PCB-31-TIL*_R{1,2}_*.fastq.gz"
+
+params.UNFINISHED="/data/local/MD_project/data/exome/raw/*/PCB-31-TIL*.fastq.gz"
 
 
 
-params.trimmed_dir="/home/ubuntu/scratch/MD_project/data/exome/processed_final/01_trimmed_umis"
-
-
-params.test_dir="/home/ubuntu/data/local/MD_scholarly/data/processed/exome/test"
 process AGENT_trim_umis{ 
         maxForks 3
-        publishDir params.trimmed_dir, mode: 'copy'
+        publishDir params.TRIMMED_DIR, mode: 'copy'
     input:
         file EXOME_read_pair
     output:
@@ -22,9 +22,7 @@ process AGENT_trim_umis{
 
 
 workflow{
-    read_pairs_ch = Channel.fromFilePairs(params.EXOME_raw_reads_directory, flat: true)
+    read_pairs_ch = Channel.fromFilePairs(params.EXOME_raw_reads, flat: true)
     read_pairs_ch.view()
     AGENT_trim_umis(read_pairs_ch)
-
-
 }

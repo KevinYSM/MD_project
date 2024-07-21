@@ -8,6 +8,7 @@ From: ubuntu:20.04
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
         export PATH=$PATH:/java/jdk-21.0.3/bin
+        export PATH=$PATH:/micromamba/bin
 
 %post
         mkdir -p /mnt/data
@@ -26,6 +27,7 @@ From: ubuntu:20.04
                 curl \
                 unzip \
                 zip \
+                libbamtools-dev \
                 && apt-get clean
 
         # Download and install samtools 1.20
@@ -49,6 +51,16 @@ From: ubuntu:20.04
         mv AGeNT_3.1.2.zip AGeNT/
         unzip AGeNT/AGeNT_3.1.2.zip -d AGeNT/
         export PATH="/AGeNT/agent:$PATH"
+
+        #Install ngs_disambiguate
+        mkdir ngs_disambiguate
+        cd ngs_disambiguate
+        wget https://anaconda.org/bioconda/ngs-disambiguate/2018.05.03/download/linux-64/ngs-disambiguate-2018.05.03-h7a259b3_9.tar.bz2
+        tar xvf ngs-disambiguate-2018.05.03-h7a259b3_9.tar.bz2
+        cd ..
+      
+    
+
 
 
     
