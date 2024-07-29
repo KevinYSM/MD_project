@@ -22,7 +22,7 @@ nextflow run nf-core/sarek \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --max_memory '120.GB' \
-    --input /home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/tumi_tumour.csv \
+    --input /home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/tumi_tumour.csv \
     --outdir $2 \
     --genome GRCm38 \
     --igenomes_base /data/local/reference/aws/igenomes \

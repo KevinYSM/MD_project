@@ -5,32 +5,9 @@ From: exome.sif
 
 %environment
         
-        export PATH=$PATH:/java/jdk-21.0.3/bin
-        export PATH=$PATH:/ngs_disambiguate/bin
-        export PATH=$PATH:/bamtools2.5.2/bin
 
 %post
-       
-        apt-get update
-        apt-get install -y g++-11
-        apt-get install libstdc++6
-        apt-get upgrade libstdc++6
-        apt-get dist-upgrade
-
-        
-        #Install bamtools2.5.2
-        mkdir /bamtools2.5.2
-        cd /bamtools2.5.2
-        wget https://anaconda.org/bioconda/bamtools/2.5.2/download/linux-64/bamtools-2.5.2-hdcf5f25_5.tar.bz2
-        tar xvf bamtools-2.5.2-hdcf5f25_5.tar.bz2
-
-
-
-        #Install ngs_disambiguate
-        mkdir /ngs_disambiguate
-        cd /ngs_disambiguate
-        wget https://anaconda.org/bioconda/ngs-disambiguate/2018.05.03/download/linux-64/ngs-disambiguate-2018.05.03-h7a259b3_9.tar.bz2
-        tar xvf ngs-disambiguate-2018.05.03-h7a259b3_9.tar.bz2
+       chmod +x /AGeNT/agent/agent.sh
         
 
 %runscript
