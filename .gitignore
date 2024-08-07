@@ -28,6 +28,7 @@ processed
 *.gz
 data/
 *.nextflow.*
+gatk/
 
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log.1

@@ -100,15 +100,9 @@ process BAM_TO_FASTQ {
 
 workflow {
     
-    
-    cram_human_ch = Channel
-        .fromPath(params.cram_human)
-        .map { file -> tuple(file.baseName, file) }
-
-    cram_mouse_ch = Channel
-        .fromPath(params.cram_mouse)
-        .map { file -> tuple(file.baseName, file) }
-    cram_mouse_ch.view()
+    cram_human_ch = Channel.fromFilePairs( params.cram_human, size: 1)
+    cram_mouse_ch = Channel.fromFilePairs( params.cram_mouse, size: 1)
+    cram_human_ch.view()
     cram_to_bam_human_ch = CRAM_TO_BAM_HUMAN(
         cram_human_ch
     )
@@ -127,6 +121,5 @@ workflow {
     BAM_TO_FASTQ(
         disambiguate_ch
     )
-
 
 }

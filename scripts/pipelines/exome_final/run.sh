@@ -4,7 +4,7 @@ JAVA_HOME="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 
 
-SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome.sif"
+SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif"
 EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
 
@@ -16,7 +16,7 @@ TRIM_UMIS_WORK="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final
 #nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
 
 
-#Generate Sample Sheets
+#Generate Tumour Sample Sheets
 #python3 /data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/get_tumi_tumour.py $TRIMMED_DIR
 
 #02_Disambiguate
@@ -32,18 +32,22 @@ MAP_MOUSE="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambi
 #source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
 #source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
 
-CRAM_HUMAN=$RESULTS_HUMAN_DIR+'/preprocessing/mapped/*/*.cram'
-CRAM_MOUSE=$RESULTS_MOUSE_DIR+'/preprocessing/mapped/*/*.cram'
-
-FASTA_HUMAN= "/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
-FASTA_MOUSE= "/data/local/reference/aws/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
+CRAM_HUMAN='/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_human/preprocessing/mapped/*/*.cram'
+CRAM_MOUSE='/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_mouse/preprocessing/mapped/*/*.cram'
+FASTA_MOUSE="/data/local/reference/aws/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
+FASTA_HUMAN="/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
 
 
 DISAMBIGUATE_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/disambiguate.nf"
 
 
 
-nextflow run $DISAMBIGUATE_NF -with-singularity $SIF --cram_human $CRAM_HUMAN --cram_mouse $CRAM_MOUSE --fasta_human "/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta" --fasta_mouse "/data/local/reference/aws/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa" --outdir $RESULTS_DISAMBIGUATE_DIR -resume
+nextflow run $DISAMBIGUATE_NF -with-singularity $SIF --cram_human "$CRAM_HUMAN" --cram_mouse "$CRAM_MOUSE" \
+ --fasta_mouse $FASTA_MOUSE \
+ --fasta_human $FASTA_HUMAN \
+ --outdir $RESULTS_DISAMBIGUATE_DIR -resume \
+ --max_memory '120.GB' \
+ --max_cpus 63 \
 
 
 #03_Prepare Samplesheets

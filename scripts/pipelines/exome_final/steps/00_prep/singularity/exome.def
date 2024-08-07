@@ -2,13 +2,15 @@ Bootstrap: docker
 From: ubuntu:20.04
 
 %files
-        /home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/AGeNT_3.1.2.zip .
+        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/AGeNT_3.1.2.zip .
+        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/ngs_disambiguate .
 
 %environment
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
         export PATH=$PATH:/java/jdk-21.0.3/bin
         export PATH=$PATH:/micromamba/bin
+        
 
 %post
         mkdir -p /mnt/data
@@ -51,6 +53,13 @@ From: ubuntu:20.04
         mv AGeNT_3.1.2.zip AGeNT/
         unzip AGeNT/AGeNT_3.1.2.zip -d AGeNT/
         export PATH="/AGeNT/agent:$PATH"
+        chmod +x /AGeNT/agent/agent.sh
+        
+        #Install Pysam (for ngs_disambiguate)
+        apt install -y python3
+        apt-get install -y python3-pip
+        apt install -y git-core
+        pip install pysam
 
         #Install ngs_disambiguate
         mkdir ngs_disambiguate
