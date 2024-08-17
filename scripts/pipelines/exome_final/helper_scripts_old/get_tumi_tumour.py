@@ -59,13 +59,20 @@ def get_all_fastqs(dir):
                 if os.path.isfile(f) and f.endswith(".fastq.gz"):
                         print(basename)
                         print(basename[:-29])
+                     
                         row=df.loc[df['Raw_name'].str.contains(basename[:-29])]     
+                                
+                       
+                        
+
                         if not (row.empty):
                                 tumi_name=row["Tumi_name"].values.tolist()[0]
                                 all_fastqs.append(tumi_name)
                                 count=count+1
                         else:
                                 failed_fastqs.append(basename)
+                        
+                        
                                   
         with open("/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/failed_fastqs.csv", 'w') as myfile:
                 wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)

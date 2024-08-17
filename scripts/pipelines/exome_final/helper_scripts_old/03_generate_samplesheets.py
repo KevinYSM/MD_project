@@ -4,117 +4,13 @@ import re
 import shutil
 import csv
 
-tumour_dir="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_disambiguate/bam_to_fastq/"
-all_samples_dir="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_/"
+tumour_dir="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_disambiguate/bam_to_fastq"
+normal_dir="/data/local/MD_scholarly/data/processed/exome/02_renamed"
 batch_ids=["335","374","693","952"]
-rename_table="/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/file_rename_tumis_table.csv"
-sex_table="/data/local/MD_project/scripts/pipelines/exome/patient_sex.csv"
 
 def main():
-        tumour_samples=os.listdir(tumour_dir) #These samples have been disambiguated
-        normal_samples=get_all_fastqs(all_samples_dir)
-
-        for i in range(len(tumour_samples)):
-                tumour_samples[i]=tumour_dir+tumour_samples[i]
-
-        for i in range(len(normal_samples)):
-                normal_samples[i]=all_samples_dir+normal_samples[i]
-
-        all_samples=normal_samples+tumour_samples
-        all_samples.sort()
-        create_samplesheet(all_samples)
-        with open("/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/samples_list.csv","w",newline='') as myfile:
-                wr=csv.writer(myfile, quoting=csv.QUOTE_ALL)
-                wr.writerow(all_samples)
-        
-        #create_blank_samplesheet(all_samples)
+        tumour_samples= os.listdir(tumour_dir)
         return 0
-
-def create_samplesheet(samples):
-        f=open("/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/blank_samplesheet.csv","a")
-     
-        writer=csv.writer(f, delimiter="|") 
-        if not (check_csv_for_text("/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/blank_samplesheet.csv")):
-                writer.writerow(["patient,sex,status,sample,lane,fastq_1,fastq_2"])
-
-        while (len(samples)>0):
-                read1=samples.pop()
-                read2=samples.pop()
-                
-                basename1 = os.path.basename(read1)
-                basename2 = os.path.basename(read2)
-                if (basename1[:10] == basename2[:10]):
-                        ID,sex,status,sample,lane="","","","",""
-                        row=str(ID+","+sex+","+status+","+sample+","+lane+","+read1+","+read2)
-                        writer.writerow([row])
-                
-def create_all_samplesheet(all_samples):
-        print(len(all_samples))
-        all_csv="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/all.csv"
-        if (os.path.exists(all_csv)):
-                f=open(all_csv,"w")
-                f.truncate()
-                f.close()
-        paired=[]
-        pair_count=0
-        for sample_keys_1 in all_samples:
-                sample_1=sample_keys_1[1]
-                attributes_1=get_attributes(sample_1)
-                for sample_keys_2 in all_samples:
-                        sample_2=sample_keys_1[1]
-                        attributes_2=get_attributes(sample_2)
-        
-                        if (attributes_1["read"]=="1"):
-                            
-                                if (attributes_1["ID"]==attributes_2["ID"]
-                                and attributes_1["status"]==attributes_2["status"]
-                                and attributes_2["read"]=="2"
-                                and attributes_1["lane"]==attributes_2["lane"]):
-                                        
-                                        pair=[sample_keys_1[0],sample_keys_2[1]]
-                                        paired.insert(0,pair)
-                                        pair_count=pair_count+1
-                        
-                                        
-        print("Number of paired fastqs: "+str(pair_count))
-    
-        update_samplesheet(paired,all_csv)
-               
-                
-        
-        
-        
-        #update_samplesheet(batch,batch_name)
-
-def get_normal_fastqs(dir):
-        all_samples=os.listdir(all_samples_dir)
-
-def get_all_fastqs(dir):
-        df=pd.read_csv(rename_table,names=["Patient_ID","Lane","Sample","Read","Batch","Raw_name","New_name","Tumi_name"])
-        sex_df=pd.read_csv(sex_table, names=["Patient_ID","Sex"])
-    
-        count=0
-        failed_fastqs=[]
-        all_fastqs=[]
-        for basename in os.listdir(dir):
-                f=os.path.join(dir, basename)
-                if os.path.isfile(f) and f.endswith(".fastq.gz"):
-                        
-                        row=df.loc[df['Raw_name'].str.contains(basename[:-29])]     
-                        if not (row.empty):
-                                
-                                if (row["Sample"].str.contains("normal").any()):
-                                        tumi_name=row["Tumi_name"].values.tolist()[0]
-                                        all_fastqs.append(basename)
-                                        count=count+1
-                        else:
-                                failed_fastqs.append(basename)
-                                  
-        with open("/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/failed_fastqs.csv", 'w') as myfile:
-                wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-                for fastq in failed_fastqs:
-                        wr.writerow([fastq])
-        return all_fastqs
 
 def get_batches(filtered_files, batch_ids):
         batches=[]
@@ -197,14 +93,46 @@ def create_paired_samplesheet(batch):
         #update_samplesheet(paired,"/data/local/MD_scholarly/scripts/pipelines/exome/04_samplesheets/samplesheets/all.csv")
         return paired
 
+def create_all_samplesheet(batches):
+        all_csv="/home/ubuntu/data/local/MD_scholarly/scripts/pipelines/exome/04_samplesheets/samplesheets/"+"all.csv"
+        if (os.path.exists(all_csv)):
+                f=open(all_csv,"w")
+                f.truncate()
+                f.close()
+        paired=[]
+        pair_count=0
+        for batch in batches:
+                batch_id=get_attributes(batch[0])["ID"]
+                
+                for f in batch:
+                
+                        attributes_f=get_attributes(f)
+                        for g in batch:
+                                attributes_g=get_attributes(g)
+                
+                                if (attributes_f["read"]=="1"):
 
+                                        if (attributes_f["ID"]==attributes_g["ID"]
+                                        and attributes_f["status"]==attributes_g["status"]
+                                        and attributes_g["read"]=="2"):
+                                                pair=[f,g]
+                                                paired.insert(0,pair)
+                                                pair_count=pair_count+1
+        print("Number of paired fastqs: "+str(pair_count))
+    
+        update_samplesheet(paired,all_csv)
+               
+                
+        
+        
+        
+        #update_samplesheet(batch,batch_name)
         
 def get_attributes(samplesheet_name):
-        print(samplesheet_name)
         attributes={}
         attributes["ID"]=re.search("P.+_L",samplesheet_name).group(0)[1:-3]
         attributes["sex"]=re.search("P.+_L",samplesheet_name).group(0)[-3:-2]
-       
+
         if not (re.search("_clean",samplesheet_name)==None):
 
                 attributes["read"]=re.search("_clean.+.fastq.gz",samplesheet_name).group(0)[6:7]
@@ -294,10 +222,10 @@ def update_samplesheet(fastq_pairs, samplesheet_name):
                 else:   
                         sample=patient+"_"+attributes_1["status"]+"_sample" 
                 
-                if ("normal" in attributes_1):
-                        basedir="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
+                if ("clean" in read1):
+                        basedir=bbsplit_dir
                 else:
-                        basedir="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_disambiguate/bam_to_fastq"
+                        basedir="/data/local/MD_scholarly/data/processed/exome/02_renamed"
                 row=str(attributes_1["ID"]+","+sex+","+status+","+sample+","+lane+","+basedir+"/"+read1+","+basedir+"/"+read2)
                 i=i+1
                 writer.writerow([row])
