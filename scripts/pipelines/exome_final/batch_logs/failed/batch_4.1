@@ -1,0 +1,449 @@
+Aug-14 17:00:42.082 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/sarek -with-singularity /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif --input /data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_4.csv -profile singularity --fasta /data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta -work-dir /data/local/MD_project/scripts/pipelines/exome_final/work/batch_4 --tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes --outdir /data/local/MD_project/data/exome/processed_final/sarek
+Aug-14 17:00:42.993 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.04.4
+Aug-14 17:00:43.266 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.5.3,nf-azure@1.6.1,nf-cloudcache@0.4.1,nf-codecommit@0.2.1,nf-console@1.1.3,nf-ga4gh@1.3.0,nf-google@1.13.2-patch1,nf-tower@1.9.1,nf-wave@1.4.2-patch1
+Aug-14 17:00:43.290 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-14 17:00:43.291 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-14 17:00:43.295 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Aug-14 17:00:43.493 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-14 17:00:43.929 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/ubuntu/.nextflow/scm
+Aug-14 17:00:48.440 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Aug-14 17:00:48.571 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Aug-14 17:00:48.834 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/ubuntu/.nextflow/assets/nf-core/sarek/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/sarek.git
+Aug-14 17:00:59.129 [main] INFO  nextflow.scm.AssetManager - NOTE: Your local project version looks outdated - a different revision is available in the remote repository [e92242ead3]
+Aug-14 17:00:59.140 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Aug-14 17:00:59.143 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/.nextflow/assets/nf-core/sarek/nextflow.config
+Aug-14 17:00:59.156 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Aug-14 17:00:59.161 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@15c6027d] - activable => nextflow.secret.LocalSecretsProvider@15c6027d
+Aug-14 17:00:59.227 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Aug-14 17:01:02.789 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [bih, cfc_dev, uzl_omics, ifb_core, embl_hd, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, ilifu, uge, rosalind_uge, lugh, mccleary, test_full_germline, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, unc_longleaf, tigem, tubingen_apg, google, apollo, ipop_up, vsc_calcua, pdc_kth, googlels, use_gatk_spark, daisybio, eddie, medair, alignment_to_fastq, biowulf, apptainer, bi, bigpurple, adcra, cedars, tools, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, spark, charliecloud, targeted, icr_davros, ceres, save_bam_mapped, munin, arm, rosalind, hasta, annotation, cfc, uzh, test_full_aws, split_fastq, ebi_codon_slurm, ebc, ccga_dx, variantcalling_channels, crick, ku_sund_danhead, recalibrate_bam, marvin, biohpc_gen, shifter, mana, mamba, york_viking, unc_lccc, wehi, awsbatch, wustl_htcf, test_aws, test_full_germline_ncbench_agilent, arcc, imperial, maestro, software_license, skip_bqsr, genotoul, nci_gadi, skip_markduplicates, abims, janelia, nu_genomics, test_full_germline_aws, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, create, sage, trimming, cambridge, tools_tumoronly, jex, podman, ebi_codon, cheaha, xanadu, nyu_hpc, test, marjorie, prepare_recalibration_bam, computerome, ucd_sonic, tools_germline, seg_globe, sanger, dkfz, tools_somatic_ascat, pasteur, einstein, ethz_euler, m3c, test_full, imb, ucl_cscluster, tuos_stanage, azurebatch, hki, crukmi, csiro_petrichor, qmul_apocrita, wave, docker, test_azure, engaging, gis, hypatia, psmn, test_full_azure, umi, eva, nygc, markduplicates_bam, fgcz, conda, crg, singularity, sentieon_dedup_bam, self_hosted_runner, tufts, uw_hyak_pedslabs, sentieon_dedup_cram, debug, genouest, tools_somatic, cbe, markduplicates_cram, recalibrate_cram, no_intervals, prepare_recalibration_cram, pair, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac, test_full_germline_azure]
+Aug-14 17:01:02.830 [main] DEBUG nextflow.config.ConfigBuilder - Enabling execution in Singularity container as requested by command-line option `-with-singularity null`
+Aug-14 17:01:02.906 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Aug-14 17:01:02.906 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/nf-core/sarek` [backstabbing_brown] DSL2 - revision: b5b766d3b4 [master]
+Aug-14 17:01:02.908 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-validation@1.1.3, nf-prov@1.2.2]
+Aug-14 17:01:02.909 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-14 17:01:02.909 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-validation@1.1.3, nf-prov@1.2.2]
+Aug-14 17:01:02.909 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: 1.1.3
+Aug-14 17:01:03.001 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.3' resolved
+Aug-14 17:01:03.002 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.3'
+Aug-14 17:01:03.874 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.3
+Aug-14 17:01:03.874 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-prov version: 1.2.2
+Aug-14 17:01:03.907 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-prov@1.2.2' resolved
+Aug-14 17:01:03.907 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-prov@1.2.2'
+Aug-14 17:01:03.927 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-prov@1.2.2
+Aug-14 17:01:04.536 [main] DEBUG nextflow.Session - Session UUID: f503d758-c8a7-47bd-810e-1939d4e04b94
+Aug-14 17:01:04.536 [main] DEBUG nextflow.Session - Run name: backstabbing_brown
+Aug-14 17:01:04.537 [main] DEBUG nextflow.Session - Executor pool size: 64
+Aug-14 17:01:04.652 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Aug-14 17:01:05.508 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.04.4 build 5917
+  Created: 01-08-2024 07:05 UTC 
+  System: Linux 5.4.0-186-generic
+  Runtime: Groovy 4.0.21 on OpenJDK 64-Bit Server VM 21.0.3+9-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 3316437@instance-1 [127.0.1.1]
+  CPUs: 64 - Mem: 251.7 GB (8.6 GB) - Swap: 0 (0) - Virtual threads ON
+Aug-14 17:01:05.566 [main] DEBUG nextflow.Session - Work-dir: /data/local/MD_project/scripts/pipelines/exome_final/work/batch_4 [ext2/ext3]
+Aug-14 17:01:05.709 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-14 17:01:05.894 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-14 17:01:05.913 [main] DEBUG nextflow.Session - Observer factory: ProvObserverFactory
+Aug-14 17:01:06.499 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-14 17:01:06.761 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Aug-14 17:01:07.562 [main] DEBUG nextflow.Session - Session start
+Aug-14 17:01:07.567 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /data/local/MD_project/data/exome/processed_final/sarek/pipeline_info/execution_trace_2024-08-14_17-01-01.txt
+Aug-14 17:01:08.049 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-14 17:01:09.086 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-validation
+Aug-14 17:01:10.029 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-validation
+Aug-14 17:01:10.031 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [fromSamplesheet:fromSamplesheet]; plugin Id: nf-validation
+Aug-14 17:01:10.451 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-validation
+Aug-14 17:01:10.452 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-validation
+Aug-14 17:01:10.453 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-validation
+Aug-14 17:01:28.717 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-validation
+Aug-14 17:01:28.718 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [fromSamplesheet:fromSamplesheet]; plugin Id: nf-validation
+Aug-14 17:01:28.818 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-validation
+Aug-14 17:01:28.819 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-validation
+Aug-14 17:01:28.820 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-validation
+Aug-14 17:01:30.748 [main] DEBUG nextflow.Nextflow - Using schema file: nextflow_schema.json
+Aug-14 17:01:30.751 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `monochromeLogs` -- Initialise it to a default value eg. `params.monochromeLogs = some_value`
+Aug-14 17:01:30.807 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek v3.4.2-gb5b766d[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision               : [0;32mmaster[0m
+  [0;34mrunName                : [0;32mbackstabbing_brown[0m
+  [0;34mcontainerEngine        : [0;32msingularity[0m
+  [0;34mcontainer              : [0;32m/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif[0m
+  [0;34mlaunchDir              : [0;32m/data/local/MD_project/scripts/pipelines/exome_final[0m
+  [0;34mworkDir                : [0;32m/data/local/MD_project/scripts/pipelines/exome_final/work/batch_4[0m
+  [0;34mprojectDir             : [0;32m/home/ubuntu/.nextflow/assets/nf-core/sarek[0m
+  [0;34muserName               : [0;32mubuntu[0m
+  [0;34mprofile                : [0;32msingularity[0m
+  [0;34mconfigFiles            : [0;32m[0m
+
+[1mInput/output options[0m
+  [0;34minput                  : [0;32m/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_4.csv[0m
+  [0;34moutdir                 : [0;32m/data/local/MD_project/data/exome/processed_final/sarek[0m
+
+[1mMain options[0m
+  [0;34mwes                    : [0;32mtrue[0m
+  [0;34mintervals              : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/intervals/wgs_calling_regions_noseconds.hg38.bed[0m
+  [0;34mtools                  : [0;32mmutect2,haplotypecaller,ascat,cnvkit,msisensorpro[0m
+
+[1mVariant Calling[0m
+  [0;34mcf_chrom_len           : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/Length/Homo_sapiens_assembly38.len[0m
+
+[1mReference genome options[0m
+  [0;34mascat_genome           : [0;32mhg38[0m
+  [0;34mascat_alleles          : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip[0m
+  [0;34mascat_loci             : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_loci_hg38.zip[0m
+  [0;34mascat_loci_gc          : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/GC_G1000_hg38.zip[0m
+  [0;34mascat_loci_rt          : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/RT_G1000_hg38.zip[0m
+  [0;34mbwa                    : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/BWAIndex/[0m
+  [0;34mbwamem2                : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/BWAmem2Index/[0m
+  [0;34mchr_dir                : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/Chromosomes[0m
+  [0;34mdbsnp                  : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdbsnp_tbi              : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz.tbi[0m
+  [0;34mdbsnp_vqsr             : [0;32m--resource:dbsnp,known=false,training=true,truth=false,prior=2.0 dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdict                   : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict[0m
+  [0;34mdragmap                : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/dragmap/[0m
+  [0;34mfasta                  : [0;32m/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta[0m
+  [0;34mfasta_fai              : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai[0m
+  [0;34mgermline_resource      : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz[0m
+  [0;34mgermline_resource_tbi  : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz.tbi[0m
+  [0;34mknown_indels           : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz[0m
+  [0;34mknown_indels_tbi       : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz.tbi[0m
+  [0;34mknown_indels_vqsr      : [0;32m--resource:gatk,known=false,training=true,truth=true,prior=10.0 Homo_sapiens_assembly38.known_indels.vcf.gz --resource:mills,known=false,training=true,truth=true,prior=10.0 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz[0m
+  [0;34mknown_snps             : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mknown_snps_tbi         : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz.tbi[0m
+  [0;34mknown_snps_vqsr        : [0;32m--resource:1000G,known=false,training=true,truth=true,prior=10.0 1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mmappability            : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/Control-FREEC/out100m2_hg38.gem[0m
+  [0;34mngscheckmate_bed       : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/NGSCheckMate/SNP_GRCh38_hg38_wChr.bed[0m
+  [0;34mpon                    : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz[0m
+  [0;34mpon_tbi                : [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz.tbi[0m
+  [0;34msentieon_dnascope_model: [0;32ms3://ngi-igenomes/igenomes//Homo_sapiens/GATK/GRCh38/Annotation/Sentieon/SentieonDNAscopeModel1.1.model[0m
+  [0;34msnpeff_db              : [0;32m105[0m
+  [0;34msnpeff_genome          : [0;32mGRCh38[0m
+  [0;34mvep_genome             : [0;32mGRCh38[0m
+  [0;34mvep_species            : [0;32mhomo_sapiens[0m
+  [0;34mvep_cache_version      : [0;32m110[0m
+
+[1mGeneric options[0m
+  [0;34mvalidationLenientMode  : [0;32mtrue[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/sarek for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.12688/f1000research.16665.2
+  https://doi.org/10.1093/nargab/lqae031
+  https://doi.org/10.5281/zenodo.3476425
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Aug-14 17:01:30.812 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Aug-14 17:01:31.239 [main] DEBUG n.validation.DirectoryPathValidator - S3 paths are not supported by 'DirectoryPathValidator': 's3://annotation-cache/snpeff_cache/'
+Aug-14 17:01:31.239 [main] DEBUG n.validation.DirectoryPathValidator - S3 paths are not supported by 'DirectoryPathValidator': 's3://ngi-igenomes/igenomes/'
+Aug-14 17:01:31.239 [main] DEBUG n.validation.DirectoryPathValidator - S3 paths are not supported by 'DirectoryPathValidator': 's3://annotation-cache/vep_cache/'
+Aug-14 17:01:31.240 [main] DEBUG nextflow.validation.SchemaValidator - Starting validation: 'input': '/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_4.csv' with '/home/ubuntu/.nextflow/assets/nf-core/sarek/assets/schema_input.json'
+Aug-14 17:01:31.559 [main] ERROR nextflow.validation.SchemaValidator - ERROR: Validation of 'input' file failed!
+Aug-14 17:01:31.612 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_5605ca73962b533e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_sentieon/../../../modules/nf-core/sentieon/applyvarcal/main.nf
+  Script_59cdaa6bffb72fbc: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_convert_samtools/../../../modules/nf-core/samtools/collatefastq/main.nf
+  Script_2b401a04ae31574b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/cram_sampleqc/main.nf
+  Script_028a088a254cd6dd: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_freebayes/main.nf
+  Script_76c3210580c9fe21: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/main.nf
+  Script_0f36a442c43f7a86: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_haplotypecaller/../../../modules/nf-core/gatk4/haplotypecaller/main.nf
+  Script_c224dd21b5252285: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/cram_sampleqc/../../../subworkflows/nf-core/bam_ngscheckmate/../../../modules/nf-core/bcftools/mpileup/main.nf
+  Script_8593608f0c1edc2b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/download_cache_snpeff_vep/../../../modules/nf-core/ensemblvep/download/main.nf
+  Script_8bb068ece15ad99f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_qc_bcftools_vcftools/../../../modules/nf-core/bcftools/stats/main.nf
+  Script_0ffe5af2a42de7eb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../fastq_align_bwamem_mem2_dragmap_sentieon/../../../modules/nf-core/sentieon/bwamem/main.nf
+  Script_c80bb66b9dac5c97: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../../nf-core/vcf_annotate_snpeff/../../../modules/nf-core/snpeff/snpeff/main.nf
+  Script_b8b71093ffc116f1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/post_variantcalling/../vcf_concatenate_germline/main.nf
+  Script_15a6f18236447b08: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_convert_samtools/../../../modules/nf-core/cat/fastq/main.nf
+  Script_9f122e32eac0f4c1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_freebayes/../../../modules/nf-core/freebayes/main.nf
+  Script_824368743d45b72e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/main.nf
+  Script_02b13fce0ed21a2e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_manta/../../../modules/nf-core/manta/somatic/main.nf
+  Script_a40ac2ab631fac5b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates_spark/../../../modules/nf-core/gatk4/estimatelibrarycomplexity/main.nf
+  Script_1f0a1eb4bf79a7fd: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_sentieon_dedup/main.nf
+  Script_c42565820f6a744b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/main.nf
+  Script_ef4f0c2a4416fc75: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_intervals/../../../modules/nf-core/gatk4/intervallisttobed/main.nf
+  Script_bf84ae935173146f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/cram_sampleqc/../../../subworkflows/local/cram_qc_mosdepth_samtools/main.nf
+  Script_53e86617d350b547: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_sentieon_dedup/../../../modules/nf-core/sentieon/dedup/main.nf
+  Script_b12dc3a5e89cce39: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_cnvkit/main.nf
+  Script_2b1c6a73b143b9f1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_strelka/main.nf
+  Script_07dc9629fb0b74a6: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr/../cram_merge_index_samtools/../../../modules/nf-core/samtools/index/main.nf
+  Script_b6f6b85e4ee95525: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_baserecalibrator/../../../modules/nf-core/gatk4/gatherbqsrreports/main.nf
+  Script_057d3de35ec771e9: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates_spark/main.nf
+  Script_c6ab92036a270e9c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_mutect2/../../../modules/nf-core/gatk4/mergemutectstats/main.nf
+  Script_d6715a92b793b124: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/bwamem2/index/main.nf
+  Script_ca1602e337ab4f2a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_cnvkit/../../../modules/nf-core/cnvkit/genemetrics/main.nf
+  Script_a7f7077ef5d586a9: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/post_variantcalling/../vcf_concatenate_germline/../../../modules/nf-core/tabix/bgziptabix/main.nf
+  Script_e6188ba138d07431: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_baserecalibrator/main.nf
+  Script_1346e13adecfcf92: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_convert_samtools/../../../modules/nf-core/samtools/view/main.nf
+  Script_5a1ee4df50ceb976: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/channel_markduplicates_create_csv/main.nf
+  Script_f2e81372c7236ce7: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/main.nf
+  Script_f6daac9289277a66: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/unzip/main.nf
+  Script_7bdb792340bdcbe3: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../modules/nf-core/fastp/main.nf
+  Script_cf01c1f7c169b2bb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/download_cache_snpeff_vep/../../../modules/nf-core/snpeff/download/main.nf
+  Script_95a53b279f561a18: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../../../modules/nf-core/fgbio/groupreadsbyumi/main.nf
+  Script_d11b5c79ea543e09: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_controlfreec/main.nf
+  Script_9992387d96403e2f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/cram_sampleqc/../../../subworkflows/nf-core/bam_ngscheckmate/../../../modules/nf-core/ngscheckmate/ncm/main.nf
+  Script_12f1b0cba653bc40: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_ascat/main.nf
+  Script_eda4c1615e5caaae: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr_spark/../cram_merge_index_samtools/main.nf
+  Script_57ee94b0d1ea8856: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/channel_variant_calling_create_csv/main.nf
+  Script_96de58be48fa6cbb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_sentieon/../../../modules/nf-core/bcftools/sort/main.nf
+  Script_34a6e65ee7dbdbe0: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/utils_nfcore_sarek_pipeline/../../nf-core/utils_nextflow_pipeline/main.nf
+  Script_a7d371fe23db7aab: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/utils_nfcore_sarek_pipeline/../../nf-core/utils_nfvalidation_plugin/main.nf
+  Script_1dca684e20afa7cb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr/main.nf
+  Script_11299cb12a111d0f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../modules/nf-core/multiqc/main.nf
+  Script_d1fb3931ae30269e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/cram_sampleqc/../../../subworkflows/nf-core/bam_ngscheckmate/main.nf
+  Script_b586a2201c19b6cb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../../../modules/nf-core/samblaster/main.nf
+  Script_ee2021533d309cc4: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_baserecalibrator_spark/main.nf
+  Script_dd425130137a09a5: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../vcf_annotate_bcftools/main.nf
+  Script_bc049ecb86093316: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_sentieon_dnascope/main.nf
+  Script_1a1ad9a55706351e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/gatk4/createsequencedictionary/main.nf
+  Script_755c4bca437f6e1a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_convert_samtools/main.nf
+  Script_7e1dbf17e4d60bc6: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates/../cram_qc_mosdepth_samtools/../../../modules/nf-core/mosdepth/main.nf
+  Script_f956f6322a74991c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_gatk/../../../modules/nf-core/gatk4/genomicsdbimport/main.nf
+  Script_fd8d87d1f0714306: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_tiddit/main.nf
+  Script_635d76453b1a680f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_gatk/main.nf
+  Script_d0b56273bec7c219: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_single_strelka/main.nf
+  Script_5063435f9f6c42c1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_controlfreec/main.nf
+  Script_5fd54cc278f5533b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_mpileup/main.nf
+  Script_ccf2b8f40d5f2d96: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_baserecalibrator_spark/../../../modules/nf-core/gatk4spark/baserecalibrator/main.nf
+  Script_cd2ebdf13fca0cc8: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_intervals/../../../modules/nf-core/gawk/main.nf
+  Script_7b336feb765c7526: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_reference_cnvkit/../../../modules/nf-core/cnvkit/reference/main.nf
+  Script_1513213805431d5d: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_single_tiddit/main.nf
+  Script_794cc440b327f065: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/main.nf
+  Script_50a37d59281f26e1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates_spark/../../../modules/nf-core/gatk4spark/markduplicates/main.nf
+  Script_22a5695a535af2d7: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../../../modules/nf-core/sentieon/dnamodelapply/main.nf
+  Script_9774f37817da1540: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_deepvariant/../../../modules/nf-core/deepvariant/main.nf
+  Script_b020395cbce5d093: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../../nf-core/vcf_annotate_snpeff/main.nf
+  Script_5ebb2c36f6b7f624: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_manta/main.nf
+  Script_0aa2573610e23815: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_freebayes/../../../modules/nf-core/tabix/tabix/main.nf
+  Script_19b54da666a96d27: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../fastq_align_bwamem_mem2_dragmap_sentieon/main.nf
+  Script_c7ac4d9476aa2ba2: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_baserecalibrator/../../../modules/nf-core/gatk4/baserecalibrator/main.nf
+  Script_f546fa1a30569187: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_controlfreec/../../../modules/nf-core/controlfreec/assesssignificance/main.nf
+  Script_cc6f2ba7cda1ea5b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/post_variantcalling/../vcf_concatenate_germline/../../../modules/nf-core/bcftools/concat/main.nf
+  Script_9ce7c0ac4adf9ce2: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_sentieon/../../../modules/nf-core/sentieon/gvcftyper/main.nf
+  Script_c274e714e18d6f2d: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/utils_nfcore_sarek_pipeline/../samplesheet_to_channel/main.nf
+  Script_22665c4a579d54f9: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_cnvkit/../../../modules/nf-core/cnvkit/batch/main.nf
+  Script_5887836764e3f95a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_qc_bcftools_vcftools/main.nf
+  Script_797066b6729b76d2: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_intervals/../../../modules/local/create_intervals_bed/main.nf
+  Script_2188acb123c22beb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../vcf_variant_filtering_gatk/../../../modules/nf-core/gatk4/filtervarianttranches/main.nf
+  Script_40c8af5fd1d6a65d: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_strelka/../../../modules/nf-core/strelka/somatic/main.nf
+  Script_338f73711d0097e9: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_sentieon/main.nf
+  Script_3a490b10a1aee53b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_ascat/../../../modules/nf-core/ascat/main.nf
+  Script_65f7a9bfe841c9f1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_haplotypecaller/main.nf
+  Script_e89f3ccaf693db2d: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/bwa/index/main.nf
+  Script_a596d37d30e0bd03: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_mutect2/main.nf
+  Script_a1bcdb7a1cee0441: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_mutect2/../../../modules/nf-core/gatk4/mutect2/main.nf
+  Script_b5b23f8e21c075d4: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../../nf-core/vcf_annotate_ensemblvep/../../../modules/nf-core/ensemblvep/vep/main.nf
+  Script_e83659ef19b1ec70: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_mutect2/../../../modules/nf-core/gatk4/filtermutectcalls/main.nf
+  Script_8c20e171c50f95cb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_qc_bcftools_vcftools/../../../modules/nf-core/vcftools/main.nf
+  Script_c4100f5be1bb0795: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/main.nf
+  Script_b939615ecc1517b3: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/main.nf
+  Script_07e778c9418e34ce: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/post_variantcalling/../vcf_concatenate_germline/../../../modules/local/add_info_to_vcf/main.nf
+  Script_95fc895ef88c0a5e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_gatk/../../../modules/nf-core/gatk4/variantrecalibrator/main.nf
+  Script_9a0341bb8a253b1b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr_spark/main.nf
+  Script_ca3483cfbba7127f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../modules/nf-core/fastqc/main.nf
+  Script_398efd73d6615984: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/download_cache_snpeff_vep/main.nf
+  Script_8826664b2901382a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_reference_cnvkit/../../../modules/nf-core/cnvkit/antitarget/main.nf
+  Script_dc37288a8ff6ff5e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../vcf_variant_filtering_gatk/main.nf
+  Script_274156cf92c4a1c4: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/samtools/faidx/main.nf
+  Script_12b351128b2a0047: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../vcf_annotate_bcftools/../../../modules/nf-core/bcftools/annotate/main.nf
+  Script_71644ff913245f63: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/vcf_annotate_all/../../nf-core/vcf_annotate_ensemblvep/main.nf
+  Script_cc95cdf301222818: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_controlfreec/../../../modules/nf-core/controlfreec/freec2bed/main.nf
+  Script_ec7f32831b7e4583: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_mutect2/../../../modules/nf-core/gatk4/learnreadorientationmodel/main.nf
+  Script_2a4e69034065fab5: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../../../modules/nf-core/fgbio/callmolecularconsensusreads/main.nf
+  Script_db3044231f065f60: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_gatk/../../../modules/nf-core/gatk4/genotypegvcfs/main.nf
+  Script_bfb494d69f2d0778: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_sentieon_haplotyper/main.nf
+  Script_ecd574d9c4390aab: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/annotation_cache_initialisation/main.nf
+  Script_e644fb6da94d4bab: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/untar/main.nf
+  Script_83a7e4a748f14791: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr/../../../modules/nf-core/gatk4/applybqsr/main.nf
+  Script_27bfd85c6357625a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_merge_index_samtools/main.nf
+  Script_d0b8f450f71dfc7a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_mpileup/../../../modules/nf-core/cat/cat/main.nf
+  Script_ad5b7f33ced876c2: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_sentieon_haplotyper/../../../modules/nf-core/sentieon/haplotyper/main.nf
+  Script_7f821f8ef02deb5a: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_mutect2/../../../modules/nf-core/gatk4/gatherpileupsummaries/main.nf
+  Script_c29a09cb05703805: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/msisensorpro/scan/main.nf
+  Script_9a898fc2ef2d97f0: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../../../modules/nf-core/msisensorpro/msisomatic/main.nf
+  Script_9c7586ea2937c2f0: /home/ubuntu/.nextflow/assets/nf-core/sarek/main.nf
+  Script_3c537a6d105b66a5: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/post_variantcalling/main.nf
+  Script_d0ab7e0b77e301c4: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_tiddit/../../../modules/nf-core/svdb/merge/main.nf
+  Script_fb37976b86c01d80: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_sentieon_dnascope/../../../modules/nf-core/sentieon/dnascope/main.nf
+  Script_d6adaaecfd9939c9: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/utils_nfcore_sarek_pipeline/main.nf
+  Script_736e2c7042b6fa53: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../../../modules/nf-core/samtools/bam2fq/main.nf
+  Script_47023b830d2a0f0f: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_single_tiddit/../../../modules/nf-core/tiddit/sv/main.nf
+  Script_9243144022b51650: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_gatk/../../../modules/nf-core/gatk4/applyvqsr/main.nf
+  Script_d86efa1a3c45f294: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates/../../../modules/nf-core/gatk4/markduplicates/main.nf
+  Script_b530bf25fb72e640: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_intervals/main.nf
+  Script_1613b97f11d35ecd: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_reference_cnvkit/main.nf
+  Script_49a410273a0d4342: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_align_bwamem_mem2_dragmap_sentieon/../../../modules/nf-core/bwamem2/mem/main.nf
+  Script_5fe56935cbbdbe39: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_somatic_mutect2/main.nf
+  Script_fffa1220f8e87c30: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../fastq_align_bwamem_mem2_dragmap_sentieon/../../../modules/nf-core/bwa/mem/main.nf
+  Script_8d1bad9e1fc84660: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_manta/main.nf
+  Script_66516be8545f71f2: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/channel_align_create_csv/main.nf
+  Script_d581cb963f4596c7: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../../../modules/nf-core/fgbio/fastqtobam/main.nf
+  Script_a19f9ce9b09443d5: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_controlfreec/../../../modules/nf-core/controlfreec/freec/main.nf
+  Script_9a9735536805ee91: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/utils_nfcore_sarek_pipeline/../../nf-core/utils_nfcore_pipeline/main.nf
+  Script_981d89be108d933e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_manta/../../../modules/nf-core/manta/tumoronly/main.nf
+  Script_74caef000f89a48b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_mutect2/../../../modules/nf-core/gatk4/calculatecontamination/main.nf
+  Script_bc1034bcad96577b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/channel_applybqsr_create_csv/main.nf
+  Script_a57b73412a5be98e: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../vcf_variant_filtering_gatk/../../../modules/nf-core/gatk4/cnnscorevariants/main.nf
+  Script_ed09b821209fd04c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates_spark/../cram_qc_mosdepth_samtools/../../../modules/nf-core/samtools/stats/main.nf
+  Script_9c1a81a9ee2514ba: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_germline_manta/main.nf
+  Script_7a96355ab7d6f1a3: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_markduplicates/main.nf
+  Script_189360434f4e098b: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_deepvariant/main.nf
+  Script_602945516a2dd366: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/fastq_create_umi_consensus_fgbio/../fastq_align_bwamem_mem2_dragmap_sentieon/../../../modules/nf-core/dragmap/align/main.nf
+  Script_0a849060da7056aa: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_controlfreec/../../../modules/nf-core/controlfreec/freec2circos/main.nf
+  Script_3d237f1c80d02f9c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr/../cram_merge_index_samtools/../../../modules/nf-core/samtools/merge/main.nf
+  Script_70daabc3d00f2ecb: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../modules/nf-core/samtools/convert/main.nf
+  Script_6df0dcc77a212b33: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_controlfreec/../../../modules/nf-core/controlfreec/makegraph2/main.nf
+  Script_1bd098db325044b1: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/channel_baserecalibrator_create_csv/main.nf
+  Script_e2fb30b813036521: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_variant_calling_germline_manta/../../../modules/nf-core/manta/germline/main.nf
+  Script_e7e4058441ead3e3: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_single_strelka/../../../modules/nf-core/strelka/germline/main.nf
+  Script_bf5fea05e615580c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./subworkflows/local/prepare_genome/../../../modules/nf-core/dragmap/hashtable/main.nf
+  Script_d323b22201361065: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_mpileup/../../../modules/nf-core/samtools/mpileup/main.nf
+  Script_2ea86e57d340a80c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_germline_all/../bam_joint_calling_germline_sentieon/../../../modules/nf-core/sentieon/varcal/main.nf
+  Script_968436927447c3df: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_somatic_all/../bam_variant_calling_freebayes/../../../modules/nf-core/gatk4/mergevcfs/main.nf
+  Script_6e58dab2f6472f41: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_applybqsr_spark/../../../modules/nf-core/gatk4spark/applybqsr/main.nf
+  Script_dd67c0219c86738c: /home/ubuntu/.nextflow/assets/nf-core/sarek/./workflows/sarek/../../subworkflows/local/bam_variant_calling_tumor_only_all/../bam_variant_calling_tumor_only_mutect2/../../../modules/nf-core/gatk4/getpileupsummaries/main.nf
+Aug-14 17:01:31.613 [main] DEBUG nextflow.Session - Session aborted -- Cause: [0;31mThe following errors have been detected:
+
+* -- Entry 1 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-50-TIL_S103_L002_R2_001.1710857698027_Cut_0.fastq.gz' does not exist.
+* -- Entry 2 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P50_L001_tumour1_R1_B374_tumis_2.fastq.gz' does not exist.
+* -- Entry 3 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-54-TIL_S104_L002_R2_001.1710863443768_Cut_0.fastq.gz' does not exist.
+* -- Entry 4 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P54_L001_tumour1_R1_B374_tumis_2.fastq.gz' does not exist.
+* -- Entry 5 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB57-TIL_S4_L001_R2_001.1710845567292_Cut_0.fastq.gz' does not exist.
+* -- Entry 6 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P57_L001_tumour1_R1_B693_tumis_2.fastq.gz' does not exist.
+* -- Entry 1 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-50-TIL_S103_L002_R1_001.1710857698027_Cut_0.fastq.gz' does not exist.
+* -- Entry 2 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P50_L001_tumour1_R1_B374_tumis_1.fastq.gz' does not exist.
+* -- Entry 3 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-54-TIL_S104_L002_R1_001.1710863443768_Cut_0.fastq.gz' does not exist.
+* -- Entry 4 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P54_L001_tumour1_R1_B374_tumis_1.fastq.gz' does not exist.
+* -- Entry 5 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB57-TIL_S4_L001_R1_001.1710845567292_Cut_0.fastq.gz' does not exist.
+* -- Entry 6 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P57_L001_tumour1_R1_B693_tumis_1.fastq.gz' does not exist.
+[0m
+
+Aug-14 17:01:31.630 [main] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] map
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+
+Aug-14 17:01:31.718 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.validation.SchemaValidationException: [0;31mThe following errors have been detected:
+
+* -- Entry 1 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-50-TIL_S103_L002_R2_001.1710857698027_Cut_0.fastq.gz' does not exist.
+* -- Entry 2 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P50_L001_tumour1_R1_B374_tumis_2.fastq.gz' does not exist.
+* -- Entry 3 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-54-TIL_S104_L002_R2_001.1710863443768_Cut_0.fastq.gz' does not exist.
+* -- Entry 4 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P54_L001_tumour1_R1_B374_tumis_2.fastq.gz' does not exist.
+* -- Entry 5 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB57-TIL_S4_L001_R2_001.1710845567292_Cut_0.fastq.gz' does not exist.
+* -- Entry 6 - fastq_2: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P57_L001_tumour1_R1_B693_tumis_2.fastq.gz' does not exist.
+* -- Entry 1 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-50-TIL_S103_L002_R1_001.1710857698027_Cut_0.fastq.gz' does not exist.
+* -- Entry 2 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P50_L001_tumour1_R1_B374_tumis_1.fastq.gz' does not exist.
+* -- Entry 3 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB-54-TIL_S104_L002_R1_001.1710863443768_Cut_0.fastq.gz' does not exist.
+* -- Entry 4 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P54_L001_tumour1_R1_B374_tumis_1.fastq.gz' does not exist.
+* -- Entry 5 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/01_trimmed_umis/PCB57-TIL_S4_L001_R1_001.1710845567292_Cut_0.fastq.gz' does not exist.
+* -- Entry 6 - fastq_1: the file or directory '/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new/out_human_P57_L001_tumour1_R1_B693_tumis_1.fastq.gz' does not exist.
+[0m
+
+	at nextflow.validation.SchemaValidator.validateFile(SchemaValidator.groovy:597)
+	at nextflow.validation.SchemaValidator.validateParameters(SchemaValidator.groovy:444)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at nextflow.script.FunctionDef.invoke_a(FunctionDef.groovy:64)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:103)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:391)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:330)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_a7d371fe23db7aab$_runScript_closure1$_closure2.doCall(Script_a7d371fe23db7aab:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:204)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:188)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:103)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:391)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:330)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_d6adaaecfd9939c9$_runScript_closure2$_closure4.doCall(Script_d6adaaecfd9939c9:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:204)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:188)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:103)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:391)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:330)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_9c7586ea2937c2f0$_runScript_closure3$_closure15.doCall(Script_9c7586ea2937c2f0:328)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:204)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:188)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:198)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:243)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:138)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:372)
+	at nextflow.cli.Launcher.run(Launcher.groovy:503)
+	at nextflow.cli.Launcher.main(Launcher.groovy:657)
