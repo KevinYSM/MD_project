@@ -1,6 +1,0 @@
-patient,sex,status,sample,lane,fastq_1,fastq_2
-9,M,normal,9_normal_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P9M_L001_normal1_R1_B335_tumis.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P9M_L001_normal1_R2_B335_tumis.fastq.gz
-30,F,normal,30_normal_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P30F_L001_normal1_R1_B335_tumis.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P30F_L001_normal1_R2_B335_tumis.fastq.gz
-20,M,normal,20_normal_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P20M_L001_normal1_R1_B335_tumis.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P20M_L001_normal1_R2_B335_tumis.fastq.gz
-28,F,tumour,28_tumour_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P28F_L001_tumour1_R1_B335_tumis.fastq.gz_clean1.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P28F_L001_tumour1_R1_B335_tumis.fastq.gz_clean2.fastq.gz
-31,F,tumour,31_tumour_sample,1,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P31F_L001_tumour1_R1_B335_tumis.fastq.gz_clean1.fastq.gz,/home/ubuntu/data/local/MD_scholarly/data/processed/exome/03_bbsplit/P31F_L001_tumour1_R1_B335_tumis.fastq.gz_clean2.fastq.gz
