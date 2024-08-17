@@ -1,0 +1,52 @@
+Bootstrap: localimage
+From: exome_2.sif
+
+%files
+    
+
+%environment
+        
+
+%post
+       apt-get install -y libhts-dev
+       apt install -y cpanminus
+
+       # install dependencies #
+       cpan -i LWP::Simple
+       cpan -i DBI
+       cpan -i Archive::Zip
+      
+       #cpanm Archive::Zip
+       #cpanm DBI
+       #cpanm XML::LibXML
+       #cpanm XML::LibXML::Reader
+       #apt-get install -y libmysqlclient-dev
+       #cpanm DBD::mysql
+       #cpanm Bio::Root::Version
+
+       # install VEP #
+       cd ensembl-vep
+       perl INSTALL.pl --AUTO acfp --ASSEMBLY GRCh38 --PLUGINS all --SPECIES homo_sapiens,mus_musculus
+       
+       
+       #apt install libdbi-perl
+       #curl -L https://cpanmin.us | perl - App::cpanminus
+
+       #cpan install IO::Socket::SSL
+       #cpan install Net::SSLeay
+       #cpan install Alien::Libxml2
+       #cpan install XML::LibXML
+       #cpan install XML::LibXML::Reader
+       #cpan install Bio::SeqFeature::Lite
+       #cpan install Bio::DB::HTS
+       #cpan install DBI
+       #cd ensembl-vep
+       #perl INSTALL.pl
+
+      
+       
+       
+        
+
+%runscript
+       

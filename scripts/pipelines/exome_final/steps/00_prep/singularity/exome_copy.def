@@ -2,23 +2,27 @@ Bootstrap: localimage
 From: exome.sif
 
 %files
-       /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/ngs_disambiguate /ngs_disambiguate
+    
 
 %environment
         
 
 %post
-       apt-get update
-       apt install -y python-is-python3
-       apt-get install -y python3-pip
-       apt install -y git-core
-       pip install pysam
-       git --version
+       apt-get install -y tabix 
 
-       mkdir /gatk
-       cd /gatk
-       wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip
-       unzip gatk-4.6.0.0.zip
+       cd /                       
+       #Install perl                             
+       curl -L http://xrl.us/installperlnix | bash
+
+      
+       #Install vep
+       git clone https://github.com/Ensembl/ensembl-vep.git
+       cd ensembl-vep
+       #perl INSTALL.pl
+
+       cd /
+       wget https://github.com/mskcc/vcf2maf/archive/refs/tags/v1.6.22.tar.gz
+       tar xvf v1.6.22.tar.gz
        
        
         

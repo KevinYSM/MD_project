@@ -1,0 +1,20 @@
+Bootstrap: localimage
+From: exome_3.sif
+
+%files
+    
+
+%environment
+        
+
+%post
+       apt-get install -y tabix
+       mkdir /.vep
+
+      
+       
+       
+        
+
+%runscript
+       

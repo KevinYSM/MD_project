@@ -4,7 +4,7 @@ JAVA_HOME="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 
 
-SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif"
+SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome.sif"
 EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
 
@@ -29,6 +29,8 @@ RESULTS_DISAMBIGUATE_DIR="/data/local/MD_project/data/exome/processed_final/02_d
 
 MAP_HUMAN="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_human.sh"
 MAP_MOUSE="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_mouse.sh"
+
+#Please note, this step below only runs on tumour samples:
 #source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
 #source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
 
@@ -42,16 +44,58 @@ DISAMBIGUATE_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_d
 
 
 
-nextflow run $DISAMBIGUATE_NF -with-singularity $SIF --cram_human "$CRAM_HUMAN" --cram_mouse "$CRAM_MOUSE" \
- --fasta_mouse $FASTA_MOUSE \
- --fasta_human $FASTA_HUMAN \
- --outdir $RESULTS_DISAMBIGUATE_DIR -resume \
- --max_memory '120.GB' \
- --max_cpus 63 \
+#nextflow run $DISAMBIGUATE_NF -with-singularity $SIF --cram_human "$CRAM_HUMAN" --cram_mouse "$CRAM_MOUSE" \
+# --fasta_mouse $FASTA_MOUSE \
+# --fasta_human $FASTA_HUMAN \
+# --outdir $RESULTS_DISAMBIGUATE_DIR -resume \
+# --max_memory '120.GB' \
+# --max_cpus 63 \
 
 
 #03_Prepare Samplesheets
-
+samplesheet_path="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_samplesheet.csv"
 #SAREK
+#nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+#-resume \
+# -profile singularity --fasta "/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta" \
+#--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
+#--outdir "/data/local/MD_project/data/exome/processed_final/sarek" 
+
+batch_1="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_1.csv"
+batch_2="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_2.csv"
+batch_4="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_4.csv"
+#nextflow run nf-core/sarek -with-singularity $SIF --input $batch_4 \
+#-resume \
+# -profile singularity --fasta "/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta" \
+# -work-dir "/data/local/MD_project/scripts/pipelines/exome_final/work/batch_4" \
+#--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
+#--outdir "/data/local/MD_project/data/exome/processed_final/sarek" 
+
+batch_base="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches"
+work_dir_base="/data/local/MD_project/scripts/pipelines/exome_final/work"
+out_dir="/data/local/MD_project/data/exome/processed_final/sarek"
+fasta_file="/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
+
+# Loop through batch_1 to batch_8
+#for i in {2..8}; do
+#    batch_file="${batch_base}/batch_${i}.csv"
+#    work_dir="${work_dir_base}/batch_${i}"
+#  
+#    nextflow run nf-core/sarek -with-singularity $SIF --input $batch_file \
+#    -profile singularity --fasta $fasta_file \
+#    -work-dir $work_dir \
+#    --tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
+#    --outdir $out_dir
+#done
 
 #vcf processing
+MUTECT2="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
+export NXF_SINGULARITY_OPTS="--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
+export SINGULARITY_BINDPATH="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
+export SINGULARITY_BIND="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
+if [ ! -d output_vep_updated ]
+    then
+        mkdir output_vep_updated
+fi
+
+nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_processing.nf  -with-singularity $SIF --mutect2 $MUTECT2

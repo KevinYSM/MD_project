@@ -1,5 +1,5 @@
 #!/bin/bash
-samplesheet_path="/home/ubuntu/data/local/MD_scholarly/scripts/pipelines/exome/04_samplesheets/samplesheets/bbsplit_test.csv"
+samplesheet_path="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_samplesheet.csv"
 java --version
 
 nextflow run nf-core/sarek --input $samplesheet_path \

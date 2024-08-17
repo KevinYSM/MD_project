@@ -1,7 +1,8 @@
-params.vcf_files="/data/local/proj/bioinformatics_project/data/processed/variant_calling_workflow_nextflow/*.vcf.gz"
-params.outdir="/data/local/proj/bioinformatics_project/data/processed/vcf_processing_workflow/"
+params.vcf_files=params.mutect2
+params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing"
 
 process VEP {
+    containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
     publishDir "${params.outdir}", mode: 'copy'
 
     input:
@@ -16,15 +17,8 @@ process VEP {
 
  
 
-    if [ ! -d output_vep_updated ]
-    then
-        mkdir output_vep_updated
-    fi
-    singularity exec \
-        -B \$(pwd)/output_vep_updated:/output_vep_updated \
-        -B /data/vep_cache:/.vep \
-        -B "\$vcf":/\$(basename "\$vcf") \
-        /home/ubuntu/vep.sif /opt/vep/src/ensembl-vep/vep \
+    
+    /ensembl-vep/vep \
         --species homo_sapiens \
         --assembly GRCh38 \
         --offline \
