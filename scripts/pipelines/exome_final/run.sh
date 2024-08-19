@@ -4,7 +4,7 @@ JAVA_HOME="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 
 
-SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome.sif"
+SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_w.sif"
 EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
 
@@ -98,4 +98,17 @@ if [ ! -d output_vep_updated ]
         mkdir output_vep_updated
 fi
 
-nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_processing.nf  -with-singularity $SIF --mutect2 $MUTECT2
+
+
+#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vep.nf  -with-singularity $SIF  \
+#--max_memory '120.GB' \
+# --max_cpus 63 \
+
+nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf \
+ --max_memory '120.GB' --max_cpus 63 \
+
+#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
+#--max_memory '120.GB' \
+# --max_cpus 63 \
+#-c /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
+

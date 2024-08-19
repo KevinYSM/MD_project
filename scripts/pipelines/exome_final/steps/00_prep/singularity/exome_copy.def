@@ -1,5 +1,5 @@
 Bootstrap: localimage
-From: exome.sif
+From: exome_w.sif
 
 %files
     
@@ -8,22 +8,7 @@ From: exome.sif
         
 
 %post
-       apt-get install -y tabix 
-
-       cd /                       
-       #Install perl                             
-       curl -L http://xrl.us/installperlnix | bash
-
-      
-       #Install vep
-       git clone https://github.com/Ensembl/ensembl-vep.git
-       cd ensembl-vep
-       #perl INSTALL.pl
-
-       cd /
-       wget https://github.com/mskcc/vcf2maf/archive/refs/tags/v1.6.22.tar.gz
-       tar xvf v1.6.22.tar.gz
-       
+       apt-get install -y libvcflib-tools libvcflib-dev
        
         
 
