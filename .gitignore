@@ -28,6 +28,7 @@ processed
 *.gz
 data/
 *.nextflow.*
+gatk/
 
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log.1
@@ -54,3 +55,5 @@ scripts/pipelines/exome/05_sarek/work2
 **/results_*/
 **/work*/
 file_transfer.sh
+*.sif
+scripts/pipelines/exome_final/steps/00_prep/singularity/exome_3.sif

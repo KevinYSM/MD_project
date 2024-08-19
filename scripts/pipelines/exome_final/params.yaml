@@ -1,0 +1,10 @@
+
+
+
+
+
+EXOME_raw_reads_directory: "/home/ubuntu/scratch/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
+trimmed_dir: "/home/ubuntu/scratch/MD_project/data/exome/processed/01_trimmed_umis"
+
+
+disambiguated_dir: "/home/ubuntu/data/local/MD_scholarly/data/processed/exome/02_disambiguated"

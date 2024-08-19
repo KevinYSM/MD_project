@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bash
 if [ ! -d "logs" ]
 then
     mkdir logs
@@ -26,7 +27,7 @@ SINGULARITY_LOCALCACHEDIR="/data/local/MD_project/scripts/pipelines/exome/05_sar
 
 nextflow run nf-core/sarek \
     -profile singularity \
-    -c custom.config \
+    -c /home/ubuntu/data/local/MD_project/scripts/pipelines/exome/05_sarek_joakim/custom.config \
     -w work_disambiguate/batch_1 \
     -resume \
     --intervals /data/local/reference/agilent/SureSelect_XT_HS_Human_All_Exon_V8/hg38/S33266340_Padded.reformatted.bed \
@@ -88,7 +89,7 @@ nextflow run nf-core/sarek \
     --cf_contamination 0 \
     --max_memory '120.GB' \
     --input inputs_disambiguate/batch_4.csv \
-    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate_2 \
+    --outdir /data/local/MD_project/data/exome/processed/04_sarek_joakim_disambiguate \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
     --max_cpus 63 \

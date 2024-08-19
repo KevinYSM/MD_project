@@ -1,0 +1,5 @@
+/home/ubuntu/data/local/MD_project/data/exome/raw/S336-NovaSeq/fastqs/PCB-141-PDX_S15_L002_R1_001.fastq.gz
+/home/ubuntu/data/local/MD_project/data/exome/raw/S336-NovaSeq/fastqs/PCB-141-PDX_S15_L002_R2_001.fastq.gz
+
++
+UM151005

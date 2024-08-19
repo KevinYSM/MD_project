@@ -1,4 +1,4 @@
-params.EXOME_raw_reads_directory="/home/ubuntu/scratch/MD_project/data/exome/raw/unbatched/*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads_directory="/home/ubuntu/scratch/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 
 
 
@@ -29,18 +29,7 @@ process AGENT_trim_umis{
 workflow{
     read_pairs_ch = Channel.fromFilePairs(params.EXOME_raw_reads_directory, flat: true)
     read_pairs_ch.view()
-    AGENT_trim_umis(read_pairs_ch)
-    //trimmed_umis_ch.view()
-    //tumour_read_pairs_ch=trimmed_umis_ch.filter(~/.*tumour.*/)
-    //tumour_read_pairs_ch.view()
-    //bbsplit(tumour_read_pairs_ch)
+    //AGENT_trim_umis(read_pairs_ch)
 
-
-    //trimmed_umis_ch=AGENT_trim_umis(read_pairs_ch)
-    //need to put a pause here
-    
-    //trimmed_umis_ch=Channel.fromFilePairs(params.trimmed_umis,flat:true)
-    //trimmed_umis_ch.view()
-    //output_ch=bbsplit(trimmed_umis_ch)
 
 }

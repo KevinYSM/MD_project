@@ -1,0 +1,103 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%files
+        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/AGeNT_3.1.2.zip .
+        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/ngs_disambiguate .
+
+%environment
+        export LC_ALL=C
+        export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
+        export PATH=$PATH:/java/jdk-21.0.3/bin
+        export PATH=$PATH:/micromamba/bin
+        
+
+%post
+        mkdir -p /mnt/data
+        mkdir -p /mnt/pipeline
+
+        apt-get update && apt-get install -y \
+                libcurl4-openssl-dev \
+                wget \
+                bzip2 \
+                lbzip2 \
+                build-essential \
+                zlib1g-dev \
+                libbz2-dev \
+                liblzma-dev \
+                libncurses-dev \
+                curl \
+                unzip \
+                zip \
+                libbamtools-dev \
+                tabix \
+                && apt-get clean
+
+        # Download and install samtools 1.20
+        wget https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2
+        tar xvjf samtools-1.20.tar.bz2
+        cd samtools-1.20 || exit 1  # Change directory and exit if not found
+        ./configure --prefix=/usr/local  # Optional: Set installation prefix
+        make
+        make install
+        cd ..
+
+    #Install Java without SDKMAN
+        wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+        tar xvf jdk-21_linux-x64_bin.tar.gz
+        mkdir /java
+        mv jdk-21.0.4 /java
+        export PATH="/java/jdk-21.0.4/bin:$PATH"
+        
+        # Set up AGeNT
+        mkdir AGeNT
+        mv AGeNT_3.1.2.zip AGeNT/
+        unzip AGeNT/AGeNT_3.1.2.zip -d AGeNT/
+        export PATH="/AGeNT/agent:$PATH"
+        chmod +x /AGeNT/agent/agent.sh
+        
+        #Install Pysam (for ngs_disambiguate)
+        apt install -y python3
+        apt-get install -y python3-pip
+        apt install -y git-core
+        pip install pysam
+
+     
+
+        #Install GATK
+        mkdir /gatk
+        cd /gatk
+        wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip
+        unzip gatk-4.6.0.0.zip
+
+
+        cd /                       
+        #Install perl                             
+        curl -L http://xrl.us/installperlnix | bash
+
+      
+        #Download vep repo
+        cd /
+        git clone https://github.com/Ensembl/ensembl-vep.git
+        
+
+        cd /
+        wget https://github.com/mskcc/vcf2maf/archive/refs/tags/v1.6.22.tar.gz
+        tar xvf v1.6.22.tar.gz
+    
+        #Install vep and vcf2maf dependencies
+        apt-get install -y libhts-dev
+        apt install -y cpanminus
+        cpan -i LWP::Simple
+        cpan -i DBI
+        cpan -i Archive::Zip
+
+        # install VEP #
+        mkdir /.vep
+        cd /ensembl-vep
+        perl INSTALL.pl --AUTO acfp --ASSEMBLY GRCh38 --PLUGINS all --SPECIES homo_sapiens,mus_musculus --CACHEDIR /.vep
+        
+    
+
+%runscript
+    

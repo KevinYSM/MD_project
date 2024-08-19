@@ -1,0 +1,16 @@
+Bootstrap: localimage
+From: exome_w.sif
+
+%files
+    
+
+%environment
+        
+
+%post
+       apt-get install -y libvcflib-tools libvcflib-dev
+       
+        
+
+%runscript
+       

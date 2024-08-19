@@ -1,101 +1,78 @@
-Mar-19 07:58:48.283 [main] DEBUG nextflow.cli.Launcher - $> nextflow run trim_umis.nf -resume -c exome.config /
-Mar-19 07:58:48.546 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
-Mar-19 07:58:48.597 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
-Mar-19 07:58:48.670 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Mar-19 07:58:48.671 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Mar-19 07:58:48.675 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-Mar-19 07:58:48.792 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Mar-19 07:58:48.820 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/exome.config
-Mar-19 07:58:48.821 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/exome.config
-Mar-19 07:58:48.851 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
-Mar-19 07:58:49.968 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
-Mar-19 07:58:49.987 [main] INFO  nextflow.cli.CmdRun - Launching `trim_umis.nf` [mad_pike] DSL2 - revision: 0e8b9bfedb
-Mar-19 07:58:49.988 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Mar-19 07:58:49.988 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Mar-19 07:58:49.999 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
-Mar-19 07:58:50.003 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@45acdd11] - activable => nextflow.secret.LocalSecretsProvider@45acdd11
-Mar-19 07:58:50.110 [main] DEBUG nextflow.Session - Session UUID: 909c9cad-b8cb-4915-bdee-e72bc6257509
-Mar-19 07:58:50.111 [main] DEBUG nextflow.Session - Run name: mad_pike
-Mar-19 07:58:50.112 [main] DEBUG nextflow.Session - Executor pool size: 8
-Mar-19 07:58:50.134 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-Mar-19 07:58:50.147 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Mar-19 07:58:50.534 [main] DEBUG nextflow.cli.CmdRun - 
+Mar-28 07:39:41.393 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test.nf
+Mar-28 07:39:41.481 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Mar-28 07:39:41.500 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ubuntu/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Mar-28 07:39:41.510 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-28 07:39:41.511 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-28 07:39:41.514 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-28 07:39:41.524 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-28 07:39:41.593 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-28 07:39:41.611 [main] INFO  nextflow.cli.CmdRun - Launching `test.nf` [furious_planck] DSL2 - revision: 62a73e02f4
+Mar-28 07:39:41.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-28 07:39:41.612 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-28 07:39:41.621 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ubuntu/.nextflow/secrets/store.json
+Mar-28 07:39:41.628 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@27b22f74] - activable => nextflow.secret.LocalSecretsProvider@27b22f74
+Mar-28 07:39:41.694 [main] DEBUG nextflow.Session - Session UUID: 6a525bc7-57f6-4612-b7a4-47d1f0e84c5d
+Mar-28 07:39:41.694 [main] DEBUG nextflow.Session - Run name: furious_planck
+Mar-28 07:39:41.696 [main] DEBUG nextflow.Session - Executor pool size: 8
+Mar-28 07:39:41.703 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-28 07:39:41.707 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-28 07:39:41.734 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 23.10.1 build 5891
   Created: 12-01-2024 22:01 UTC 
   System: Linux 5.15.0-76-generic
   Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 11.0.22+7-post-Ubuntu-0ubuntu222.04.1
   Encoding: UTF-8 (UTF-8)
-  Process: 3307063@kevin-melanoma [127.0.1.1]
-  CPUs: 8 - Mem: 31.3 GB (559 MB) - Swap: 0 (0)
-Mar-19 07:58:50.982 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/work [ext2/ext3]
-Mar-19 07:58:50.983 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/bin
-Mar-19 07:58:50.996 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Mar-19 07:58:51.029 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Mar-19 07:58:51.051 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Mar-19 07:58:51.064 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-Mar-19 07:58:51.378 [main] DEBUG nextflow.Session - Session start
-Mar-19 07:58:51.801 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Mar-19 07:58:52.003 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Mar-19 07:58:52.003 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Mar-19 07:58:52.009 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Mar-19 07:58:52.078 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
-Mar-19 07:58:52.082 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
-Mar-19 07:58:52.207 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: AGENT_trim_umis
-Mar-19 07:58:52.208 [main] DEBUG nextflow.Session - Igniting dataflow network (2)
-Mar-19 07:58:52.214 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > AGENT_trim_umis
-Mar-19 07:58:52.214 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ubuntu/scratch/MD_project/data/exome/raw/unbatched/; pattern: *_R{1,2}_*.fastq.gz; options: [:]
-Mar-19 07:58:52.218 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_acce28f75d00008e: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/trim_umis.nf
-Mar-19 07:58:52.219 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Mar-19 07:58:52.219 [main] DEBUG nextflow.Session - Session await
-Mar-19 07:58:52.925 [Actor Thread 4] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (8); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (8)` script contains error(s)
-Mar-19 07:58:52.975 [Actor Thread 4] ERROR nextflow.processor.TaskProcessor - Error executing process > 'AGENT_trim_umis (8)'
+  Process: 2465071@kevin-melanoma [127.0.1.1]
+  CPUs: 8 - Mem: 31.3 GB (1 GB) - Swap: 0 (0)
+Mar-28 07:39:41.754 [main] DEBUG nextflow.Session - Work-dir: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/work [ext2/ext3]
+Mar-28 07:39:41.754 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/bin
+Mar-28 07:39:41.764 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-28 07:39:41.775 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-28 07:39:41.796 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-28 07:39:41.806 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Mar-28 07:39:42.197 [main] DEBUG nextflow.Session - Session start
+Mar-28 07:39:42.691 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-28 07:39:42.741 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-28 07:39:42.742 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-28 07:39:42.747 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-28 07:39:42.753 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Mar-28 07:39:42.755 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-28 07:39:42.879 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: test_dir
+Mar-28 07:39:42.879 [main] DEBUG nextflow.Session - Igniting dataflow network (1)
+Mar-28 07:39:42.880 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > test_dir
+Mar-28 07:39:42.881 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_41e2b335108310b8: /home/ubuntu/scratch/MD_project/scripts/pipelines/exome/01_trim_umis/test.nf
+Mar-28 07:39:42.881 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-28 07:39:42.882 [main] DEBUG nextflow.Session - Session await
+Mar-28 07:39:42.940 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=test_dir; work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Process `test_dir` script contains error(s)
+Mar-28 07:39:42.954 [Actor Thread 3] ERROR nextflow.processor.TaskProcessor - Error executing process > 'test_dir'
 
 Caused by:
-  No such variable: TRIMMER -- Check script 'trim_umis.nf' at line: 22
+  No such variable: pwd -- Check script 'test.nf' at line: 16
 
 Source block:
   """
-      java -jar $TRIMMER -fq1 ${EXOME_read_pair[1]} -fq2 ${EXOME_read_pair[2]} -out_loc . -v2
+      #!/bin/bash
+      pwd=\$(pwd | awk -F '/scripts/pipelines/exome/01_trim_umis' '{print \$1}')
+      touch $pwd/${params.EXOME_raw_reads_directory}/apple.txt
+      
       """
 
-Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
-Mar-19 07:58:52.978 [Actor Thread 4] DEBUG nextflow.Session - Session aborted -- Cause: Process `AGENT_trim_umis (8)` script contains error(s)
-Mar-19 07:58:52.989 [Actor Thread 4] DEBUG nextflow.Session - The following nodes are still active:
-[process] AGENT_trim_umis
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Mar-28 07:39:42.958 [Actor Thread 3] DEBUG nextflow.Session - Session aborted -- Cause: Process `test_dir` script contains error(s)
+Mar-28 07:39:42.970 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-28 07:39:43.025 [Actor Thread 3] DEBUG nextflow.Session - The following nodes are still active:
+[process] test_dir
   status=ACTIVE
-  port 0: (queue) OPEN  ; channel: EXOME_read_pair
-  port 1: (cntrl) -     ; channel: $
+  port 0: (cntrl) -     ; channel: $
 
-Mar-19 07:58:52.991 [main] DEBUG nextflow.Session - Session await > all processes finished
-Mar-19 07:58:52.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
-Mar-19 07:58:52.992 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Mar-19 07:58:52.993 [Actor Thread 12] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (7); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (7)` script contains error(s)
-Mar-19 07:58:52.997 [Actor Thread 9] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis; work-dir=null
-  error [java.lang.IllegalStateException]: Cannot obtain the semaphore to fork operator's body.
-Mar-19 07:58:52.998 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (4); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (4)` script contains error(s)
-Mar-19 07:58:52.999 [Actor Thread 8] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (2); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (2)` script contains error(s)
-Mar-19 07:58:52.999 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
-Mar-19 07:58:52.999 [Actor Thread 3] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (1); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (1)` script contains error(s)
-Mar-19 07:58:53.000 [Actor Thread 10] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (5); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (5)` script contains error(s)
-Mar-19 07:58:53.000 [Actor Thread 11] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (6); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (6)` script contains error(s)
-Mar-19 07:58:53.001 [Actor Thread 2] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
-  task: name=AGENT_trim_umis (3); work-dir=null
-  error [nextflow.exception.ProcessUnrecoverableException]: Process `AGENT_trim_umis (3)` script contains error(s)
-Mar-19 07:58:53.191 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Mar-19 07:58:53.202 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+Mar-28 07:39:43.026 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-28 07:39:43.026 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-28 07:39:43.029 [Actor Thread 1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=test_dir; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Mar-28 07:39:43.032 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Mar-28 07:39:43.170 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-28 07:39:43.184 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
