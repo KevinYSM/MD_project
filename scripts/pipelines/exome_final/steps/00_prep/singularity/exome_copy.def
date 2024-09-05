@@ -6,10 +6,10 @@ From: exome_w.sif
 
 %environment
         
+       export PATH=$PATH:/java/jdk-21.0.4/bin
 
 %post
-       apt-get install -y libvcflib-tools libvcflib-dev
-       
+       ln -s /usr/bin/python3 /usr/bin/python
         
 
 %runscript

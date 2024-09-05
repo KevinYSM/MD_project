@@ -4,7 +4,7 @@ JAVA_HOME="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
 
 
-SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_w.sif"
+SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif"
 EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
 
@@ -88,7 +88,7 @@ fasta_file="/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Who
 #    --outdir $out_dir
 #done
 
-#vcf processing
+#VCF
 MUTECT2="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
 export NXF_SINGULARITY_OPTS="--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
 export SINGULARITY_BINDPATH="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
@@ -98,17 +98,19 @@ if [ ! -d output_vep_updated ]
         mkdir output_vep_updated
 fi
 
+#01_gatk_filter_mutect_calls
+#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/01_gatk_filter_mutect_calls.nf -with-singularity $SIF \
+# --max_memory '120.GB' \
+# --max_cpus 63 -work-dir "/data/local/MD_project/scripts/pipelines/exome_final/work/gatk_filter"
 
+ #02_vep
+nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/02_vep.nf  -with-singularity $SIF  \
+--max_memory '120.GB' \
+--max_cpus 63 -work-dir "/data/local/MD_project/scripts/pipelines/exome_final/work/vep" 
 
-#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vep.nf  -with-singularity $SIF  \
-#--max_memory '120.GB' \
-# --max_cpus 63 \
-
-nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf \
- --max_memory '120.GB' --max_cpus 63 \
-
-#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
-#--max_memory '120.GB' \
-# --max_cpus 63 \
-#-c /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
+#03_vcf2maf
+nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/03_vcf2maf.nf  -with-singularity $SIF  \
+--max_memory '120.GB' \
+ --max_cpus 63 \
+-c /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config -work-dir "/data/local/MD_project/scripts/pipelines/exome_final/work/vcf2maf"
 

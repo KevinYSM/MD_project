@@ -8,7 +8,7 @@ From: ubuntu:20.04
 %environment
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
-        export PATH=$PATH:/java/jdk-21.0.3/bin
+        export PATH=$PATH:/java/jdk-21.0.4/bin
         export PATH=$PATH:/micromamba/bin
         
 
