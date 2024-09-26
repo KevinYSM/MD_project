@@ -10,13 +10,13 @@ exome-sequenced normals were used for further filtering using GATK SelectVariant
 downloaded from GDC (accessed May 29, 2017).
 */
 
-params.raw_vcfs="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2_test/*/*filtered.vcf.gz"
-params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing/01_filtered"
+//params.raw_vcfs="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2_test/*/*filtered.vcf.gz"
+params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing_all/01_filtered"
 
-params.VCF_stats_pair="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2_test/*/115*sample.mutect2.{filtered.vcf.gz,vcf.gz.stats}"
-params.VCF_files = "/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*.filtered.vcf.gz"
-params.VCF_stats="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*.vcf.gz.stats"
-params.VCF_index="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*filtered.vcf.gz.tbi"
+//params.VCF_stats_pair="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2_test/*/115*sample.mutect2.{filtered.vcf.gz,vcf.gz.stats}"
+params.VCF_files = "/data/local/MD_project/data/exome/processed_final/sarek_2_all/variant_calling/mutect2/*/*.filtered.vcf.gz"
+params.VCF_stats="/data/local/MD_project/data/exome/processed_final/sarek_2_all/variant_calling/mutect2/*/*.vcf.gz.stats"
+params.VCF_index="/data/local/MD_project/data/exome/processed_final/sarek_2_all/variant_calling/mutect2/*/*filtered.vcf.gz.tbi"
 process gatk_filter {
     containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2,/data/local/MD_project/data/.vep:/data/local/MD_project/data/.vep,/data/local/MD_project/data/output_vep:/data/local/MD_project/data/output_vep,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta:/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai:/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict:/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict"
 

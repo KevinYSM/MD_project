@@ -1,6 +1,6 @@
 //params.EXOME_raw_reads_directory_old="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 
-params.EXOME_raw_reads=  "/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads=  "/data/local/MD_project/data/exome/raw/re_demux/*_R{1,2}_*.fastq.gz"
 
 
 

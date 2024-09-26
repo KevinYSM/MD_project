@@ -1,12 +1,12 @@
-params.vep_files="/data/local/MD_project/data/exome/processed_final/vcf_processing/02_VEP/*.ann.vcf"
-params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing/03_vcf2maf/"
+params.vep_files="/data/local/MD_project/data/exome/processed_final/vcf_processing_all/02_VEP/*.ann.vcf"
+params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing_all/03_vcf2maf/"
 
 
 
  
 
 process VCF2MAF {
-    containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2,/data/local/MD_project/data/.vep:/data/local/MD_project/data/.vep,/data/local/MD_project/data/output_vep:/data/local/MD_project/data/output_vep,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/:/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/,/data/local/MD_project/data/exome/processed_final/vcf_processing/02_VEP,/data/local/MD_project/data/exome/processed_final/vcf_processing/03_vcf2maf"
+    containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek_2_all/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek_2_all/variant_calling/mutect2,/data/local/MD_project/data/.vep:/data/local/MD_project/data/.vep,/data/local/MD_project/data/output_vep:/data/local/MD_project/data/output_vep,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/:/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/,/data/local/MD_project/data/exome/processed_final/vcf_processing_all/02_VEP,/data/local/MD_project/data/exome/processed_final/vcf_processing_all/03_vcf2maf"
     publishDir "${params.outdir}", mode: 'copy'
     maxForks 8
 

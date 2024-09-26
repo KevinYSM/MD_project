@@ -57,3 +57,5 @@ scripts/pipelines/exome/05_sarek/work2
 file_transfer.sh
 *.sif
 scripts/pipelines/exome_final/steps/00_prep/singularity/exome_3.sif
+scripts/pipelines/exome_final/ref
+scripts/pipelines/exome_final/ref
