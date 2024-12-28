@@ -1,46 +1,48 @@
 #!/bin/bash
-BASE_DIR="/data/local/MD_project"
-JAVA_HOME="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
-JAVA_CMD="/home/ubuntu/.sdkman/candidates/java/21.0.3-tem"
+BASE_DIR="/home/user_oruko/work/MD_project"
+JAVA_HOME="/home/user_oruko/other/bin/.sdkman/candidates/java/21.0.5-tem"
+JAVA_CMD="/home/user_oruko/other/bin/.sdkman/candidates/java/21.0.5-tem"
 
 
-SIF="/data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_w.sif"
-EXOME_RAW_READS="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
-TRIMMED_DIR="/data/local/MD_project/data/exome/processed_final/01_trimmed_umis_redone_"
+SIF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome_2.sif"
+EXOME_RAW_READS="/home/user_oruko/data/raw/exome/*/fastqs/*_R{1,2}_*.fastq.gz"
+TRIMMED_DIR="/home/user_oruko/work/processed/exome/01_trimmed_umis"
 
 
 
 #01_Trim UMIs
-TRIM_UMIS_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/01_trim_umis/trim_umis.nf"
-TRIM_UMIS_WORK="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/work/01_trim_umis"
-#nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
+TRIM_UMIS_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/01_trim_umis/trim_umis.nf"
+TRIM_UMIS_WORK="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/01_trim_umis_re_demux"
+nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
 
 
 #Generate Tumour Sample Sheets
-#python3 /data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/get_tumi_tumour.py $TRIMMED_DIR
+#python3 /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/helper_scripts/get_tumi_tumour.py $TRIMMED_DIR
 
 #02_Disambiguate
-WORK_HUMAN_DIR="/data/local/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/human"
-RESULTS_HUMAN_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_human"
+WORK_HUMAN_DIR="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/human"
+RESULTS_HUMAN_DIR="/home/user_oruko/work/processed/exome/02_disambiguate/results_human"
 
-WORK_MOUSE_DIR="/data/local/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/mouse"
-RESULTS_MOUSE_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_mouse"
-RESULTS_DISAMBIGUATE_DIR="/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_disambiguate"
+WORK_MOUSE_DIR="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/02_disambiguate/mouse"
+RESULTS_MOUSE_DIR="/home/user_oruko/work/processed/exome/02_disambiguate/results_mouse"
+RESULTS_DISAMBIGUATE_DIR="/home/user_oruko/work/processed/exome/02_disambiguate/results_disambiguate"
 
-MAP_HUMAN="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_human.sh"
-MAP_MOUSE="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_mouse.sh"
+MAP_HUMAN="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_human.sh"
+MAP_MOUSE="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_mouse.sh"
 
 #Please note, this step below only runs on tumour samples:
-#source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
-#source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
+source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
+source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
 
-CRAM_HUMAN='/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_human/preprocessing/mapped/*/*.cram'
-CRAM_MOUSE='/data/local/MD_project/data/exome/processed_final/02_disambiguated/results_mouse/preprocessing/mapped/*/*.cram'
-FASTA_MOUSE="/data/local/reference/aws/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
-FASTA_HUMAN="/data/local/reference/aws/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
+CRAM_HUMAN='/home/user_oruko/data/processed/exome/02_disambiguate/results_human/preprocessing/mapped/*/*.cram'
+CRAM_MOUSE='/home/user_oruko/data/processed/exome/02_disambiguate/results_mouse/preprocessing/mapped/*/*.cram'
 
 
-DISAMBIGUATE_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/disambiguate.nf"
+FASTA_MOUSE="/home/user_oruko/data/references/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
+FASTA_HUMAN="/home/user_oruko/data/references/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
+
+
+DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/disambiguate.nf"
 
 
 
@@ -48,8 +50,8 @@ DISAMBIGUATE_NF="/data/local/MD_project/scripts/pipelines/exome_final/steps/02_d
 # --fasta_mouse $FASTA_MOUSE \
 # --fasta_human $FASTA_HUMAN \
 # --outdir $RESULTS_DISAMBIGUATE_DIR -resume \
-# --max_memory '120.GB' \
-# --max_cpus 63 \
+# --max_memory '175.GB' \
+# --max_cpus 93 \
 
 
 #03_Prepare Samplesheets
@@ -104,8 +106,8 @@ fi
 #--max_memory '120.GB' \
 # --max_cpus 63 \
 
-nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf \
- --max_memory '120.GB' --max_cpus 63 \
+#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf \
+# --max_memory '120.GB' --max_cpus 63 \
 
 #nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
 #--max_memory '120.GB' \

@@ -21,12 +21,12 @@ nextflow run nf-core/sarek \
     -resume \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
-    --max_memory '120.GB' \
-    --input /data/local/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/tumi_tumour.csv \
+    --max_memory '190.GB' \
+    --input "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/trimmed_umis_samplesheet_28122024.csv" \
     --outdir $2 \
     --genome GATK.GRCh38 \
     --igenomes_base /data/local/reference/aws/igenomes \
-    --max_cpus 63 \
+    --max_cpus 93 \
     --wes \
     --save_mapped \
     --skip_tools baserecalibrator,markduplicates

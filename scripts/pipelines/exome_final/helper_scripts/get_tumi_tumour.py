@@ -5,7 +5,7 @@ import shutil
 import csv
 import sys
 
-bbsplit_dir="/home/ubuntu/data/local/MD_project/data/exome/processed/02_disambiguated_new"
+
 trimmed_umis_dir=sys.argv[1]
 batch_ids=["335","374","693","952"]
 rename_table="/home/ubuntu/data/local/MD_project/scripts/pipelines/exome_final/helper_scripts/file_rename_tumis_table.csv"

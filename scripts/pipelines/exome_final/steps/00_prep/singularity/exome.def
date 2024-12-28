@@ -1,14 +1,14 @@
 Bootstrap: docker
-From: ubuntu:20.04
+From: ubuntu:24.04
 
 %files
-        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/AGeNT_3.1.2.zip .
-        /data/local/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/ngs_disambiguate .
+        /home/user_oruko/other/bin/AGeNT_3.1.2.zip .
+        /home/user_oruko/other/bin/ngs-disambiguate .
 
 %environment
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
-        export PATH=$PATH:/java/jdk-21.0.3/bin
+        export PATH=$PATH:/java/jdk-21.0.5/bin
         export PATH=$PATH:/micromamba/bin
         
 
@@ -46,8 +46,8 @@ From: ubuntu:20.04
         wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
         tar xvf jdk-21_linux-x64_bin.tar.gz
         mkdir /java
-        mv jdk-21.0.4 /java
-        export PATH="/java/jdk-21.0.4/bin:$PATH"
+        mv jdk-21.0.5 /java
+        export PATH="/java/jdk-21.0.5/bin:$PATH"
         
         # Set up AGeNT
         mkdir AGeNT
@@ -58,9 +58,13 @@ From: ubuntu:20.04
         
         #Install Pysam (for ngs_disambiguate)
         apt install -y python3
-        apt-get install -y python3-pip
+        apt-get install -y python3-pip python3-venv
+        python3 -m venv /opt/venv
+        . /opt/venv/bin/activate
         apt install -y git-core
         pip install pysam
+        echo "export PATH=/opt/venv/bin:\$PATH" >> /environment
+
 
      
 

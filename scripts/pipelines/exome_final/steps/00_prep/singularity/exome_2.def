@@ -1,14 +1,17 @@
 Bootstrap: localimage
-From: exome_w.sif
+From: exome.sif
 
 %files
     
 
 %environment
-        
+        export PATH=$PATH:/java/jdk-21.0.5/bin
 
 %post
-       apt-get install -y libvcflib-tools libvcflib-dev
+       
+
+      
+       
        
         
 

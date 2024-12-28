@@ -1,11 +1,11 @@
 //params.EXOME_raw_reads_directory_old="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 
-params.EXOME_raw_reads=  "/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads=  "/home/user_oruko/data/raw/exome/re_demux/fastqs/PCB-141*_R{1,2}_*.fastq.gz"
 
 
 
 process AGENT_trim_umis{ 
-        maxForks 3
+        maxForks 5
         publishDir params.TRIMMED_DIR, mode: 'copy'
     input:
         file EXOME_read_pair
