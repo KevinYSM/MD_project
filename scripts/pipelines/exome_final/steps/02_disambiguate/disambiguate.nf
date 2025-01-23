@@ -8,7 +8,7 @@ nextflow.enable.dsl=2
 //input_disambiguate_ch = bam_human_ch.join(bam_mouse_ch, by: 0).view()
 
 process CRAM_TO_BAM_HUMAN {
-    containerOptions '-B /data/local/reference/aws/:/data/local/reference/aws/'
+    containerOptions '-B /home/user_oruko/data/references/aws:/home/user_oruko/data/references/aws'
 
     //publishDir "${params.outdir}/CRAM_TO_BAM_HUMAN", pattern: "*.*", mode: 'symlink'
 
@@ -20,13 +20,13 @@ process CRAM_TO_BAM_HUMAN {
 
     script:
     """
-    ls -l /data/local/reference/aws/
+    ls -l  /home/user_oruko/data/references/aws
     samtools view -b -o ${sname}.human.bam -T ${params.fasta_human} ${cram}
     """
 }
 
 process CRAM_TO_BAM_MOUSE {
-    containerOptions '-B /data/local/reference/aws/:/data/local/reference/aws/'
+    containerOptions '-B /home/user_oruko/data/references/aws:/home/user_oruko/data/references/aws'
     //publishDir "${params.outdir}/CRAM_TO_BAM_MOUSE", pattern: "*.*", mode: 'symlink'
 
     input:
@@ -53,7 +53,7 @@ process DISAMBIGUATE {
 
     script:
     """
-    python3 /ngs_disambiguate/disambiguate/disambiguate.py -s "${sname}" -o "./" -a bwa "${bam_human}" "${bam_mouse}"
+    /ngs-disambiguate/bin/ngs_disambiguate -s "${sname}" -o "./" -a bwa "${bam_human}" "${bam_mouse}"
     """
 }
 
@@ -109,6 +109,7 @@ workflow {
         .fromPath(params.cram_mouse)
         .map { file -> tuple(file.baseName, file) }
     cram_mouse_ch.view()
+    
     cram_to_bam_human_ch = CRAM_TO_BAM_HUMAN(
         cram_human_ch
     )

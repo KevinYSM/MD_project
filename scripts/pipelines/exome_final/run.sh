@@ -13,7 +13,7 @@ TRIMMED_DIR="/home/user_oruko/work/processed/exome/01_trimmed_umis"
 #01_Trim UMIs
 TRIM_UMIS_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/01_trim_umis/trim_umis.nf"
 TRIM_UMIS_WORK="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/01_trim_umis_re_demux"
-nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
+#nextflow run $TRIM_UMIS_NF -with-singularity $SIF -resume  --TRIMMED_DIR $TRIMMED_DIR  -work-dir $TRIM_UMIS_WORK
 
 
 #Generate Tumour Sample Sheets
@@ -31,15 +31,15 @@ MAP_HUMAN="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/
 MAP_MOUSE="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/map_mouse.sh"
 
 #Please note, this step below only runs on tumour samples:
-source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
-source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
+#source $MAP_HUMAN $WORK_HUMAN_DIR $RESULTS_HUMAN_DIR
+#source $MAP_MOUSE $WORK_MOUSE_DIR $RESULTS_MOUSE_DIR
 
-CRAM_HUMAN='/home/user_oruko/data/processed/exome/02_disambiguate/results_human/preprocessing/mapped/*/*.cram'
-CRAM_MOUSE='/home/user_oruko/data/processed/exome/02_disambiguate/results_mouse/preprocessing/mapped/*/*.cram'
+CRAM_HUMAN='/home/user_oruko/work/processed/exome/02_disambiguate/results_human/preprocessing/mapped/*/*.cram'
+CRAM_MOUSE='/home/user_oruko/work/processed/exome/02_disambiguate/results_mouse/preprocessing/mapped/*/*.cram'
 
 
-FASTA_MOUSE="/home/user_oruko/data/references/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
-FASTA_HUMAN="/home/user_oruko/data/references/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
+FASTA_MOUSE="/home/user_oruko/data/references/aws/Mus_musculus/Ensembl/GRCm38/Sequence/WholeGenomeFasta/genome.fa"
+FASTA_HUMAN="/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta"
 
 
 DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/disambiguate.nf"
@@ -57,11 +57,11 @@ DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/
 #03_Prepare Samplesheets
 samplesheet_path="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_samplesheet.csv"
 #SAREK
-#nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
-#-resume \
-# -profile singularity --fasta "/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta" \
-#--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
-#--outdir "/data/local/MD_project/data/exome/processed_final/sarek" 
+nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+-resume \
+ -profile singularity --fasta $FASTA_HUMAN \
+--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
+--outdir "/data/local/MD_project/data/exome/processed_final/sarek" 
 
 batch_1="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_1.csv"
 batch_2="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_2.csv"
