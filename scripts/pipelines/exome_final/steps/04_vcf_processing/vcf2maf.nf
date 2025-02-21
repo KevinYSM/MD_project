@@ -1,12 +1,12 @@
-params.vep_files="/data/local/MD_project/data/filtered_vcfs/*.ann.vcf"
-params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing"
+params.vep_files="/home/user_oruko/work/processed/exome/vcf_processing/filtered_vcfs/*filtered.vcf"
+params.outdir="/home/user_oruko/work/processed/exome/vcf_processing/output_maf"
 
 
 
  
 
 process VCF2MAF {
-    containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2,/data/local/MD_project/data/.vep:/data/local/MD_project/data/.vep,/data/local/MD_project/data/output_vep:/data/local/MD_project/data/output_vep,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/:/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/"
+    containerOptions "--bind /home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2,/home/user_oruko/work/processed/exome/.vep:/home/user_oruko/work/processed/exome/.vep,/home/user_oruko/work/processed/exome/vcf_processing/output_vep:/home/user_oruko/work/processed/exome/vcf_processing/output_vep,/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta:/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta,/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/:/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/"
     publishDir "${params.outdir}", mode: 'copy'
     maxForks 8
 
@@ -15,17 +15,20 @@ process VCF2MAF {
 
     script:
     """
+    vcf=${vcf}
+
+
     #Extract vcf-tumor-id and vcf-normal-id
-    vcf_tumor_id=\$(grep -F "##tumor_sample" ${vcf} | cut -d '=' -f2)
-    vcf_normal_id=\$(grep -F "##normal_sample" ${vcf} | cut -d '=' -f2)
+    vcf_tumor_id=\$(grep -F "##tumor_sample" "\${vcf}" | cut -d '=' -f2)
+    vcf_normal_id=\$(grep -F "##normal_sample" "\${vcf}" | cut -d '=' -f2)
 
     /vcf2maf-1.6.22/vcf2maf.pl \
         --inhibit-vep \
-        --input-vcf ${vcf} \
+        --input-vcf "\${vcf}" \
         --vcf-tumor-id "\$vcf_tumor_id" \
         --vcf-normal-id "\$vcf_normal_id" \
-        --output-maf /data/local/MD_project/data/output_maf/\$(basename "${vcf}" ".vcf").maf \
-        --ref-fasta /data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta \
+        --output-maf /home/user_oruko/work/processed/exome/vcf_processing/output_maf/\$(basename "\${vcf}" ".vcf").maf \
+        --ref-fasta /home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta \
         --ncbi-build GRCh38 \
    
     """

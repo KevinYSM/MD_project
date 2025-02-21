@@ -55,13 +55,14 @@ DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/
 
 
 #03_Prepare Samplesheets
-samplesheet_path="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_samplesheet.csv"
+samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_MASTER.csv"
 #SAREK
-nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
--resume \
- -profile singularity --fasta $FASTA_HUMAN \
---tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
---outdir "/data/local/MD_project/data/exome/processed_final/sarek" 
+#nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+#-w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/sarek" \
+# -profile singularity --fasta $FASTA_HUMAN \
+#--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
+#--outdir "/home/user_oruko/work/processed/exome/sarek" \
+#-c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config"
 
 batch_1="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_1.csv"
 batch_2="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_2.csv"
@@ -91,10 +92,10 @@ fasta_file="/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Who
 #done
 
 #vcf processing
-MUTECT2="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
-export NXF_SINGULARITY_OPTS="--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
-export SINGULARITY_BINDPATH="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
-export SINGULARITY_BIND="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2"
+MUTECT2="/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
+export NXF_SINGULARITY_OPTS="--bind /home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2"
+export SINGULARITY_BINDPATH="/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2"
+export SINGULARITY_BIND="/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2"
 if [ ! -d output_vep_updated ]
     then
         mkdir output_vep_updated
@@ -102,15 +103,16 @@ fi
 
 
 
-#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vep.nf  -with-singularity $SIF  \
-#--max_memory '120.GB' \
-# --max_cpus 63 \
+#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vep.nf  -with-singularity $SIF  \
+#--max_memory '185.GB' \
+# --max_cpus 94 \
+# -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/vep_refseq" 
 
-#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf \
-# --max_memory '120.GB' --max_cpus 63 \
+#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf  -with-singularity $SIF \
+# --max_memory '185.GB' --max_cpus 94 \
 
-#nextflow run /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
-#--max_memory '120.GB' \
-# --max_cpus 63 \
-#-c /data/local/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
+nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
+--max_memory '185.GB' \
+ --max_cpus 94 \
+-c /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
 

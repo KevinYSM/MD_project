@@ -1,10 +1,10 @@
-params.vcf_files="/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
-params.outdir="/data/local/MD_project/data/exome/processed_final/vcf_processing"
+params.vcf_files="/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
+params.outdir="/home/user_oruko/work/processed/exome/vcf_processing"
 
 process VEP {
-    containerOptions "--bind /data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2:/data/local/MD_project/data/exome/processed_final/sarek/variant_calling/mutect2,/data/local/MD_project/data/.vep:/data/local/MD_project/data/.vep,/data/local/MD_project/data/output_vep:/data/local/MD_project/data/output_vep,/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/:/data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/"
+    containerOptions "--bind /home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2,/home/user_oruko/work/processed/exome/.vep:/home/user_oruko/work/processed/exome/.vep,/home/user_oruko/work/processed/exome/vcf_processing/output_vep:/home/user_oruko/work/processed/exome/vcf_processing/output_vep,/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta:/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta,/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/:/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/"
     publishDir "${params.outdir}", mode: 'copy'
-    maxForks 4
+    maxForks 1
 
     input:
         val(vcf_gz)
@@ -20,16 +20,19 @@ process VEP {
     
     /ensembl-vep/vep \
         --species homo_sapiens \
+        --use_given_ref \
         --assembly GRCh38 \
+        --refseq \
         --offline \
         --cache \
-        --dir /data/local/MD_project/data/.vep \
+        --dir /home/user_oruko/work/processed/exome/.vep \
+        --dir_cache /home/user_oruko/work/processed/exome/.vep \
         --input_file "\$vcf" \
-        --output_file /data/local/MD_project/data/output_vep/\$(basename "\$vcf" ".vcf").ann.vcf \
+        --output_file /home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/\$(basename "\$vcf" ".vcf").ann.vcf \
         --everything \
         --vcf \
-        --fork 4 \
-        --fasta /data/local/reference/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta \
+        --fork 2 \
+        --fasta /home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta \
         --force_overwrite
     """
 }

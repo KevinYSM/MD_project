@@ -1,14 +1,15 @@
-params.unfiltered_vcfs="/data/local/MD_project/data/output_vep/*.ann.vcf"
-params.outdir="/data/local/MD_project/data/filtered_vcfs"
+params.unfiltered_vcfs="/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/*.ann.vcf"
+params.outdir="/home/user_oruko/work/processed/exome/vcf_processing/filtered_vcfs"
 
 process VCF2MAF {
+    containerOptions "--bind /home/user_oruko/other/:/home/user_oruko/other/"
     input:
         path unfiltered_vcfs
     publishDir "${params.outdir}", mode: 'copy'
     script:
     """
     basename=\$(basename "${unfiltered_vcfs}" ".vcf")
-    vcffilter -f "(DP > 5 & MMQ > 30 & )" ${unfiltered_vcfs} > /data/local/MD_project/data/filtered_vcfs/"\$basename".filtered.vcf
+    java -jar /home/user_oruko/other/vcffilter-assembly-0.2.jar  -I ${unfiltered_vcfs} -o /home/user_oruko/work/processed/exome/vcf_processing/filtered_vcfs/"\$basename".filtered.vcf --minSampleDepth 5 --minQualScore 30
     """
 }
 
