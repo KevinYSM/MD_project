@@ -57,13 +57,23 @@ DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/
 #03_Prepare Samplesheets
 samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_MASTER.csv"
 #SAREK
-#nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
-#-w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/sarek" \
-# -profile singularity --fasta $FASTA_HUMAN \
-#--tools mutect2,haplotypecaller,ascat,cnvkit,msisensorpro --wes \
-#--outdir "/home/user_oruko/work/processed/exome/sarek" \
-#-c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config"
+nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+    -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/sarek" \
+    -profile singularity \
+    --intervals "/home/user_oruko/data/references/agilent/S33266340_Padded_merge.clean.bed" \
+    --cf_contamination_adjustment FALSE \
+    --cf_contamination 0 \
+    --genome GATK.GRCh38 \
+    --tools mutect2,msisensorpro,vep,haplotypecaller \
+    --wes \
+    --outdir "/home/user_oruko/work/processed/exome/sarek_intervals" \
+    -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" 
 
+#missing #controlfreec, manta, snpeff, tiddit, vep, cnvkit, controlfreec
+
+#    --known_indels "/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/beta/Homo_sapiens_assembly38.known_indels.vcf.gz" \
+#    --known_indels_tbi "/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/beta/Homo_sapiens_assembly38.known_indels.vcf.gz.tbi" \
+#     --igenomes_base /home/user_oruko/data/references/aws \
 batch_1="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_1.csv"
 batch_2="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_2.csv"
 batch_4="/data/local/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/batches/batch_4.csv"
@@ -111,8 +121,8 @@ fi
 #nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf  -with-singularity $SIF \
 # --max_memory '185.GB' --max_cpus 94 \
 
-nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
---max_memory '185.GB' \
- --max_cpus 94 \
--c /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
+#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
+#--max_memory '185.GB' \
+# --max_cpus 94 \
+#-c /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
 
