@@ -1,5 +1,5 @@
-params.unfiltered_vcfs="/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/*.ann.vcf"
-params.outdir="/home/user_oruko/work/processed/exome/vcf_processing/filtered_vcfs"
+params.unfiltered_vcfs="/home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep_refseq/*.ann.vcf"
+params.outdir="/home/user_oruko/work/processed/exome/vcf_processing_intervals/filtered_vcfs_qual_30"
 
 process VCF2MAF {
     containerOptions "--bind /home/user_oruko/other/:/home/user_oruko/other/"
@@ -9,7 +9,7 @@ process VCF2MAF {
     script:
     """
     basename=\$(basename "${unfiltered_vcfs}" ".vcf")
-    java -jar /home/user_oruko/other/vcffilter-assembly-0.2.jar  -I ${unfiltered_vcfs} -o /home/user_oruko/work/processed/exome/vcf_processing/filtered_vcfs/"\$basename".filtered.vcf --minSampleDepth 5 --minQualScore 30
+    java -jar /home/user_oruko/other/vcffilter-assembly-0.2.jar  -I ${unfiltered_vcfs} -o /home/user_oruko/work/processed/exome/vcf_processing_intervals/filtered_vcfs_qual_30/"\$basename".filtered.vcf --minSampleDepth 10 --minTotalDepth 30 
     """
 }
 

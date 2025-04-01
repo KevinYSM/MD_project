@@ -55,8 +55,21 @@ DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/
 
 
 #03_Prepare Samplesheets
+#samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_31.csv"
 samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_MASTER.csv"
 #SAREK
+#nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+#    -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/sarek" \
+#    -profile singularity \
+#    --intervals "/home/user_oruko/data/references/agilent/S33266340_Padded_merge.clean.bed" \
+#    --cf_contamination_adjustment FALSE \
+#    --cf_contamination 0 \
+#    --genome GATK.GRCh38 \
+#    --tools mutect2,msisensorpro,vep,haplotypecaller \
+#    --wes \
+#    --outdir "/home/user_oruko/work/processed/exome/sarek_intervals" \
+#    -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" 
+
 nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
     -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/sarek" \
     -profile singularity \
@@ -64,12 +77,14 @@ nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
     --genome GATK.GRCh38 \
-    --tools mutect2,msisensorpro,vep,haplotypecaller \
+    --tools cnvkit \
     --wes \
     --outdir "/home/user_oruko/work/processed/exome/sarek_intervals" \
+    -resume \
     -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" 
 
-#missing #controlfreec, manta, snpeff, tiddit, vep, cnvkit, controlfreec
+#missing #controlfreec, manta, snpeff, tiddit, vep, cnvkit
+#completed mutect2,msisensorpro,vep,haplotypecaller
 
 #    --known_indels "/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/beta/Homo_sapiens_assembly38.known_indels.vcf.gz" \
 #    --known_indels_tbi "/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/beta/Homo_sapiens_assembly38.known_indels.vcf.gz.tbi" \
@@ -116,13 +131,18 @@ fi
 #nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vep.nf  -with-singularity $SIF  \
 #--max_memory '185.GB' \
 # --max_cpus 94 \
-# -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work/vep_refseq" 
+# -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/vep_refseq" 
 
-#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter.nf  -with-singularity $SIF \
+#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf_filter_new.nf \
 # --max_memory '185.GB' --max_cpus 94 \
+
+
+
+#nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/add_af.nf \
+#--max_memory '185.GB' \
+#--max_cpus 94 
 
 #nextflow run /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf2maf.nf  -with-singularity $SIF  \
 #--max_memory '185.GB' \
-# --max_cpus 94 \
+#--max_cpus 94 \
 #-c /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/04_vcf_processing/vcf.config
-

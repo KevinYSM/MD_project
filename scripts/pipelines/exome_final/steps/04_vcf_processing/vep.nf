@@ -1,8 +1,8 @@
-params.vcf_files="/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2/*/*filtered.vcf.gz"
-params.outdir="/home/user_oruko/work/processed/exome/vcf_processing"
+params.vcf_files="/home/user_oruko/work/processed/exome/sarek_intervals/variant_calling/mutect2/*/*filtered.vcf.gz"
+params.outdir="/home/user_oruko/work/processed/exome/vcf_processing_intervals"
 
 process VEP {
-    containerOptions "--bind /home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek/variant_calling/mutect2,/home/user_oruko/work/processed/exome/.vep:/home/user_oruko/work/processed/exome/.vep,/home/user_oruko/work/processed/exome/vcf_processing/output_vep:/home/user_oruko/work/processed/exome/vcf_processing/output_vep,/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta:/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta,/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/:/home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/"
+    containerOptions "--bind /home/user_oruko/work/processed/exome/sarek_intervals/variant_calling/mutect2:/home/user_oruko/work/processed/exome/sarek_intervals/variant_calling/mutect2,/home/user_oruko/work/processed/exome/.vep:/home/user_oruko/work/processed/exome/.vep,/home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep:/home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep,/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta:/home/user_oruko/data/references/aws/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta,/home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep_refseq/:/home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep_refseq/"
     publishDir "${params.outdir}", mode: 'copy'
     maxForks 1
 
@@ -28,7 +28,7 @@ process VEP {
         --dir /home/user_oruko/work/processed/exome/.vep \
         --dir_cache /home/user_oruko/work/processed/exome/.vep \
         --input_file "\$vcf" \
-        --output_file /home/user_oruko/work/processed/exome/vcf_processing/output_vep_refseq/\$(basename "\$vcf" ".vcf").ann.vcf \
+        --output_file /home/user_oruko/work/processed/exome/vcf_processing_intervals/output_vep_refseq/\$(basename "\$vcf" ".vcf").ann.vcf \
         --everything \
         --vcf \
         --fork 2 \
