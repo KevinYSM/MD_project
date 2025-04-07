@@ -6,21 +6,17 @@ From: ubuntu:24.04
 %environment
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
-        export PATH=$PATH:/java/jdk-21.0.5/bin
+        export PATH=$PATH:/java/jdk-21.0.6/bin
         export PATH=$PATH:/micromamba/bin
         
 
 %post
-        # Get latest STAR source from releases
-        wget https://github.com/alexdobin/STAR/archive/2.7.11b.tar.gz
-        tar -xzf 2.7.11b.tar.gz
-        cd STAR-2.7.11b
-
-        # Compile STAR
-        cd STAR/source
-        make STAR
-
-        apt-get update && apt-get install -y \
+       
+        apt-get -y update \
+        && apt-get -y autoremove \
+        && apt-get clean \
+        && apt-get install -y \
+                tabix \
                 libcurl4-openssl-dev \
                 wget \
                 bzip2 \
@@ -30,14 +26,36 @@ From: ubuntu:24.04
                 libbz2-dev \
                 liblzma-dev \
                 libncurses-dev \
-                curl \
-                unzip \
-                zip \
                 libbamtools-dev \
-                tabix \
+                git-all \
+                xxd \
+                curl \
+                zip \
                 && apt-get clean
+  
+   
+        # Get latest STAR source from releases
+        wget https://github.com/alexdobin/STAR/archive/2.7.11b.tar.gz
+        tar -xzf 2.7.11b.tar.gz
+        cd STAR-2.7.11b
+
+        # Compile STAR
+        cd source
+        make STAR
+
+        #Install GATK
+        mkdir /gatk
+        cd /gatk
+        wget https://github.com/broadinstitute/gatk/releases/download/4.6.1.0/gatk-4.6.1.0.zip
+        unzip gatk-4.6.1.0.zip
+
+        #Install picard
+        mkdir /picard
+        cd /picard
+        wget -O picard.jar https://github.com/broadinstitute/picard/releases/download/3.3.0/picard.jar
 
         # Download and install samtools 1.20
+        cd /
         wget https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2
         tar xvjf samtools-1.20.tar.bz2
         cd samtools-1.20 || exit 1  # Change directory and exit if not found
@@ -46,38 +64,14 @@ From: ubuntu:24.04
         make install
         cd ..
 
-    #Install Java without SDKMAN
+        #Install Java without SDKMAN
         wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
         tar xvf jdk-21_linux-x64_bin.tar.gz
         mkdir /java
-        mv jdk-21.0.5 /java
-        export PATH="/java/jdk-21.0.5/bin:$PATH"
+        mv jdk-21.0.6 /java
+        export PATH="/java/jdk-21.0.6/bin:$PATH"
         
-        # Set up AGeNT
-        mkdir AGeNT
-        mv AGeNT_3.1.2.zip AGeNT/
-        unzip AGeNT/AGeNT_3.1.2.zip -d AGeNT/
-        export PATH="/AGeNT/agent:$PATH"
-        chmod +x /AGeNT/agent/agent.sh
         
-        #Install Pysam (for ngs_disambiguate)
-        apt install -y python3
-        apt-get install -y python3-pip python3-venv
-        python3 -m venv /opt/venv
-        . /opt/venv/bin/activate
-        apt install -y git-core
-        pip install pysam
-        echo "export PATH=/opt/venv/bin:\$PATH" >> /environment
-
-
-     
-
-        #Install GATK
-        mkdir /gatk
-        cd /gatk
-        wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip
-        unzip gatk-4.6.0.0.zip
-
 
         cd /                       
         #Install perl                             
