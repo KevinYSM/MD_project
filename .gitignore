@@ -29,6 +29,8 @@ processed
 data/
 *.nextflow.*
 gatk/
+*.bam
+*.sam
 
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log
 scripts/pipelines/exome/02_disambiguate_test/.nextflow.log.1

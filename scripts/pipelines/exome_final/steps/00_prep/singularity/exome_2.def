@@ -1,15 +1,14 @@
 Bootstrap: localimage
-From: exome_3.sif
+From: exome_2.sif
 
 %files
-    
+        /home/user_oruko/other/bin/ngs-disambiguate /ngs-test
 
 %environment
-        
+      
 
 %post
-       apt-get install -y tabix
-       mkdir /.vep
+       
 
       
        
