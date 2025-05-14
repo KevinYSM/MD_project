@@ -56,8 +56,21 @@ DISAMBIGUATE_NF="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/
 
 #03_Prepare Samplesheets
 #samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_31.csv"
-samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_final_MASTER.csv"
+samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02b_samplesheets/samplesheets/exome_bbsplit_sheet.csv"
 #SAREK
+nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
+    -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals_bbsplit/sarek" \
+    -profile singularity \
+    --intervals "/home/user_oruko/data/references/agilent/S33266340_Padded_merge.clean.bed" \
+    --cf_contamination_adjustment FALSE \
+    --cf_contamination 0 \
+    --genome GATK.GRCh38 \
+    --tools mutect2,msisensorpro,vep,haplotypecaller,cnvkit \
+    --wes \
+    --outdir "/home/user_oruko/work/processed/exome/sarek_intervals_bbsplit" \
+    -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" \
+    -resume
+
 #nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
 #    -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/sarek" \
 #    -profile singularity \
@@ -65,23 +78,11 @@ samplesheet_path="/home/user_oruko/work/MD_project/scripts/pipelines/exome_final
 #    --cf_contamination_adjustment FALSE \
 #    --cf_contamination 0 \
 #    --genome GATK.GRCh38 \
-#    --tools mutect2,msisensorpro,vep,haplotypecaller \
+#    --tools cnvkit \
 #    --wes \
 #    --outdir "/home/user_oruko/work/processed/exome/sarek_intervals" \
+#    -resume \
 #    -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" 
-
-nextflow run nf-core/sarek -with-singularity $SIF --input $samplesheet_path \
-    -w "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/work_intervals/sarek" \
-    -profile singularity \
-    --intervals "/home/user_oruko/data/references/agilent/S33266340_Padded_merge.clean.bed" \
-    --cf_contamination_adjustment FALSE \
-    --cf_contamination 0 \
-    --genome GATK.GRCh38 \
-    --tools cnvkit \
-    --wes \
-    --outdir "/home/user_oruko/work/processed/exome/sarek_intervals" \
-    -resume \
-    -c "/home/user_oruko/work/MD_project/scripts/pipelines/exome_final/configs/sarek.config" 
 
 #missing #controlfreec, manta, snpeff, tiddit, vep, cnvkit
 #completed mutect2,msisensorpro,vep,haplotypecaller
