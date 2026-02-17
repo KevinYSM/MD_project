@@ -4,12 +4,14 @@ From: ubuntu:24.04
 %files
         /home/user_oruko/other/bin/AGeNT_3.1.2.zip .
         /home/user_oruko/other/bin/ngs-disambiguate .
+        /home/user_oruko/other/bin/ngs-disambiguate /ngs-test
 
 %environment
         export LC_ALL=C
         export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
         export PATH=$PATH:/java/jdk-21.0.5/bin
         export PATH=$PATH:/micromamba/bin
+        export PATH=$PATH:/java/jdk-21.0.5/bin
         
 
 %post
