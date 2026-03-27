@@ -2,16 +2,17 @@ Bootstrap: docker
 From: ubuntu:24.04
 
 %files
-        /home/user_oruko/other/bin/AGeNT_3.1.2.zip .
-        /home/user_oruko/other/bin/ngs-disambiguate .
-        /home/user_oruko/other/bin/ngs-disambiguate /ngs-test
+        /home/kevin/bin/AGeNT_3.1.2.zip /opt/
 
 %environment
         export LC_ALL=C
-        export PATH=$PATH:/usr/local/bin  # Assuming samtools will be installed here
-        export PATH=$PATH:/java/jdk-21.0.5/bin
-        export PATH=$PATH:/micromamba/bin
-        export PATH=$PATH:/java/jdk-21.0.5/bin
+        export JAVA_HOME=/opt/java/latest
+
+        export PATH="/opt/java/latest/bin:/opt/venv/bin:/usr/local/bin:/opt/gatk/gatk-4.6.2.0:/opt/ensembl-vep:/opt/vcf2maf-1.6.22:/opt/AGeNT/agent:/opt/ngs_disambiguate:$PATH"        
+        # Define the cache directory so VEP knows where to look by default
+        export VEP_CACHEDIR=/.vep
+
+       
         
 
 %post
@@ -20,6 +21,15 @@ From: ubuntu:24.04
 
         apt-get update && apt-get install -y \
                 libcurl4-openssl-dev \
+                perl \
+                libperl-dev \
+                libdbd-mysql-perl \
+                libdbi-perl \
+                libarchive-zip-perl \
+                libmodule-build-perl \
+                libwww-perl \
+                liblwp-protocol-https-perl \
+                cpanminus \
                 wget \
                 bzip2 \
                 lbzip2 \
@@ -33,63 +43,72 @@ From: ubuntu:24.04
                 zip \
                 libbamtools-dev \
                 tabix \
+                python3 python3-pip python3-venv git-core \
                 && apt-get clean
+        
+        mkdir -p /mnt/data /mnt/pipeline /java /opt/venv
 
-        # Download and install samtools 1.20
-        wget https://github.com/samtools/samtools/releases/download/1.20/samtools-1.20.tar.bz2
-        tar xvjf samtools-1.20.tar.bz2
-        cd samtools-1.20 || exit 1  # Change directory and exit if not found
+
+        # Download and install samtools 1.23
+        wget https://github.com/samtools/samtools/releases/download/1.23/samtools-1.23.tar.bz2
+        tar xvjf samtools-1.23.tar.bz2
+        cd samtools-1.23 || exit 1  # Change directory and exit if not found
         ./configure --prefix=/usr/local  # Optional: Set installation prefix
         make
         make install
-        cd ..
+        rm -rf samtools-1.23.tar.bz2
+        cd .. 
 
     #Install Java without SDKMAN
-        wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
-        tar xvf jdk-21_linux-x64_bin.tar.gz
-        mkdir /java
-        mv jdk-21.0.5 /java
-        export PATH="/java/jdk-21.0.5/bin:$PATH"
-        
+        wget https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.tar.gz
+        tar xvf jdk-25_linux-x64_bin.tar.gz
+        mkdir -p /opt/java
+        mkdir -p /opt/java/latest
+        mv jdk-25*/* /opt/java/latest
+        rm -rf jdk-25_linux-x64_bin.tar.gz
+
+
+
         # Set up AGeNT
-        mkdir AGeNT
-        mv AGeNT_3.1.2.zip AGeNT/
-        unzip AGeNT/AGeNT_3.1.2.zip -d AGeNT/
-        export PATH="/AGeNT/agent:$PATH"
-        chmod +x /AGeNT/agent/agent.sh
+        mkdir -p /opt/AGeNT
+        mv /opt/AGeNT_3.1.2.zip /opt/AGeNT/
+        unzip /opt/AGeNT/AGeNT_3.1.2.zip -d /opt/AGeNT/        
+
+        chmod +x /opt/AGeNT/agent/agent.sh        
+        ln -s /opt/AGeNT/agent/agent.sh /usr/local/bin/agent
+
         
         #Install Pysam (for ngs_disambiguate)
-        apt install -y python3
-        apt-get install -y python3-pip python3-venv
         python3 -m venv /opt/venv
-        . /opt/venv/bin/activate
-        apt install -y git-core
-        pip install pysam
-        echo "export PATH=/opt/venv/bin:\$PATH" >> /environment
-
-
+        /opt/venv/bin/pip install --upgrade pip
+        /opt/venv/bin/pip install pysam
+        
+        #Install ngs_disambiguate
+        wget https://github.com/AstraZeneca-NGS/disambiguate/archive/refs/tags/v1.0.0.tar.gz
+        tar xvf v1.0.0.tar.gz
+        mkdir /opt/ngs_disambiguate
+        mv disambiguate* /opt/ngs_disambiguate
+        rm -rf v1.0.0.tar.gz
      
 
         #Install GATK
-        mkdir /gatk
-        cd /gatk
-        wget https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip
-        unzip gatk-4.6.0.0.zip
+        mkdir /opt/gatk
+        cd /opt/gatk
+        wget https://github.com/broadinstitute/gatk/releases/download/4.6.2.0/gatk-4.6.2.0.zip
+        unzip gatk-4.6.2.0.zip
+        rm gatk-4.6.2.0.zip
 
 
-        cd /                       
-        #Install perl                             
-        curl -L http://xrl.us/installperlnix | bash
+       
 
       
-        #Download vep repo
-        cd /
-        git clone https://github.com/Ensembl/ensembl-vep.git
+        
         
 
         cd /
         wget https://github.com/mskcc/vcf2maf/archive/refs/tags/v1.6.22.tar.gz
         tar xvf v1.6.22.tar.gz
+        rm v1.6.22.tar.gz
     
         #Install vep and vcf2maf dependencies
         apt-get install -y libhts-dev
@@ -98,11 +117,55 @@ From: ubuntu:24.04
         cpan -i DBI
         cpan -i Archive::Zip
 
-        # install VEP #
-        mkdir /.vep
-        cd /ensembl-vep
-        perl INSTALL.pl --AUTO acfp --ASSEMBLY GRCh38 --PLUGINS all --SPECIES homo_sapiens,mus_musculus --CACHEDIR /.vep
-        
+        mkdir -p /.vep
+        cd /.vep 
+        wget http://ftp.ensembl.org/pub/release-113/variation/indexed_vep_cache/homo_sapiens_vep_113_GRCh38.tar.gz
+        tar -xzf homo_sapiens_vep_113_GRCh38.tar.gz 
+
+        wget http://ftp.ensembl.org/pub/release-113/variation/indexed_vep_cache/mus_musculus_vep_113_GRCm39.tar.gz
+        tar -xzf mus_musculus_vep_113_GRCm39.tar.gz 
+        rm -rf *.tar.gz
+
+        # 1. System Dependencies (Cleaned up syntax)
+        apt-get update && apt-get install -y \
+        libxml2-dev \
+        libhts-dev \
+        libmodule-build-perl \
+        libfile-copy-recursive-perl \
+        libbz2-dev \
+        liblzma-dev
+
+    # 2. Perl Modules
+    cpanm XML::LibXML XML::LibXML::Reader || true
+    cpanm Bio::DB::HTS::Faidx Bio::PrimarySeqI Bio::SeqIO LWP::Simple DBI Archive::Zip || true
+
+    # 3. Setup Directories
+    mkdir -p /opt
+    mkdir -p /.vep
+    cd /opt
+
+    # 4. Clone VEP (with a check to prevent errors if it already exists)
+    if [ ! -d "ensembl-vep" ]; then
+        git clone https://github.com/Ensembl/ensembl-vep.git
+    fi
+
+    # 5. Run VEP Installer
+    cd /opt/ensembl-vep
+    # Added --NO_TEST to ensure the exit status is 0
+    perl INSTALL.pl \
+        --AUTO ap \
+        --PLUGINS LoF,MaxEntScan,SpliceRegion,dbNSFP,CADD,SpliceAI \
+        --SPECIES homo_sapiens,mus_musculus \
+        --CACHEDIR /.vep \
+        --NO_HTSLIB \
+        --NO_TEST \
+        --NO_UPDATE
+
+    # 6. Permissions (Do this AFTER installation)
+    chmod -R 777 /opt/ensembl-vep
+    chmod -R 777 /.vep
+
+    
     
 
 %runscript

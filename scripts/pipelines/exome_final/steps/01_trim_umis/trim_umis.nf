@@ -1,6 +1,6 @@
 //params.EXOME_raw_reads_directory_old="/data/local/MD_project/data/exome/raw/*/fastqs/*_R{1,2}_*.fastq.gz"
 
-params.EXOME_raw_reads=  "/home/user_oruko/data/raw/exome/re_demux/fastqs/PCB-141*_R{1,2}_*.fastq.gz"
+params.EXOME_raw_reads=  "/media/cph/Store4-USB/kevin/raw/*_R{1,2}_*.fastq.gz"
 
 
 
@@ -13,7 +13,7 @@ process AGENT_trim_umis{
         file "*"
         
     """
-    /AGeNT/agent/agent.sh trim -fq1 ${EXOME_read_pair[1]} -fq2 ${EXOME_read_pair[2]} -v2 -out_loc .
+    /opt/AGeNT/agent/agent.sh trim -fq1 ${EXOME_read_pair[1]} -fq2 ${EXOME_read_pair[2]} -v2 -out_loc .
     """
 }
 

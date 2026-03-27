@@ -1,0 +1,2 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+p9,XY,1,9_1,L001,/media/cph/Store4-USB/kevin/exome/01_trimmed_umis/PCB-09-PDX_S1_L001_R1_001.1773054689290_Cut_0.fastq.gz,/media/cph/Store4-USB/kevin/exome/01_trimmed_umis/PCB-09-PDX_S1_L001_R2_001.1773054689290_Cut_0.fastq.gz

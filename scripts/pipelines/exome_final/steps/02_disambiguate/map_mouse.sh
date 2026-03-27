@@ -21,9 +21,11 @@ nextflow run nf-core/sarek \
     -resume \
     --cf_contamination_adjustment FALSE \
     --cf_contamination 0 \
-    --input /home/user_oruko/work/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/trimmed_umis_28122024.csv \
+    --input /home/kevin/MD_project/scripts/pipelines/exome_final/steps/02_disambiguate/trimmed_samplesheet.csv \
     --outdir $2 \
-    --genome GRCm38 \
+    --fasta /media/cph/Store4-USB/kevin/references/mouse/ensembl/Mus_musculus.GRCm39.dna.primary_assembly.fa \
+    --gtf /media/cph/Store4-USB/kevin/references/mouse/ensembl/Mus_musculus.GRCm39.115.gtf \
+    --save_reference \
     --wes \
     --save_mapped \
     --skip_tools baserecalibrator,markduplicates

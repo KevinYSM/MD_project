@@ -8,7 +8,7 @@ nextflow.enable.dsl=2
 //input_disambiguate_ch = bam_human_ch.join(bam_mouse_ch, by: 0).view()
 
 process CRAM_TO_BAM_HUMAN {
-    containerOptions '-B /home/user_oruko/data/references/aws:/home/user_oruko/data/references/aws'
+    containerOptions '-B /media/cph/Store4-USB/kevin/references:/media/cph/Store4-USB/kevin/references'
 
     //publishDir "${params.outdir}/CRAM_TO_BAM_HUMAN", pattern: "*.*", mode: 'symlink'
 
@@ -20,13 +20,13 @@ process CRAM_TO_BAM_HUMAN {
 
     script:
     """
-    ls -l  /home/user_oruko/data/references/aws
+    #ls -l  /home/user_oruko/data/references/aws
     samtools view -b -o ${sname}.human.bam -T ${params.fasta_human} ${cram}
     """
 }
 
 process CRAM_TO_BAM_MOUSE {
-    containerOptions '-B /home/user_oruko/data/references/aws:/home/user_oruko/data/references/aws'
+    containerOptions '-B /media/cph/Store4-USB/kevin/references:/media/cph/Store4-USB/kevin/references'
     //publishDir "${params.outdir}/CRAM_TO_BAM_MOUSE", pattern: "*.*", mode: 'symlink'
 
     input:
@@ -53,7 +53,11 @@ process DISAMBIGUATE {
 
     script:
     """
-    /ngs-disambiguate/bin/ngs_disambiguate -s "${sname}" -o "./" -a bwa "${bam_human}" "${bam_mouse}"
+    samtools sort -n -o ${sname}.human.name_sorted.bam ${bam_human}
+    samtools sort -n -o ${sname}.mouse.name_sorted.bam ${bam_mouse}
+
+    python3 /opt/ngs_disambiguate/disambiguate-1.0.0/disambiguate.py \
+    -s "${sname}" -o "./" -a bwa "${sname}.human.name_sorted.bam" "${sname}.mouse.name_sorted.bam"
     """
 }
 
@@ -77,7 +81,7 @@ process BAM_TO_FASTQ {
     #    -o queryname_sorted.bam \
     #    -n
      
-    /gatk/gatk-4.6.0.0/gatk SortSam \
+    /opt/gatk/gatk-4.6.2.0/gatk SortSam \
         --TMP_DIR \$tmp \
         -I ${bam} \
         -O queryname_sorted.bam \
@@ -86,7 +90,7 @@ process BAM_TO_FASTQ {
     TMP_DIR_2=./\$(basename "${bam}" ".bam")_tmp_2
 
     # Convert to FASTQ while keeping the full reads (including soft trimmed parts)
-    /gatk/gatk-4.6.0.0/gatk SamToFastq \
+    /opt/gatk/gatk-4.6.2.0/gatk SortSam \
         --TMP_DIR \$TMP_DIR_2 \
         -I queryname_sorted.bam \
         -F ${sname}_human_R1.fastq.gz \

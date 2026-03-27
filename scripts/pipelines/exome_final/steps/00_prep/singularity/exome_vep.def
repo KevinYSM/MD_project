@@ -1,0 +1,18 @@
+Bootstrap: localimage
+From: /home/kevin/MD_project/scripts/pipelines/exome_final/steps/00_prep/singularity/exome.sif
+
+%environment
+    export PATH=$PATH:/opt/BBMap
+
+%post
+   mkdir /opt/BBMap
+   cd /opt/BBMap
+   
+   wget https://sourceforge.net/projects/bbmap/files/BBMap_39.80.tar.gz/download -O BBMap_39.80.tar.gz
+   tar -xzvf  BBMap_39.80.tar.gz
+   rm BBMap_39.80.tar.gz
+
+   cd /opt/java/latest
+   mv jdk-25.0.2/* /opt/java/latest
+   rm -rf jdk-25.0.2 jdk-25_linux-x64_bin.tar.gz
+
