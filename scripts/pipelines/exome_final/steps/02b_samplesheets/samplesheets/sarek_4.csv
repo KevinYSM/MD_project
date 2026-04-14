@@ -1,0 +1,11 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+P39,XY,0,P39_0,336_L002,/media/cph/Store4-USB/kevin/GWA-JN-335/fastqs/PCB-20-TIL_S4_L001_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/GWA-JN-335/fastqs/PCB-20-TIL_S4_L001_R2_001.fastq.gz
+P39,XY,1,P39_1,374_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/39-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/39-PDX_human_R2.fastq.gz
+P54,XX,0,P54_0,336_L002,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-143-TIL_S20_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-143-TIL_S20_L002_R2_001.fastq.gz
+P54,XX,1,P54_1,374_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/54-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/54-PDX_human_R2.fastq.gz
+P57,XY,0,P57_0,693_L001,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-142-TIL_S18_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-142-TIL_S18_L002_R2_001.fastq.gz
+P57,XY,1,P57_1,693_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB57-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB57-PDX_human_R2.fastq.gz
+P60,XX,0,P60_0,693_L001,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-141-TIL_S16_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-141-TIL_S16_L002_R2_001.fastq.gz
+P60,XX,1,P60_1,336_L002,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-60-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-60-PDX_human_R2.fastq.gz
+P64,XY,0,P64_0,693_L001,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-138-PBMC_S14_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-138-PBMC_S14_L002_R2_001.fastq.gz
+P64,XY,1,P64_1,693_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB64-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB64-PDX_human_R2.fastq.gz

@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 
-params.TUMI_reads= "/media/cph/Store4-USB/kevin/exome/01_trimmed_umis/50*PDX*_R{1,2}_*.fastq.gz"
+params.TUMI_reads= "/media/cph/Store4-USB/kevin/exome/01_trimmed_umis/73*biopsy*_R{1,2}_*.fastq.gz"
 
 
 //input_disambiguate_ch = bam_human_ch.join(bam_mouse_ch, by: 0).view()

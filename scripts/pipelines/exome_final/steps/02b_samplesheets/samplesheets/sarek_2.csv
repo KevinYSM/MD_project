@@ -1,0 +1,12 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+P141,XY,0,P141_0,336_L002,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB60-TIL_S7_L001_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB60-TIL_S7_L001_R2_001.fastq.gz
+P141,XY,1,P141_1,336_L002,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-141-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-141-PDX_human_R2.fastq.gz
+P142,XY,0,P142_0,336_L002,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB57-TIL_S4_L001_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB57-TIL_S4_L001_R2_001.fastq.gz
+P142,XY,1,P142_1,336_L002,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-142-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-142-PDX_human_R2.fastq.gz
+P143,XY,0,P143_0,336_L002,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-54-TIL_S4_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-54-TIL_S4_L002_R2_001.fastq.gz
+P143,XY,1,P143_1,336_L002,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-143-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-143-PDX_human_R2.fastq.gz
+P16,XY,0,P16_0,693_L002,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-50-TIL_S3_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-50-TIL_S3_L002_R2_001.fastq.gz
+P16,XY,1,P16_1,374_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/16-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/16-PDX_human_R2.fastq.gz
+P20,XY,0,P20_0,335_L001,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-39-TIL_S2_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-39-TIL_S2_L002_R2_001.fastq.gz
+P20,XY,1,P20_1,335_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-20-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB-20-PDX_human_R2.fastq.gz
+P20,XY,1,P20_2,693_L002,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB20-2-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/PCB20-2-PDX_human_R2.fastq.gz

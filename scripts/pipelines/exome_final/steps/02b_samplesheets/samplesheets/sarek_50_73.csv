@@ -1,0 +1,5 @@
+patient,sex,status,sample,lane,fastq_1,fastq_2
+P50,XX,0,P50_0,336_L002,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB16-TIL_S9_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/GWA-JN-693/fastqs/PCB16-TIL_S9_L002_R2_001.fastq.gz
+P50,XX,1,P50_1,374_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/50-PDX_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/50-PDX_human_R2.fastq.gz
+P73,XX,0,P73_0,374_L001,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-126-TIL_S11_L002_R1_001.fastq.gz,/media/cph/Store4-USB/kevin/S336-NovaSeq/fastqs/PCB-126-TIL_S11_L002_R2_001.fastq.gz
+P73,XX,1,P73_1,374_L001,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/73-biopsy_human_R1.fastq.gz,/media/cph/Store4-USB/kevin/exome/02_bbsplit/results_bbsplit/73-biopsy_human_R2.fastq.gz
